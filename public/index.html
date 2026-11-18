@@ -1,0 +1,2140 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZETAPACK Srl — Imballaggi e Monouso per Attività | Verona e Rovereto</title>
+<meta name="description" content="ZETAPACK Srl: imballaggi, prodotti monouso, packaging alimentare e igiene professionale per bar, ristoranti, negozi e attività nella zona di Verona e Rovereto. Prodotti personalizzabili col tuo marchio e preventivi su misura.">
+<meta name="keywords" content="imballaggi Verona, monouso Rovereto, packaging alimentare, grossista imballaggi, forniture ristorazione, packaging personalizzato, monouso bio">
+<meta name="author" content="ZETAPACK Srl">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZETAPACK Srl — Imballaggi e Monouso per la tua attività">
+<meta property="og:description" content="Un unico fornitore di imballaggi, monouso, packaging alimentare e igiene professionale nella zona di Verona e Rovereto. Personalizzazione col tuo marchio.">
+<meta property="og:image" content="/assets/logo.png">
+<meta property="og:locale" content="it_IT">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "ZETAPACK Srl",
+  "description": "Fornitore di imballaggi, prodotti monouso, packaging alimentare e igiene professionale per attività nella zona di Verona e Rovereto.",
+  "url": "https://zetapacksrl.it",
+  "email": "commerciale@zetapacksrl.it",
+  "telephone": ["+39 340 0810670", "+39 0464 684125"],
+  "image": "https://zetapacksrl.it/assets/logo.png",
+  "areaServed": ["Verona", "Rovereto", "Provincia di Verona", "Vallagarina"],
+  "priceRange": "€€"
+}
+</script>
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+:root{
+  --green:#2FB81C; --green-d:#1E7D12; --green-l:#EAF8E7;
+  --ink:#101311; --ink-2:#3A423C; --mut:#6B7568;
+  --bg:#F6F8F4; --card:#FFFFFF; --line:#E4E9DF; --line-2:#EEF2EA;
+  --warn:#E0A106; --danger:#D8412F; --info:#2F6DB8;
+  --r:14px; --r-s:10px; --sh:0 1px 2px rgba(16,19,17,.05),0 8px 24px rgba(16,19,17,.05);
+  --sh-lg:0 12px 40px rgba(16,19,17,.14);
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:15px}
+a{color:inherit}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.hide{display:none!important}
+
+/* ---------- Header ---------- */
+.hd{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd-in{max-width:1240px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px}
+.logo{height:38px;flex:none}
+.hd-nav{display:flex;gap:6px;margin-left:6px}
+.hd-nav button{padding:8px 12px;border-radius:9px;font-weight:600;font-size:14px;color:var(--ink-2)}
+.hd-nav button:hover{background:var(--line-2)}
+.hd-nav button.on{background:var(--ink);color:#fff}
+.hd-nav button.promo-nav{color:#e11d48;font-weight:700}
+.hd-nav button.promo-nav:hover{background:#fdeaee}
+.hd-sp{flex:1}
+.hd-user{display:flex;align-items:center;gap:10px}
+.who{text-align:right;line-height:1.15}
+.who b{font-family:var(--disp);font-size:14px;display:block}
+.who span{font-size:11.5px;color:var(--mut)}
+.badge{font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
+.badge.cli{background:var(--green-l);color:var(--green-d)}
+.badge.adm{background:#101311;color:#fff}
+.badge.prev{background:#FFF3CD;color:#8A6D00;border:1px solid #F2D98A}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;transition:.15s;white-space:nowrap}
+.btn.primary{background:var(--green);color:#0a2b06;box-shadow:0 1px 0 var(--green-d)}
+.btn.primary:hover{background:var(--green-d);color:#fff}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:#000}
+.btn.ghost{border:1.5px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.sm{padding:7px 12px;font-size:13px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.main{padding:26px 0 80px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f130f 0%,#182016 60%,#12331a 100%);color:#fff;border-radius:24px;margin:24px 22px 0;padding:56px 48px}
+.hero-max{max-width:1196px;margin:0 auto}
+.hero .eyebrow{font-family:var(--disp);letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#9be08a;font-weight:600}
+.hero h1{font-family:var(--disp);font-weight:700;font-size:clamp(30px,4.4vw,54px);line-height:1.03;margin:14px 0 0;max-width:16ch;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:17px;color:#cfd8cd;max-width:52ch;margin:18px 0 26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-cta .btn.primary{padding:13px 22px;font-size:15px}
+.hero-cta .btn.ghost{border-color:#3c4a3c;color:#eaf3e8;padding:13px 22px}
+.hero-cta .btn.ghost:hover{border-color:#9be08a}
+.stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.stat b{font-family:var(--disp);font-size:30px;display:block;color:#fff}
+.stat span{font-size:13px;color:#9fae9c}
+.arc{position:absolute;right:-120px;top:-80px;width:520px;height:520px;pointer-events:none;opacity:.9}
+.arc svg{width:100%;height:100%}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;position:relative;z-index:1}
+.hero-banner{background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 22px 55px rgba(0,0,0,.30)}
+.hero-banner img{width:100%;height:auto;display:block;border-radius:4px}
+.promo-band{margin:22px 0 0;background:linear-gradient(135deg,#fff 0%,#f2fbef 100%);border:1px solid var(--line);border-radius:20px;padding:22px 22px 24px;box-shadow:var(--sh)}
+.promo-hd{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.promo-hd h2{font-family:var(--disp);font-size:24px;margin:0;display:flex;align-items:center;gap:9px}
+.promo-hd h2::before{content:"★";color:var(--green)}
+.promo-hd .sub{color:var(--mut);font-size:13.5px;margin-top:3px}
+.promo-pill{background:var(--green);color:#fff;font-weight:700;font-size:12.5px;padding:6px 13px;border-radius:20px;white-space:nowrap}
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.promo-card{cursor:pointer;position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:9px;transition:.15s}
+.promo-cta{margin-top:2px;font-size:12px;font-weight:700;color:var(--green-d,#1f8f16)}
+#promozioni{scroll-margin-top:84px}
+.promo-card:hover{box-shadow:var(--sh);transform:translateY(-2px)}
+.promo-tag{position:absolute;top:10px;right:10px;background:#e11d48;color:#fff;font-weight:800;font-size:11.5px;padding:3px 9px;border-radius:20px;letter-spacing:.02em}
+.promo-img{height:120px;border-radius:10px;background:var(--line-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.promo-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.promo-img .noimg{font-size:34px;opacity:.5}
+.promo-desc{font-size:13px;font-weight:600;line-height:1.32;min-height:34px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.promo-price{font-family:var(--disp);font-size:18px;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.promo-price s{font-family:var(--sans);font-size:13px;color:var(--mut)}
+.promo-price .mut{font-family:var(--sans);font-size:11px}
+.promo-chip{background:#e11d48;color:#fff;font-weight:700;font-size:11px;padding:4px 10px;border-radius:20px;white-space:nowrap}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:26px}.hero h1{max-width:none}.hero p{max-width:none}}
+
+/* ---------- Sector chips ---------- */
+.sectors{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 6px}
+.chip{padding:8px 14px;border-radius:99px;border:1.5px solid var(--line);background:#fff;font-size:13.5px;font-weight:600;color:var(--ink-2);transition:.15s}
+.chip:hover{border-color:var(--green)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- Toolbar / filters ---------- */
+.sect-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:34px 0 14px;flex-wrap:wrap}
+.sect-title h2{font-family:var(--disp);font-size:24px;margin:0;letter-spacing:-.01em}
+.sect-title .sub{color:var(--mut);font-size:14px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:var(--sh)}
+.search{flex:1;min-width:220px;display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 13px}
+.search input{border:none;background:none;outline:none;width:100%}
+.fsel{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;color:var(--ink);font-weight:500}
+.count{color:var(--mut);font-size:13.5px;white-space:nowrap;padding:0 4px}
+
+/* ---------- Product grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:16px;margin-top:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--sh);transition:.18s}
+.card-promo{position:absolute;top:10px;left:10px;z-index:2;background:#e11d48;color:#fff;font-weight:700;font-size:10.5px;padding:3px 9px;border-radius:20px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+.card:hover{border-color:#cfd9c8;transform:translateY(-2px);box-shadow:var(--sh-lg)}
+.card .cat{font-family:var(--disp);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green-d)}
+.card h3{font-size:15px;font-weight:600;margin:0;line-height:1.3;min-height:38px}
+.card .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card .code{font-size:11.5px;color:var(--mut)}
+.um{font-size:10.5px;font-weight:700;background:var(--line-2);color:var(--ink-2);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:10.5px;color:var(--mut);background:var(--bg);border:1px solid var(--line);padding:2px 7px;border-radius:99px}
+.card .foot{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-family:var(--disp);font-weight:700;font-size:19px}
+.price small{font-weight:500;font-size:12px;color:var(--mut)}
+.locked{display:flex;align-items:center;gap:7px;color:var(--mut);font-size:12.5px;font-weight:500}
+.locked svg{width:15px;height:15px}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.stepper button{width:30px;height:32px;font-size:17px;font-weight:600;color:var(--ink-2)}
+.stepper button:hover{background:var(--line-2)}
+.stepper input{width:42px;height:32px;border:none;text-align:center;border-left:1px solid var(--line);border-right:1px solid var(--line);outline:none}
+.more{display:flex;justify-content:center;margin:30px 0}
+
+/* ---------- Cart ---------- */
+.cartbtn{position:fixed;right:22px;bottom:22px;z-index:45;background:var(--ink);color:#fff;border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:10px;box-shadow:var(--sh-lg);font-weight:600}
+.cartbtn .n{background:var(--green);color:#0a2b06;border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;font-weight:700;padding:0 6px}
+.drawer-bg{position:fixed;inset:0;background:rgba(16,19,17,.42);z-index:60;opacity:0;pointer-events:none;transition:.2s}
+.drawer-bg.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,94vw);background:#fff;z-index:61;transform:translateX(100%);transition:.28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:var(--sh-lg)}
+.drawer.open{transform:none}
+.drawer-hd{padding:20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-hd h3{font-family:var(--disp);margin:0;font-size:19px}
+.drawer-body{flex:1;overflow:auto;padding:8px 20px}
+.citem{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line-2)}
+.citem .ci-main{flex:1;min-width:0}
+.citem h4{margin:0 0 3px;font-size:13.5px;font-weight:600;line-height:1.3}
+.citem .ci-sub{font-size:11.5px;color:var(--mut)}
+.citem .ci-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.linkx{font-size:12px;color:var(--danger);font-weight:600}
+.drawer-foot{padding:18px 20px;border-top:1px solid var(--line);background:var(--bg)}
+.tot{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.tot b{font-family:var(--disp);font-size:22px}
+.note{font-size:12px;color:var(--mut);margin:6px 0 14px}
+.empty{text-align:center;color:var(--mut);padding:60px 20px}
+.empty svg{width:42px;height:42px;opacity:.4;margin-bottom:10px}
+
+/* ---------- Modal ---------- */
+.modal-bg{position:fixed;inset:0;background:rgba(16,19,17,.5);z-index:70;display:grid;place-items:center;padding:18px;opacity:0;pointer-events:none;transition:.18s}
+.modal-bg.open{opacity:1;pointer-events:auto}
+.modal{background:#fff;border-radius:20px;width:min(520px,100%);max-height:92vh;overflow:auto;box-shadow:var(--sh-lg);transform:translateY(8px) scale(.99);transition:.2s}
+.modal.wide{width:min(920px,100%)}
+.modal-bg.open .modal{transform:none}
+.modal-hd{padding:24px 26px 6px}
+.modal-hd h3{font-family:var(--disp);margin:0;font-size:22px}
+.modal-hd p{color:var(--mut);font-size:14px;margin:6px 0 0}
+.modal-body{padding:16px 26px 26px}
+.x{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:var(--mut)}
+.x:hover{background:var(--line-2)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px 13px;border:1.5px solid #b4beae;border-radius:10px;background:#fcfdfb;outline:none;transition:.15s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green)}
+.field textarea{resize:vertical;min-height:84px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.tin{border:1.5px solid #b4beae;border-radius:7px;padding:5px 7px;font:inherit;font-size:12.5px;max-width:100%;background:#fcfdfb}
+.tin.right{text-align:right}
+.hint{background:var(--green-l);border:1px solid #cdeec6;border-radius:10px;padding:11px 13px;font-size:12.5px;color:var(--green-d);margin-top:8px}
+.hint b{font-weight:700}
+.seg{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.seg button{flex:1;min-width:120px;padding:10px;border:1.5px solid var(--line);border-radius:10px;font-weight:600;font-size:13px;color:var(--ink-2)}
+.seg button.on{border-color:var(--green);background:var(--green-l);color:var(--green-d)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:13px 20px;border-radius:12px;z-index:90;font-weight:600;font-size:14px;opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--sh-lg);display:flex;align-items:center;gap:9px}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.toast .dot{width:9px;height:9px;border-radius:99px;background:var(--green)}
+
+/* ---------- Admin / tables ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:6px 0 24px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--sh)}
+.kpi b{font-family:var(--disp);font-size:32px;display:block;line-height:1}
+.kpi span{font-size:13px;color:var(--mut)}
+.kpi.hl{background:var(--ink);color:#fff}
+.kpi.hl span{color:#a9b3a6}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh);overflow:hidden}
+.panel-hd{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.panel-hd h3{font-family:var(--disp);font-size:18px;margin:0}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.tbl th{text-align:left;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);font-weight:700;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0}
+.tbl td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.tbl tr:hover td{background:#fbfdfa}
+.st{font-size:11px;font-weight:700;padding:4px 9px;border-radius:99px;white-space:nowrap}
+.st.nuovo{background:#e7f0fb;color:#2f6db8}
+.st.lav{background:#fdf3d9;color:#a67c05}
+.st.evaso{background:var(--green-l);color:var(--green-d)}
+.st.ann{background:#fbe7e4;color:var(--danger)}
+.st.aperta{background:#fdf3d9;color:#a67c05}
+.st.gestita{background:var(--green-l);color:var(--green-d)}
+.ordrow-x{background:#fbfdfa}
+.itemline{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px dashed var(--line-2)}
+.pubtog{width:40px;height:23px;border-radius:99px;background:var(--line);position:relative;transition:.15s;flex:none}
+.pubtog::after{content:"";position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:99px;background:#fff;transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.2)}
+.pubtog.on{background:var(--green)}
+.pubtog.promo.on{background:#e11d48}
+.pubtog.on::after{left:19px}
+.promo-edit{background:#fff5f6;border:1px solid #f6d4da;border-radius:12px;padding:13px 15px;margin-bottom:14px}
+.priceedit{width:82px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;text-align:right;font-family:var(--disp)}
+.mgn{font-weight:700;font-size:12.5px}
+.mgn.lo{color:var(--danger)}
+.tbl-scroll{max-height:560px;overflow:auto}
+.mut{color:var(--mut)}
+.center{text-align:center}
+.right{text-align:right}
+
+/* about strip */
+.about{margin-top:46px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:34px;box-shadow:var(--sh)}
+.about h2{font-family:var(--disp);font-size:26px;margin:0 0 12px}
+.about p{color:var(--ink-2);margin:0 0 12px;max-width:55ch}
+.about .cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ftr{border-top:1px solid var(--line);margin-top:60px;padding:30px 0;color:var(--mut);font-size:13px}
+.ftr .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+
+@media(max-width:820px){
+ .hero{padding:40px 26px;margin:16px 14px 0}
+ .about{grid-template-columns:1fr}
+ .hd-nav{display:none}
+ .who span{display:none}
+ .arc{display:none}
+ .wrap{padding:0 14px}
+}
+@media print{.hd,.cartbtn,.ftr,.sect-title button,.modal-bg,.drawer,.drawer-bg{display:none!important}.panel{box-shadow:none;border-color:#ccc}.main{padding:0}body{background:#fff}}
+.tbl-edit td{vertical-align:middle}
+.wrap.wide{max-width:none;padding:0 16px}
+.wrap.wide .tbl-scroll{max-height:calc(100vh - 250px)}
+.wrap.wide .tbl-edit{min-width:1080px}
+.wrap.wide .tbl{font-size:12px}
+.wrap.wide .tbl th{padding:8px 9px;font-size:10px}
+.wrap.wide .tbl td{padding:6px 9px}
+.wrap.wide .tbl-edit .cellinput{font-size:12px;padding:5px 7px}
+.wrap.wide .tbl-edit .priceedit{font-size:12px;padding:5px 6px}
+.wrap.wide .tbl-edit .cellsel{font-size:11.5px;padding:5px 6px}
+.cellinput{width:100%;min-width:210px;padding:6px 8px;border:1.5px solid #b4beae;border-radius:7px;font:inherit;font-size:12.5px;background:#fcfdfb;color:var(--ink)}
+.cellinput:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(47,184,28,.12)}
+.cellsel{padding:6px 8px;border:1px solid var(--line-2);border-radius:7px;font:inherit;font-size:12.5px;background:#fff;color:var(--ink);max-width:180px;cursor:pointer}
+.cellsel:focus{outline:none;border-color:var(--green)}
+.qresults{border:1px solid var(--line-2);border-radius:10px;overflow:hidden;margin-bottom:12px}
+.qres{display:flex;justify-content:space-between;gap:10px;padding:9px 12px;cursor:pointer;font-size:13px;border-top:1px solid var(--line-2)}
+.qres:first-child{border-top:0}
+.qres:hover{background:var(--line)}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.barwrap{padding:14px 18px}
+.barrow{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:10px;margin-bottom:9px;font-size:12.5px}
+.barlab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.bartrack{background:var(--line);border-radius:6px;height:12px;overflow:hidden}
+.barfill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-d));border-radius:6px;min-width:2px}
+.barval{font-weight:700;white-space:nowrap}
+.chartbars{display:flex;align-items:flex-end;gap:8px;height:172px;padding:18px 18px 12px}
+.cb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.cb-bar{width:70%;max-width:34px;background:linear-gradient(180deg,var(--green),var(--green-d));border-radius:5px 5px 0 0;min-height:2px}
+.cb-lab{font-size:10.5px;color:var(--mut);margin-top:6px}
+@media(max-width:760px){.statgrid{grid-template-columns:1fr}}
+.st.spd{background:#e6f0ff;color:#1e5fd0}
+.st.inv{background:#efe7ff;color:#6b3fd0}
+.prog{display:flex;align-items:flex-start;gap:0;flex-wrap:nowrap}
+.pstep{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;min-width:0}
+.pstep:not(:first-child)::before{content:"";position:absolute;top:12px;left:-50%;width:100%;height:3px;background:var(--line-2)}
+.pstep.done:not(:first-child)::before,.pstep.now:not(:first-child)::before{background:var(--green)}
+.pdot{width:26px;height:26px;border-radius:50%;background:var(--line-2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;position:relative;z-index:1}
+.pstep.done .pdot{background:var(--green)}
+.pstep.now .pdot{background:var(--green-d);box-shadow:0 0 0 4px rgba(47,184,28,.18)}
+.plab{font-size:10.5px;margin-top:5px;text-align:center;color:var(--mut);line-height:1.2}
+.pstep.now .plab{color:var(--ink);font-weight:700}
+.progcanc{font-size:13px;font-weight:700;color:var(--danger);background:#fdecec;border-radius:8px;padding:8px 12px;text-align:center}
+.dcard{background:var(--line);border-radius:12px;padding:14px 16px;font-size:13px;line-height:1.7;margin-bottom:6px}
+.dsub{font-family:var(--disp);font-size:14px;margin:18px 0 8px;color:var(--ink)}
+.drow{border:1px solid var(--line-2);border-radius:9px;padding:9px 12px;margin-bottom:7px}
+.drow-t{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px}
+.attsec{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 4px}
+.attcol{background:var(--line);border-radius:10px;padding:10px 12px}
+.attlab{font-size:11.5px;font-weight:700;color:var(--mut);margin-bottom:8px}
+.attrow{display:flex;align-items:center;gap:6px}
+@media(max-width:620px){.attsec{grid-template-columns:1fr}}
+.cardimg{width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--line);margin-bottom:12px}
+.cardimg img{width:100%;height:100%;object-fit:cover;display:block}
+.imgrow{display:flex;align-items:center;gap:10px}
+.imgthumb{width:64px;height:64px;object-fit:cover;border-radius:8px;border:1px solid var(--line-2);background:var(--line)}
+.lthumb{width:34px;height:34px;object-fit:cover;border-radius:6px;border:1px solid var(--line-2);flex:none;display:inline-block;vertical-align:middle}
+.lthumb.ph{background:var(--line)}
+.dscb{display:inline-block;background:#e9f8e6;color:#1f8f16;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:20px;vertical-align:middle}
+.celldesc{display:flex;align-items:center;gap:9px}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <img class="logo" id="logo" src="/assets/logo.png" alt="ZETAPACK Srl">
+    <nav class="hd-nav" id="nav"></nav>
+    <div class="hd-sp"></div>
+    <div class="hd-user" id="userbox"></div>
+  </div>
+</header>
+
+<main id="app"><div class="wrap main"><div class="empty">Caricamento…</div></div></main>
+
+<button class="cartbtn hide" id="cartbtn" onclick="openCart()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+  <span>Richiesta</span><span class="n" id="cartn">0</span>
+</button>
+<div class="drawer-bg" id="drawerbg" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-hd"><h3>Richiesta ordine</h3><button class="x" style="position:static" onclick="closeCart()">✕</button></div>
+  <div class="drawer-body" id="cartbody"></div>
+  <div class="drawer-foot" id="cartfoot"></div>
+</aside>
+
+<div class="modal-bg" id="modalbg">
+  <div class="modal" style="position:relative">
+    <button class="x" onclick="closeModal()">✕</button>
+    <div id="modalcontent"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><span class="dot"></span><span id="toastmsg"></span></div>
+
+<script>
+const APP_VERSION = "6.3.5";
+const BUILD_DATE  = "13 novembre 2026";
+
+/* ---------------- API layer ---------------- */
+function tokenGet(){ try{ return localStorage.getItem('zp_token'); }catch(e){ return null; } }
+function sessionSave(t,u){ try{ localStorage.setItem('zp_token',t); localStorage.setItem('zp_user',JSON.stringify(u)); }catch(e){} }
+function sessionClear(){ try{ localStorage.removeItem('zp_token'); localStorage.removeItem('zp_user'); }catch(e){} }
+function sessionUser(){ try{ return JSON.parse(localStorage.getItem('zp_user')||'null'); }catch(e){ return null; } }
+
+async function api(path, opts={}){
+  const h = { 'Content-Type':'application/json' };
+  const t = tokenGet(); if(t) h['Authorization']='Bearer '+t;
+  const res = await fetch(path, { method:opts.method||'GET', headers:h, body:opts.body?JSON.stringify(opts.body):undefined });
+  if(res.status===401){ sessionClear(); }
+  if(opts.raw) return res;
+  const data = await res.json().catch(()=>({}));
+  if(!res.ok) throw new Error(data.error||'Errore di rete');
+  return data;
+}
+async function apiBlob(path){
+  const h = {}; const t=tokenGet(); if(t) h['Authorization']='Bearer '+t;
+  const res = await fetch(path,{headers:h});
+  if(!res.ok) throw new Error('Errore nel download');
+  return res.blob();
+}
+
+/* ---------------- State ---------------- */
+const state = {
+  view:'public', tab:'', user:null, preview:null,
+  meta:{categories:[],sectors:[]}, catalog:[], promo:[],
+  filter:{q:'',cat:'',sector:''}, page:1, perPage:48, cart:{},
+  myOrders:[], adminOrders:[], adminRequests:[], adminClients:[], adminProducts:[], adminQuotes:[], adminLogs:[],
+  adminOrderFilter:'', adminListinoQ:'', openOrder:null, quoteFilter:'', statsPeriod:'all', logFilter:'',
+  listinoView:'all', listinoCat:'', listinoSup:'', listinoSec:''
+};
+
+function money(n){ return (n==null)?'—':Number(n).toLocaleString('it-IT',{style:'currency',currency:'EUR'}); }
+function esc(s){ return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------------- Init ---------------- */
+async function init(){
+  try{
+    const [meta, catalog, promo] = await Promise.all([api('/api/meta'), api('/api/catalog'), api('/api/promo').catch(()=>[])]);
+    state.meta=meta; state.catalog=catalog; state.promo=promo||[];
+  }catch(e){ document.getElementById('app').innerHTML=`<div class="wrap main"><div class="empty">Server non raggiungibile. Avvia il backend e ricarica.</div></div>`; return; }
+  const u = sessionUser();
+  if(u && tokenGet()){
+    state.user=u;
+    if(u.role==='admin'){ state.view='admin'; state.tab='dash'; await loadAdmin(); }
+    else { state.view='client'; state.tab='cat'; await loadClient(); }
+  }
+  render();
+  if(!state.user) track('Visita catalogo');
+}
+async function loadClient(){
+  try{
+    const [cat, ord] = await Promise.all([api('/api/catalog/prices'), api('/api/orders/mine')]);
+    state.catalog=cat; state.myOrders=ord;
+  }catch(e){ toast(e.message); logout(); }
+}
+function track(event, detail){ try{ api('/api/track',{method:'POST',body:{event:event||'',detail:detail||'',ref:document.referrer||''}}).catch(()=>{}); }catch(e){} }
+async function loadAdmin(){
+  try{
+    const [ord, req, cli, prod, quo, logs] = await Promise.all([
+      api('/api/admin/orders'), api('/api/admin/requests'), api('/api/admin/clients'), api('/api/admin/products'), api('/api/admin/quotes'), api('/api/admin/logs').catch(()=>[])
+    ]);
+    state.adminOrders=ord; state.adminRequests=req; state.adminClients=cli; state.adminProducts=prod; state.adminQuotes=quo; state.adminLogs=logs||[];
+  }catch(e){ toast(e.message); }
+}
+async function reloadLogs(){ try{ state.adminLogs=await api('/api/admin/logs'); render(); toast('Log aggiornati'); }catch(e){ toast(e.message); } }
+
+/* ---------------- Header ---------------- */
+function renderHeader(){
+  const nav=document.getElementById('nav'), ub=document.getElementById('userbox');
+  if(state.view==='public'){
+    nav.innerHTML=`<button class="on" onclick="goPublicCatalog()">Catalogo</button>${(state.promo&&state.promo.length)?`<button class="promo-nav" onclick="goPublicPromo()">★ Promozioni</button>`:''}`;
+    if(state.preview){
+      ub.innerHTML=`<span class="badge prev">👁 Anteprima: visitatore non loggato</span>
+        <button class="btn primary sm" onclick="exitPreview()">↩ Torna all'amministrazione</button>`;
+    } else {
+      ub.innerHTML=`<button class="btn ghost sm" onclick="openLogin()">Accedi</button>
+        <button class="btn primary sm" onclick="openRequest()">Richiedi accesso</button>`;
+    }
+  } else if(state.view==='client'){
+    nav.innerHTML=`<button class="${state.tab==='cat'?'on':''}" onclick="setTab('cat')">Catalogo & prezzi</button>
+      ${state.preview?'':`<button class="${state.tab==='ord'?'on':''}" onclick="setTab('ord')">I miei ordini</button>`}`;
+    if(state.preview){
+      ub.innerHTML=`<span class="badge prev">👁 Anteprima: cliente registrato</span>
+        <button class="btn primary sm" onclick="exitPreview()">↩ Torna all'amministrazione</button>`;
+    } else {
+      ub.innerHTML=`<div class="who"><b>${esc(state.user.name)}</b><span>${esc(state.user.id||'')} · ${esc(state.user.city||'')}</span></div>
+        <span class="badge cli">Cliente</span><button class="btn ghost sm" onclick="logout()">Esci</button>`;
+    }
+  } else {
+    nav.innerHTML=`
+      <button class="${state.tab==='dash'?'on':''}" onclick="setTab('dash')">Dashboard</button>
+      <button class="${state.tab==='ord'?'on':''}" onclick="setTab('ord')">Ordini</button>
+      <button class="${state.tab==='quo'?'on':''}" onclick="setTab('quo')">Preventivi</button>
+      <button class="${state.tab==='stat'?'on':''}" onclick="setTab('stat')">Statistiche</button>
+      <button class="${state.tab==='req'?'on':''}" onclick="setTab('req')">Richieste</button>
+      <button class="${state.tab==='cli'?'on':''}" onclick="setTab('cli')">Clienti</button>
+      <button class="${state.tab==='lst'?'on':''}" onclick="setTab('lst')">Listino</button>
+      <button class="${state.tab==='fatt'?'on':''}" onclick="setTab('fatt')">Fatturazione</button>
+      <button class="${state.tab==='mag'?'on':''}" onclick="setTab('mag')">Magazzino</button>
+      <button class="${state.tab==='forn'?'on':''}" onclick="setTab('forn')">Fornitori</button>
+      <button class="${state.tab==='road'?'on':''}" onclick="setTab('road')">Avanzamento</button>
+      <button class="${state.tab==='guide'?'on':''}" onclick="setTab('guide')">Guida</button>`;
+    ub.innerHTML=`<div class="who"><b>ZETAPACK Srl</b><span>Pannello gestione · v${APP_VERSION}</span></div>
+      <button class="btn ghost sm" onclick="previewAs('public')" title="Vedi il sito come un visitatore non registrato">👁 Vista pubblico</button>
+      <button class="btn ghost sm" onclick="previewAs('client')" title="Vedi il sito come un cliente registrato">👁 Vista cliente</button>
+      <span class="badge adm">Azienda</span><button class="btn ghost sm" onclick="logout()">Esci</button>`;
+  }
+  document.getElementById('cartbtn').classList.toggle('hide', !(state.view==='client'&&state.tab==='cat'));
+}
+
+/* ---------------- Router ---------------- */
+function render(){
+  renderHeader();
+  const app=document.getElementById('app');
+  if(state.view==='public') app.innerHTML=viewPublic();
+  else if(state.view==='client') app.innerHTML=viewClient();
+  else app.innerHTML=viewAdmin();
+  updateCartBtn();
+}
+async function setTab(t){
+  state.tab=t; state.page=1;
+  if(state.view==='client'&&t==='ord'&&!state.preview){ state.myOrders=await api('/api/orders/mine'); }
+  if(state.view==='admin'&&t==='fatt'){ try{ state.company=await api('/api/admin/company'); state.invoices=await api('/api/admin/invoices'); }catch(e){} }
+  if(state.view==='admin'&&t==='mag'){ try{ state.warehouse=await api('/api/admin/warehouse'); state.suppliers=await api('/api/admin/suppliers'); }catch(e){} }
+  if(state.view==='admin'&&t==='forn'){ try{ state.suppliers=await api('/api/admin/suppliers'); }catch(e){} }
+  render();
+  if(state.view==='client') track(t==='ord'?'I miei ordini':'Catalogo & prezzi');
+}
+function goPublicCatalog(){ state.filter={q:'',cat:'',sector:''}; state.page=1; render(); setTimeout(()=>document.getElementById('catalog')?.scrollIntoView({behavior:'smooth'}),40); }
+function goPublicPromo(){ document.getElementById('promozioni')?.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+/* ---------------- Filters + grid ---------------- */
+const CATS=()=>state.meta.categories, SECTORS=()=>state.meta.sectors;
+function filtered(){
+  const {q,cat,sector}=state.filter, ql=q.toLowerCase();
+  return state.catalog
+    .filter(p=>!cat||p.category===cat)
+    .filter(p=>!sector||(p.tags||[]).includes(sector))
+    .filter(p=>!ql||p.descr.toLowerCase().includes(ql)||p.code.toLowerCase().includes(ql));
+}
+function filtersBar(){
+  return `<div class="filters">
+    <div class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input placeholder="Cerca prodotto o codice…" value="${esc(state.filter.q)}" oninput="state.filter.q=this.value;debouncedGrid()"></div>
+    <select class="fsel" onchange="state.filter.cat=this.value;state.page=1;render()">
+      <option value="">Tutte le categorie</option>
+      ${CATS().map(c=>`<option ${state.filter.cat===c?'selected':''}>${esc(c)}</option>`).join('')}
+    </select>
+    <span class="count" id="rescount"></span>
+  </div>`;
+}
+function sectorChips(){
+  return `<div class="sectors">
+    <button class="chip ${state.filter.sector===''?'on':''}" onclick="setSector('')">Tutti i settori</button>
+    ${SECTORS().map(s=>`<button class="chip ${state.filter.sector===s?'on':''}" onclick="setSector('${esc(s)}')">${esc(s)}</button>`).join('')}
+  </div>`;
+}
+function setSector(s){ state.filter.sector=(state.filter.sector===s?'':s); state.page=1; render(); }
+let gridT; function debouncedGrid(){ clearTimeout(gridT); gridT=setTimeout(()=>{state.page=1;render();},220); }
+
+function grid(withPrice){
+  const list=filtered();
+  const shown=list.slice(0,state.page*state.perPage);
+  const cards=shown.map(p=>card(p,withPrice)).join('');
+  const more=list.length>shown.length?`<div class="more"><button class="btn ghost" onclick="state.page++;render()">Mostra altri prodotti (${list.length-shown.length})</button></div>`:'';
+  const empty=list.length?'':`<div class="panel"><div class="empty">Nessun prodotto trovato.</div></div>`;
+  setTimeout(()=>{const c=document.getElementById('rescount'); if(c)c.textContent=list.length+' prodotti';},0);
+  return `<div class="grid">${cards}</div>${more}${empty}`;
+}
+function card(p,withPrice){
+  const tags=(p.tags||[]).slice(0,2).map(t=>`<span class="tag">${esc(t)}</span>`).join('')+((p.tags||[]).length>2?`<span class="tag">+${p.tags.length-2}</span>`:'');
+  let foot;
+  if(!withPrice){
+    if(p.promo && p.price!=null){
+      const hasP=p.promo_price!=null&&p.promo_price>0&&p.promo_price<p.price;
+      const shown=hasP?p.promo_price:p.price;
+      foot=`<div class="price">${money(shown)} ${hasP?`<s class="mut" style="font-size:12px;font-weight:400">${money(p.price)}</s> `:''}<small>/ ${esc(p.um)}</small></div><button class="btn primary sm" onclick="openRequest()">Iscriviti</button>`;
+    } else {
+      foot=`<div class="locked"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Prezzo riservato</span></div>
+      <button class="btn ghost sm" onclick="openLogin()">Accedi</button>`;
+    }
+  } else {
+    const q=state.cart[p.code]||0;
+    foot=`<div class="price">${money(p.price)} <small>/ ${esc(p.um)}</small></div>`;
+    foot+= q>0
+      ? `<div class="stepper"><button onclick="setQty('${esc(p.code)}',${q-1})">−</button><input value="${q}" onchange="setQty('${esc(p.code)}',this.value)"><button onclick="setQty('${esc(p.code)}',${q+1})">+</button></div>`
+      : `<button class="btn primary sm" onclick="setQty('${esc(p.code)}',${p.minq||1})">Aggiungi</button>`;
+  }
+  const img=`<div class="cardimg">${prodImgTag(p,'',p.descr)}</div>`;
+  return `<div class="card">${p.promo&&!withPrice?'<span class="card-promo">★ Promo</span>':''}${img}<div class="cat">${esc(p.category)}</div><h3>${esc(p.descr)}</h3>
+    <div class="meta"><span class="code mono">${esc(p.code)}</span><span class="um">${esc(p.um)}</span></div>
+    <div class="tags">${tags}</div><div class="foot">${foot}</div></div>`;
+}
+
+/* ---------------- Public view ---------------- */
+function viewPublic(){
+  return `
+  <div class="hero"><div class="arc"><svg viewBox="0 0 200 200"><path d="M20 180 A130 130 0 0 1 180 20" fill="none" stroke="#2FB81C" stroke-width="10" stroke-linecap="round"/><path d="M45 185 A150 150 0 0 1 185 45" fill="none" stroke="#2FB81C" stroke-width="4" opacity=".5" stroke-linecap="round"/></svg></div>
+    <div class="hero-max hero-grid">
+      <div class="hero-banner"><img src="/assets/banner-central.png" alt="ZETAPACK Srl — prodotti monouso, packaging e igiene professionale"></div>
+      <div class="hero-copy">
+      <div class="eyebrow">Imballaggi & Monouso · Verona e Rovereto</div>
+      <h1>Imballaggi e monouso per <em>la tua attività</em>.</h1>
+      <p>Un unico fornitore per bar, ristoranti, pizzerie, macellerie, panifici, alimentari e market nella zona di Verona e Rovereto. Monouso in carta, plastica, alluminio, legno e bio, packaging alimentare, pulizia e igiene professionale — anche personalizzati col tuo marchio. I clienti registrati vedono i prezzi dedicati e inviano le richieste d'ordine in pochi clic.</p>
+      <div class="hero-cta"><button class="btn primary" onclick="openRequest()">Richiedi accesso / listino</button>
+        <button class="btn ghost" onclick="openLogin()">Sono già cliente — accedi</button></div>
+      <div class="stats">
+        <div class="stat"><b>${state.catalog.length}</b><span>Prodotti pubblicati</span></div>
+        <div class="stat"><b>${CATS().length}</b><span>Categorie</span></div>
+        <div class="stat"><b>${SECTORS().length}</b><span>Settori serviti</span></div>
+      </div>
+      </div>
+    </div></div>
+  ${promoSection()}
+  <div class="wrap main" id="catalog">
+    ${sectorChips()}
+    <div class="sect-title"><div><h2>Catalogo imballaggi e monouso</h2><div class="sub">Sfoglia liberamente tutto il catalogo. I prezzi sono riservati ai clienti registrati: richiedi l'accesso o il listino, è gratuito e senza impegno.</div></div></div>
+    ${filtersBar()}${grid(false)}
+  </div>${footer()}`;
+}
+function promoSection(){
+  const list=state.promo||[];
+  if(!list.length) return '';
+  return `<div class="wrap" id="promozioni"><div class="promo-band">
+    <div class="promo-hd"><div><h2>Prodotti in promozione</h2><div class="sub">Offerte del momento — prezzo visibile a tutti. Per ordinare, iscriviti gratuitamente.</div></div><span class="promo-pill">${list.length} in offerta</span></div>
+    <div class="promo-grid">${list.map(promoCard).join('')}</div>
+  </div></div>`;
+}
+function promoCard(p){
+  const hasP=p.promo_price!=null&&p.promo_price>0&&p.promo_price<p.price;
+  const shown=hasP?p.promo_price:p.price;
+  const pct=hasP?Math.round((1-p.promo_price/p.price)*100):0;
+  return `<div class="promo-card" onclick="openRequest()" title="Iscriviti per ordinare questo prodotto">
+    <span class="promo-tag">${hasP?'−'+pct+'%':'Promo'}</span>
+    <div class="promo-img">${prodImgTag(p,'',p.descr)||'<span class="noimg">📦</span>'}</div>
+    <div class="promo-desc">${esc(p.descr)}</div>
+    <div class="promo-price"><b>${money(shown)}</b>${hasP?` <s>${money(p.price)}</s>`:''}<span class="mut"> / ${esc(p.um||'pz')}</span></div>
+    <div class="promo-cta">Iscriviti per ordinare →</div>
+  </div>`;
+}
+
+/* ---------------- Client view ---------------- */
+function viewClient(){
+  if(state.tab==='ord') return `<div class="wrap main">${clientOrders()}</div>${footer()}`;
+  return `<div class="wrap main">
+    <div class="sect-title"><div><h2>Catalogo & prezzi</h2><div class="sub">Prezzi riservati ${state.preview?'ai clienti registrati':'a '+esc(state.user.name)}. Aggiungi i prodotti e invia la richiesta d'ordine.</div></div></div>
+    ${sectorChips()}${filtersBar()}${grid(true)}
+  </div>${footer()}`;
+}
+function clientOrders(){
+  const mine=state.myOrders;
+  if(!mine.length) return `<div class="sect-title"><div><h2>I miei ordini</h2></div></div><div class="panel"><div class="empty">Non hai ancora inviato richieste d'ordine.<br><button class="btn primary sm" style="margin-top:14px" onclick="setTab('cat')">Vai al catalogo</button></div></div>`;
+  return `<div class="sect-title"><div><h2>I miei ordini</h2><div class="sub">${mine.length} richieste inviate.</div></div></div>
+  ${mine.map(o=>`<div class="panel" style="margin-bottom:14px">
+    <div class="panel-hd"><div><h3 style="margin-bottom:2px">${o.id}</h3><span class="mut" style="font-size:12.5px">${new Date(o.created_at).toLocaleString('it-IT')}</span></div>
+      <div style="flex:1"></div><span class="st ${stClass(o.status)}">${o.status}</span>
+      <span style="font-family:var(--disp);font-weight:700">${money(o.total)}</span>
+      <button class="btn ghost sm" onclick="downloadPdf('${o.id}')">PDF</button>
+      <button class="btn ghost sm" onclick="replicate('${o.id}')">↻ Replica</button></div>
+    <div style="padding:12px 18px 2px">${progressStepper(o.status)}</div>
+    <div style="padding:0 18px">${docsLine(o)}</div>
+    <div style="padding:4px 18px 14px">${o.items.map(it=>`<div class="itemline"><span style="display:flex;align-items:center;gap:9px">${thumbImg(it.code)}<span>${it.qty} × ${esc(it.descr)} <span class="mut mono">(${esc(it.code)})</span>${discBadge(it)}</span></span><b>${money(it.qty*it.price)}</b></div>`).join('')}</div>
+  </div>`).join('')}`;
+}
+
+/* ---------------- Cart ---------------- */
+function setQty(code,q){ q=Math.max(0,Math.round(Number(q)||0)); if(q<=0) delete state.cart[code]; else state.cart[code]=q; render(); if(document.getElementById('drawer').classList.contains('open')) renderCart(); }
+function updateCartBtn(){ const n=Object.values(state.cart).reduce((a,b)=>a+b,0); const el=document.getElementById('cartn'); if(el)el.textContent=n; }
+function cartLines(){ return Object.entries(state.cart).map(([c,q])=>{ const p=state.catalog.find(x=>x.code===c)||{code:c,descr:c,price:0,um:''}; return {code:c,descr:p.descr,um:p.um,price:p.price||0,qty:q,sub:(p.price||0)*q}; }); }
+function openCart(){ renderCart(); document.getElementById('drawerbg').classList.add('open'); document.getElementById('drawer').classList.add('open'); }
+function closeCart(){ document.getElementById('drawerbg').classList.remove('open'); document.getElementById('drawer').classList.remove('open'); }
+function renderCart(){
+  const lines=cartLines(), body=document.getElementById('cartbody'), foot=document.getElementById('cartfoot');
+  if(!lines.length){ body.innerHTML=`<div class="empty">La tua richiesta è vuota.</div>`; foot.innerHTML=''; return; }
+  body.innerHTML=lines.map(l=>`<div class="citem"><div class="ci-main">
+    <h4>${esc(l.descr)}</h4><div class="ci-sub mono">${esc(l.code)} · ${money(l.price)}/${esc(l.um)}</div>
+    <div class="ci-row"><div class="stepper"><button onclick="setQty('${esc(l.code)}',${l.qty-1})">−</button><input value="${l.qty}" onchange="setQty('${esc(l.code)}',this.value)"><button onclick="setQty('${esc(l.code)}',${l.qty+1})">+</button></div><b>${money(l.sub)}</b></div>
+    <button class="linkx" onclick="setQty('${esc(l.code)}',0)">Rimuovi</button></div></div>`).join('');
+  const tot=lines.reduce((s,l)=>s+l.sub,0);
+  foot.innerHTML=`<div class="tot"><span>Totale indicativo</span><b>${money(tot)}</b></div>
+    <div class="note">Nessun pagamento richiesto. Invii una <b>richiesta d'ordine</b>: ZETAPACK la riceve e ti conferma.</div>
+    <div class="field" style="margin-bottom:12px"><label>Nota per ZETAPACK (facoltativa)</label><textarea id="ordernote" style="min-height:60px"></textarea></div>
+    <button class="btn primary" style="width:100%;justify-content:center;padding:13px" onclick="submitOrder()">Invia richiesta d'ordine</button>`;
+}
+async function submitOrder(){
+  if(state.preview){ toast('Anteprima: l’invio dell’ordine è disattivato'); return; }
+  const lines=cartLines(); if(!lines.length) return;
+  const note=document.getElementById('ordernote')?.value||'';
+  try{
+    const order=await api('/api/orders',{method:'POST',body:{items:lines.map(l=>({code:l.code,qty:l.qty})),note}});
+    state.cart={}; closeCart(); state.myOrders=await api('/api/orders/mine'); render();
+    toast('Richiesta '+order.id+' inviata a ZETAPACK ✓');
+  }catch(e){ toast(e.message); }
+}
+function replicate(id){ const o=state.myOrders.find(x=>x.id===id); if(!o) return; state.cart={}; o.items.forEach(it=>state.cart[it.code]=it.qty); setTab('cat'); track('Replica ordine', id); toast('Ordine '+id+' caricato nel carrello'); setTimeout(openCart,220); }
+async function downloadPdf(id){ try{ const b=await apiBlob('/api/orders/'+id+'/pdf'); window.open(URL.createObjectURL(b),'_blank'); if(state.user&&state.user.role==='client') track('Download PDF', id); }catch(e){ toast(e.message); } }
+
+/* ---------------- Admin views ---------------- */
+function viewAdmin(){
+  let body='';
+  if(state.tab==='dash') body=adminDash();
+  else if(state.tab==='ord') body=adminOrders();
+  else if(state.tab==='quo') body=adminQuotes();
+  else if(state.tab==='stat') body=adminStats();
+  else if(state.tab==='req') body=adminReqs();
+  else if(state.tab==='cli') body=adminClients();
+  else if(state.tab==='road') body=adminRoadmap();
+  else if(state.tab==='fatt') body=adminFatture();
+  else if(state.tab==='mag') body=adminMagazzino();
+  else if(state.tab==='forn') body=adminFornitori();
+  else if(state.tab==='guide') body=adminGuide();
+  else body=adminListino();
+  return `<div class="wrap main${state.tab==='lst'?' wide':''}">${body}</div>${footer()}`;
+}
+function adminDash(){
+  const nuovi=state.adminOrders.filter(o=>o.status==='Nuovo').length;
+  const aperte=state.adminRequests.filter(r=>r.status==='Aperta').length;
+  const val=state.adminOrders.filter(o=>o.status!=='Annullato').reduce((s,o)=>s+o.total,0);
+  const pub=state.adminProducts.filter(p=>p.published).length;
+  return `<div class="sect-title"><div><h2>Dashboard</h2><div class="sub">Panoramica in tempo reale dal database.</div></div></div>
+  <div class="kpis">
+    <div class="kpi hl"><b>${nuovi}</b><span>Ordini nuovi da gestire</span></div>
+    <div class="kpi"><b>${aperte}</b><span>Richieste accesso aperte</span></div>
+    <div class="kpi"><b>${state.adminOrders.length}</b><span>Ordini totali</span></div>
+    <div class="kpi"><b>${money(val)}</b><span>Valore ordini</span></div>
+    <div class="kpi"><b>${pub}/${state.adminProducts.length}</b><span>Prodotti pubblicati</span></div>
+    <div class="kpi"><b>${state.adminClients.length}</b><span>Clienti registrati</span></div>
+  </div>
+  <div class="panel"><div class="panel-hd"><h3>Ultimi ordini</h3><div style="flex:1"></div><button class="btn ghost sm" onclick="setTab('ord')">Vedi tutti</button></div>
+    ${state.adminOrders.length?orderTable(state.adminOrders.slice(0,6)):`<div class="empty">Nessun ordine ricevuto.</div>`}</div>
+  <div class="panel" style="margin-top:16px"><div class="panel-hd"><h3>Backup e ripristino</h3></div>
+    <div style="padding:16px 18px">
+      <p class="mut" style="font-size:13px;margin-bottom:14px;line-height:1.6">Scarica una copia completa del portale (clienti, prodotti, ordini, preventivi, comunicazioni e allegati DDT/fattura) in un unico file. In caso di problemi puoi ricaricarlo per riportare tutto com'era. Conserva il file in un luogo sicuro: contiene tutti i dati.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn primary sm" onclick="downloadBackup()">⤓ Scarica backup</button>
+        <button class="btn ghost sm" onclick="pickRestore()">⤒ Ripristina da backup</button>
+      </div>
+    </div></div>`;
+}
+function adminOrders(){
+  const f=state.adminOrderFilter;
+  let list=state.adminOrders.slice();
+  if(f) list=list.filter(o=>o.status===f);
+  return `<div class="sect-title"><div><h2>Ordini ricevuti</h2><div class="sub">Aggiorna lo stato, scarica PDF o esporta in CSV.</div></div></div>
+  <div class="panel"><div class="panel-hd">
+    <select class="fsel" onchange="state.adminOrderFilter=this.value;render()">
+      <option value="">Tutti gli stati</option>${['Nuovo','In lavorazione','Spedito','Fatturato','Evaso','Annullato'].map(s=>`<option ${f===s?'selected':''}>${s}</option>`).join('')}
+    </select><span class="count">${list.length} ordini</span>
+    <div style="flex:1"></div><button class="btn ghost sm" onclick="exportOrdersCSV()">⤓ Esporta CSV</button></div>
+    ${list.length?orderTable(list,true):`<div class="empty">Nessun ordine con questo filtro.</div>`}</div>`;
+}
+function orderTable(list,actions){
+  return `<div class="tbl-scroll"><table class="tbl">
+    <thead><tr><th>Ordine</th><th>Cliente</th><th>Data</th><th class="right">Righe</th><th class="right">Totale</th><th>Stato</th>${actions?'<th></th>':''}</tr></thead><tbody>
+    ${list.map(o=>`<tr>
+      <td class="mono">${o.id}</td>
+      <td>${esc(o.client_name)}<div class="mut" style="font-size:11.5px">${esc(o.client_id||'')}</div></td>
+      <td>${new Date(o.created_at).toLocaleDateString('it-IT')}<div class="mut" style="font-size:11.5px">${new Date(o.created_at).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'})}</div></td>
+      <td class="right">${o.items.length}</td><td class="right"><b>${money(o.total)}</b></td>
+      <td><span class="st ${stClass(o.status)}">${o.status}</span></td>
+      ${actions?`<td class="right" style="white-space:nowrap"><button class="btn primary sm" onclick="openQuote('${o.id}')">✉ Preventivo</button> <button class="btn ghost sm" onclick="createInvoice('${o.id}')">🧾 Fattura</button> <button class="btn ghost sm" onclick="openOrderProgress('${o.id}')">📄 Avanzamento</button> <button class="btn ghost sm" onclick="openOrderEditor('${o.id}')">✎ Modifica</button> <button class="btn ghost sm" onclick="downloadPdf('${o.id}')">PDF</button> <button class="btn ghost sm" onclick="toggleOrder('${o.id}')">${state.openOrder===o.id?'Chiudi':'Righe'}</button></td>`:''}
+    </tr>
+    ${actions&&state.openOrder===o.id?`<tr class="ordrow-x"><td colspan="7" style="padding:0 14px 14px"><div style="padding-top:8px">${o.items.map(it=>`<div class="itemline"><span style="display:flex;align-items:center;gap:9px">${thumbImg(it.code)}<span>${it.qty} × ${esc(it.descr)} <span class="mut mono">${esc(it.code)}</span>${discBadge(it)}</span></span><b>${money(it.qty*it.price)}</b></div>`).join('')}${o.note?`<div style="margin-top:8px;font-size:12.5px" class="mut">Nota cliente: ${esc(o.note)}</div>`:''}</div></td></tr>`:''}`).join('')}
+    </tbody></table></div>`;
+}
+async function setOrderStatus(id,s){ try{ await api('/api/admin/orders/'+id,{method:'PATCH',body:{status:s}}); const o=state.adminOrders.find(x=>x.id===id); if(o)o.status=s; render(); }catch(e){ toast(e.message); } }
+
+/* ---------------- Fatturazione elettronica ---------------- */
+function adminFatture(){
+  const co=state.company||{}; const inv=state.invoices||[];
+  const REG=[['RF01','Ordinario'],['RF19','Forfettario'],['RF02','Contribuenti minimi'],['RF04','Agricoltura']];
+  const MP=[['MP05','Bonifico'],['MP08','Carta'],['MP01','Contanti'],['MP02','Assegno'],['MP12','RIBA']];
+  return `<div class="sect-title"><div><h2>Fatturazione elettronica</h2><div class="sub">Genera gli XML in formato FatturaPA (SdI). Ricorda: l'XML va firmato digitalmente e trasmesso allo SdI.</div></div></div>
+  <div class="panel"><div class="panel-hd"><h3>Dati azienda (cedente/prestatore)</h3></div>
+    <div class="modal-body" style="padding:14px 18px">
+      <div class="row2"><div class="field"><label>Denominazione *</label><input id="co_name" value="${esc(co.name||'')}"></div>
+        <div class="field"><label>Partita IVA *</label><input id="co_piva" value="${esc(co.piva||'')}" placeholder="11 cifre"></div></div>
+      <div class="row2"><div class="field"><label>Codice Fiscale</label><input id="co_cf" value="${esc(co.cf||'')}"></div>
+        <div class="field"><label>Regime fiscale</label><select id="co_regime">${REG.map(r=>`<option value="${r[0]}" ${co.regime===r[0]?'selected':''}>${r[0]} — ${r[1]}</option>`).join('')}</select></div></div>
+      <div class="field"><label>Indirizzo sede</label><input id="co_address" value="${esc(co.address||'')}"></div>
+      <div class="row3"><div class="field"><label>CAP</label><input id="co_cap" value="${esc(co.cap||'')}"></div>
+        <div class="field"><label>Comune</label><input id="co_city" value="${esc(co.city||'')}"></div>
+        <div class="field"><label>Prov.</label><input id="co_prov" value="${esc(co.prov||'')}" maxlength="2"></div></div>
+      <div class="row2"><div class="field"><label>Telefono</label><input id="co_tel" value="${esc(co.tel||'')}"></div>
+        <div class="field"><label>Email</label><input id="co_email" value="${esc(co.email||'')}"></div></div>
+      <div class="field"><label>IBAN (facoltativo, per il pagamento)</label><input id="co_iban" value="${esc(co.iban||'')}"></div>
+      <button class="btn primary sm" onclick="saveCompany()">Salva dati azienda</button>
+    </div></div>
+
+  <div class="panel" style="margin-top:16px"><div class="panel-hd"><h3>Fatture emesse</h3><div style="flex:1"></div><span class="count">${inv.length}</span></div>
+    ${inv.length?`<div class="tbl-scroll"><table class="tbl"><thead><tr><th>Numero</th><th>Data</th><th>Cliente</th><th>Tipo</th><th class="right">Imponibile</th><th class="right">IVA</th><th class="right">Totale</th><th></th></tr></thead><tbody>
+      ${inv.map(f=>`<tr><td class="mono">${esc(f.numero)}</td><td>${new Date(f.data).toLocaleDateString('it-IT')}</td>
+        <td>${esc((f.client&&f.client.name)||'')}</td><td>${esc(f.tipo)}</td>
+        <td class="right">${money(f.imponibile)}</td><td class="right">${money(f.imposta)}</td><td class="right"><b>${money(f.totale)}</b></td>
+        <td class="right" style="white-space:nowrap"><button class="btn primary sm" onclick="downloadInvoiceXML('${esc(f.id)}')">⤓ XML</button> <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteInvoice('${esc(f.id)}')">Elimina</button></td></tr>`).join('')}
+    </tbody></table></div>`:`<div class="empty">Nessuna fattura. Vai in <b>Ordini</b> e usa <b>🧾 Fattura</b> per crearne una da un ordine.</div>`}
+    <div class="mut" style="font-size:11.5px;margin:10px 18px 2px">Aliquota IVA predefinita 22%. Per aliquote diverse o note di credito (TD04) posso estendere il modulo.</div>
+  </div>`;
+}
+/* ---------------- Magazzino: import fatture fornitori da PDF ---------------- */
+function adminMagazzino(){
+  const wh=state.warehouse||[]; const sup=state.suppliers||[]; const pv=state.parsePreview;
+  const valore=wh.reduce((a,w)=>a+(w.qty_stock||0)*(w.last_price||0),0);
+  let head=`<div class="sect-title"><div><h2>Magazzino</h2><div class="sub">Importa le fatture d'acquisto (PDF o fattura elettronica XML / .p7m): il sistema estrae fornitore e articoli, aggiorna le giacenze e il listino.</div></div>
+    <button class="btn primary" onclick="pickInvoicePdf()">⤴ Importa fattura (PDF / XML)</button></div>`;
+  if(pv){
+    const s=pv.supplier||{};
+    const metodo=pv.method==='ai'?'estrazione AI':(pv.method==='fattura elettronica (XML)'?'fattura elettronica (XML)':(pv.method==='fattura elettronica'?'fattura elettronica (PDF)':'estrazione automatica'));
+    head+=`<div class="panel" style="border:2px solid var(--green)"><div class="panel-hd"><h3>Anteprima import — controlla e correggi prima di confermare</h3>
+      <span class="st nuovo" style="margin-left:8px">${metodo}</span></div>
+      <div class="modal-body" style="padding:14px 18px">
+      <div style="font-weight:700;font-size:13px;margin-bottom:8px">Dati fornitore</div>
+      <div class="row2"><div class="field"><label>Ragione sociale</label><input id="pv_name" value="${esc(s.name||'')}"></div>
+        <div class="field"><label>P.IVA</label><input id="pv_piva" value="${esc(s.piva||'')}"></div></div>
+      <div class="row3"><div class="field"><label>Cod. Fiscale</label><input id="pv_cf" value="${esc(s.cf||'')}"></div>
+        <div class="field"><label>PEC</label><input id="pv_pec" value="${esc(s.pec||'')}"></div>
+        <div class="field"><label>Email</label><input id="pv_email" value="${esc(s.email||'')}"></div></div>
+      <div class="field"><label>Indirizzo</label><input id="pv_address" value="${esc(s.address||'')}"></div>
+      <div class="row3"><div class="field"><label>CAP</label><input id="pv_cap" value="${esc(s.cap||'')}"></div>
+        <div class="field"><label>Città</label><input id="pv_city" value="${esc(s.city||'')}"></div>
+        <div class="field"><label>Prov.</label><input id="pv_prov" value="${esc(s.prov||'')}"></div></div>
+      <div class="row2"><div class="field"><label>N. fattura</label><input id="pv_num" value="${esc(pv.numero||'')}"></div>
+        <div class="field"><label>Data (GG/MM/AAAA)</label><input id="pv_data" value="${esc(pv.data||'')}"></div></div>
+      <div style="font-weight:700;font-size:13px;margin:12px 0 6px">Righe rilevate (${(pv.items||[]).length}) — spunta quelle da importare, correggi i dati</div>
+      <div class="tbl-scroll" style="max-height:360px;overflow:auto"><table class="tbl"><thead><tr><th style="width:30px"><input type="checkbox" checked onclick="toggleAllInc(this.checked)"></th><th>Cod. forn.</th><th>Descrizione</th><th>U.M.</th><th class="right">Q.tà</th><th class="right">Prezzo</th><th class="right">Sconti % (in serie)</th><th class="right">IVA%</th><th>Listino</th><th></th></tr></thead><tbody>
+      ${(pv.items||[]).map((it,i)=>`<tr${it.type&&it.type!=='product'?' style="background:#fff8e8"':''}>
+        <td style="text-align:center"><input type="checkbox" id="pi_inc_${i}" ${it.include?'checked':''}></td>
+        <td><input class="tin" id="pi_code_${i}" value="${esc(it.code||'')}" style="width:76px"></td>
+        <td><input class="tin" id="pi_descr_${i}" value="${esc(it.descr||'')}" style="width:230px" title="Descrizione come da fattura">
+          <div style="margin-top:4px;display:flex;gap:4px;flex-wrap:wrap;align-items:center">
+            <input class="tin" id="pi_intcode_${i}" value="${esc(it.intcode||(it.listino&&it.listino.found?it.listino.code:'')||'')}" placeholder="Cod. interno" title="Codice interno di listino (diverso dal codice fornitore)" style="width:88px;font-size:11.5px;color:var(--green-d)">
+            <input class="tin" id="pi_descr2_${i}" value="${esc(it.descr_listino||(it.listino&&it.listino.found?it.listino.descr:'')||'')}" placeholder="↳ nome per il magazzino" title="Descrizione usata in magazzino (se vuota si usa quella della fattura)" style="width:150px;font-size:11.5px;color:var(--green-d)">
+            <input class="tin" id="pi_umw_${i}" value="${esc(it.um_wh||it.um||'')}" placeholder="UM" title="Unità di misura per il magazzino" style="width:52px;font-size:11.5px;color:var(--green-d)">
+            <input class="tin right" id="pi_unit_${i}" value="${unitSuggest(it)}" placeholder="€/pz" title="Prezzo per singolo pezzo (netto sconti in serie, modificabile)" style="width:72px;font-size:11.5px;color:var(--green-d)">
+          </div>
+          ${it.type&&it.type!=='product'?`<span class="st inv" style="font-size:10px">${esc(String(it.type).toUpperCase())}</span>`:''}</td>
+        <td><input class="tin" id="pi_um_${i}" value="${esc(it.um||'')}" style="width:42px"></td>
+        <td class="right"><input class="tin right" id="pi_qty_${i}" value="${it.qty||0}" style="width:60px"></td>
+        <td class="right"><input class="tin right" id="pi_price_${i}" value="${it.price||0}" style="width:64px" oninput="recalcUnit(${i})"></td>
+        <td class="right"><input class="tin right" id="pi_sc1_${i}" value="${(it.sconti&&it.sconti[0]!=null)?it.sconti[0]:''}" placeholder="%" title="1° sconto" style="width:44px" oninput="recalcUnit(${i})">
+          <input class="tin right" id="pi_sc2_${i}" value="${(it.sconti&&it.sconti[1]!=null)?it.sconti[1]:''}" placeholder="%" title="2° sconto" style="width:44px;margin-top:2px" oninput="recalcUnit(${i})">
+          <input class="tin right" id="pi_sc3_${i}" value="${(it.sconti&&it.sconti[2]!=null)?it.sconti[2]:''}" placeholder="%" title="3° sconto" style="width:44px;margin-top:2px" oninput="recalcUnit(${i})"></td>
+        <td class="right"><input class="tin right" id="pi_vat_${i}" value="${it.vat==null?'':it.vat}" style="width:44px"></td>
+        <td>${it.listino&&it.listino.found?`<span class="st evaso" title="${esc(it.listino.descr||'')}">✓ ${esc(it.listino.code||'in listino')}</span><div style="margin-top:3px"><button class="btn ghost sm" onclick="openImportLookup(${i})">cambia</button></div>`:`<span class="st nuovo">nuovo</span><div style="margin-top:3px;display:flex;gap:4px;flex-wrap:wrap"><button class="btn ghost sm" onclick="openImportLookup(${i})">🔎 cerca</button><button class="btn ghost sm" onclick="openCreateListino(${i})">➕ crea</button></div>`}</td>
+        <td class="right"><button class="btn ghost sm" style="color:var(--danger)" onclick="removeParseItem(${i})">✕</button></td></tr>`).join('')}
+      </tbody></table></div>
+      <div class="mut" style="font-size:11.5px;margin-top:6px">Gli <b>sconti</b> si applicano <b>in serie</b> (1, 2 o 3 colonne): il <b>€/pz</b> si ricalcola da solo (listino × sconto1 × sconto2 × sconto3). Se non ci sono sconti i campi restano vuoti. I campi <b>in verde</b> valgono per il magazzino (cod. interno, nome, UM, €/pz). Le righe evidenziate (es. <b>CONAI</b>) sono escluse: spuntale per importarle. <b>✓ verde</b> = già in listino.</div>
+      <div style="display:flex;gap:8px;margin-top:14px">
+        <button class="btn primary" onclick="confirmImport()">✓ Importa nel magazzino</button>
+        <button class="btn ghost" onclick="state.parsePreview=null;render()">Annulla</button>
+        <div style="flex:1"></div><span class="mut" style="font-size:11.5px;align-self:center">Estrazione automatica: verifica sempre i dati prima di confermare.</span>
+      </div></div></div>`;
+  }
+  const stats=`<div class="kpis" style="margin:0 0 14px"><div class="kpi"><b>${wh.length}</b><span>Articoli a magazzino</span></div>
+    <div class="kpi"><b>${sup.length}</b><span>Fornitori</span></div>
+    <div class="kpi"><b>${money(valore)}</b><span>Valore di magazzino</span></div></div>`;
+  const table=wh.length?`<div class="tbl-scroll"><table class="tbl"><thead><tr><th>Descrizione</th><th>Cod. interno</th><th>Cod. forn.</th><th>Fornitore</th><th>U.M.</th><th class="right">Giacenza</th><th class="right">Ult. prezzo</th><th class="right">IVA</th><th></th></tr></thead><tbody>
+    ${wh.map(w=>`<tr><td>${esc(w.descr||'')}</td><td class="mono">${esc(w.code||'')}</td><td class="mono">${esc(w.supplier_code||'')}</td><td>${esc(w.supplier_name||'')}</td><td>${esc(w.um||'')}</td>
+      <td class="right"><b>${(w.qty_stock||0)}</b></td><td class="right">${money(w.last_price||0)}</td><td class="right">${w.vat!=null?w.vat+'%':'-'}</td>
+      <td class="right" style="white-space:nowrap"><button class="btn ghost sm" onclick="openWarehouseDetail(${w.id})">Provenienza</button> <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteWh(${w.id})">Elimina</button></td></tr>`).join('')}
+    </tbody></table></div>`:`<div class="empty">Magazzino vuoto. Importa la prima fattura d'acquisto con <b>⤴ Importa fattura (PDF / XML)</b>.</div>`;
+  return head+`<div class="panel" style="margin-top:16px"><div class="panel-hd"><h3>Giacenze</h3></div><div style="padding:14px 18px">${stats}${table}<div class="mut" style="font-size:11.5px;margin-top:10px">Le giacenze si <b>scaricano in automatico</b> quando un ordine cliente passa a <b>Spedito/Fatturato/Evaso</b> (match sul codice interno) e si ripristinano se l'ordine torna indietro o viene annullato.</div></div></div>`;
+}
+function pickInvoicePdf(){
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='.pdf,.xml,.p7m,application/pdf,application/xml,text/xml';
+  inp.onchange=()=>{ const f=inp.files[0]; if(!f) return; const r=new FileReader();
+    r.onload=()=>{ parseInvoicePdf(String(r.result).split(',')[1], f.name); }; r.readAsDataURL(f); };
+  inp.click();
+}
+async function parseInvoicePdf(b64,fname){
+  toast('Analisi della fattura in corso…');
+  try{ const out=await api('/api/admin/purchases/parse',{method:'POST',body:{pdf:b64}});
+    state.parsePreview=Object.assign({fname,pdf:b64},out);
+    if(!out.items||!out.items.length) toast('Nessun articolo riconosciuto: inseriscili a mano o riprova con un PDF più leggibile.');
+    render();
+  }catch(e){ toast(e.message); }
+}
+function toggleAllInc(on){ (state.parsePreview&&state.parsePreview.items||[]).forEach((_,i)=>{const el=document.getElementById('pi_inc_'+i); if(el)el.checked=on;}); }
+function syncParseEdits(){
+  const pv=state.parsePreview; if(!pv) return;
+  const g=id=>{const el=document.getElementById(id);return el?el.value.trim():'';};
+  pv.supplier=Object.assign(pv.supplier||{},{name:g('pv_name'),piva:g('pv_piva'),cf:g('pv_cf'),pec:g('pv_pec'),email:g('pv_email'),address:g('pv_address'),cap:g('pv_cap'),city:g('pv_city'),prov:g('pv_prov')});
+  pv.numero=g('pv_num'); pv.data=g('pv_data');
+  pv.items=(pv.items||[]).map((it,i)=>{const inc=document.getElementById('pi_inc_'+i);const gu=g('pi_unit_'+i);const sc=[g('pi_sc1_'+i),g('pi_sc2_'+i),g('pi_sc3_'+i)].filter(v=>v!=='').map(v=>parseFloat(v.replace(',','.'))).filter(n=>!isNaN(n));return Object.assign({},it,{code:g('pi_code_'+i),intcode:g('pi_intcode_'+i),descr:g('pi_descr_'+i),descr_listino:g('pi_descr2_'+i),um:g('pi_um_'+i),um_wh:g('pi_umw_'+i),unit:gu===''?null:parseFloat(gu.replace(',','.')),qty:parseFloat(g('pi_qty_'+i).replace(',','.'))||0,price:parseFloat(g('pi_price_'+i).replace(',','.'))||0,sconti:sc,vat:g('pi_vat_'+i)===''?null:parseFloat(g('pi_vat_'+i).replace(',','.')),include:inc?inc.checked:it.include});});
+}
+function unitSuggest(it){
+  if(it.unit!=null&&it.unit!=='') return it.unit;
+  if(it.price>0 && it.sconti && it.sconti.length){ let f=1; it.sconti.forEach(s=>{const n=Number(s); if(!isNaN(n)) f*=(1-n/100);}); return Math.round(it.price*f*10000)/10000; }
+  return it.qty?Math.round(it.total/it.qty*10000)/10000:(it.price||0);
+}
+function recalcUnit(i){
+  const g=id=>{const e=document.getElementById(id);return e?e.value.trim():'';};
+  const price=parseFloat(g('pi_price_'+i).replace(',','.'));
+  let f=1, any=false;
+  ['pi_sc1_','pi_sc2_','pi_sc3_'].forEach(p=>{const v=g(p+i); if(v!==''){const n=parseFloat(v.replace(',','.')); if(!isNaN(n)){ f*=(1-n/100); any=true; }}});
+  const u=document.getElementById('pi_unit_'+i); if(!u) return;
+  if(!isNaN(price)&&price>0&&any) u.value=Math.round(price*f*10000)/10000;
+  else if(!isNaN(price)&&price>0&&!any) u.value=Math.round(price*10000)/10000;
+}
+function removeParseItem(i){ syncParseEdits(); state.parsePreview.items.splice(i,1); render(); }
+async function confirmImport(){
+  syncParseEdits(); const pv=state.parsePreview; if(!pv) return;
+  const chosen=(pv.items||[]).filter(it=>it.include);
+  if(!chosen.length){ toast('Spunta almeno una riga da importare'); return; }
+  try{ const r=await api('/api/admin/purchases/confirm',{method:'POST',body:{supplier:pv.supplier,purchase:{numero:pv.numero,data:pv.data,totals:pv.totals||{}},items:chosen,pdf:pv.pdf,fname:pv.fname}});
+    state.parsePreview=null;
+    state.warehouse=await api('/api/admin/warehouse'); state.suppliers=await api('/api/admin/suppliers');
+    render(); toast('Importato ✓ — '+r.nuovi+' nuovi, '+(r.carichi||0)+' caricati (solo prezzo+qtà), '+r.aggiornati+' aggiornati');
+  }catch(e){ toast(e.message); }
+}
+async function deleteWh(id){ if(!confirm('Eliminare questo articolo dal magazzino?')) return; try{ await api('/api/admin/warehouse/'+id,{method:'DELETE'}); state.warehouse=await api('/api/admin/warehouse'); render(); }catch(e){ toast(e.message); } }
+
+/* ---------------- Anagrafica Fornitori ---------------- */
+function adminFornitori(){
+  const sup=state.suppliers||[]; const q=(state.fornQ||'').toLowerCase();
+  const list=q?sup.filter(s=>(s.name||'').toLowerCase().includes(q)||(s.piva||'').toLowerCase().includes(q)||(s.city||'').toLowerCase().includes(q)):sup;
+  return `<div class="sect-title"><div><h2>Anagrafica fornitori</h2><div class="sub">Fornitori creati automaticamente dalle fatture importate. Apri la scheda per vedere i documenti collegati.</div></div>
+    <input class="fsel" style="min-width:220px" placeholder="Cerca fornitore, P.IVA, città…" value="${esc(state.fornQ||'')}" oninput="state.fornQ=this.value;render()"></div>
+  <div class="panel"><div class="panel-hd"><h3>Fornitori</h3><div style="flex:1"></div><span class="count">${list.length}</span></div>
+    ${list.length?`<div class="tbl-scroll"><table class="tbl"><thead><tr><th>Ragione sociale</th><th>P.IVA</th><th>Città</th><th>Contatti</th><th class="right">Documenti</th><th></th></tr></thead><tbody>
+      ${list.map(s=>`<tr><td><b>${esc(s.name||'')}</b></td><td class="mono">${esc(s.piva||'—')}</td><td>${esc([s.cap,s.city,s.prov?'('+s.prov+')':''].filter(Boolean).join(' '))||'—'}</td>
+        <td class="mut" style="font-size:12px">${esc(s.email||s.pec||'—')}</td>
+        <td class="right"><b>${s.purchases||0}</b></td>
+        <td class="right" style="white-space:nowrap"><button class="btn primary sm" onclick="openSupplierDetail('${esc(s.id)}')">Scheda</button> <button class="btn ghost sm" onclick="openSupplierForm('${esc(s.id)}')">Modifica</button> <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteSupplier('${esc(s.id)}')">Elimina</button></td></tr>`).join('')}
+    </tbody></table></div>`:`<div class="empty">Nessun fornitore. Importa una fattura d'acquisto dal <b>Magazzino</b> per popolare l'anagrafica.</div>`}
+  </div>`;
+}
+async function openSupplierDetail(id){
+  openModal('<div class="modal-body"><div class="empty">Caricamento…</div></div>');
+  let d; try{ d=await api('/api/admin/suppliers/'+encodeURIComponent(id)+'/detail'); }catch(e){ toast(e.message||'Errore'); closeModal(); return; }
+  if(!d||!d.supplier){ toast('Scheda non disponibile: verifica che il server aggiornato sia caricato.'); closeModal(); return; }
+  const s=d.supplier, pur=d.purchases||[];
+  openModal(`<div class="modal-hd"><h3>${esc(s.name||'Fornitore')}</h3><p>${esc(s.piva||'')}${s.city?' · '+esc(s.city):''}${s.prov?' ('+esc(s.prov)+')':''}</p></div>
+    <div class="modal-body">
+      <div class="dcard">
+        <div><b>P.IVA:</b> ${esc(s.piva||'—')} &nbsp;·&nbsp; <b>Cod. Fisc.:</b> ${esc(s.cf||'—')}</div>
+        <div><b>PEC:</b> ${esc(s.pec||'—')} &nbsp;·&nbsp; <b>Email:</b> ${esc(s.email||'—')}${s.phone?' · <b>Tel:</b> '+esc(s.phone):''}</div>
+        <div><b>Indirizzo:</b> ${esc([s.address,s.cap,s.city,s.prov?'('+s.prov+')':''].filter(Boolean).join(' '))||'—'}</div>
+        <div class="mut" style="margin-top:4px">Articoli a magazzino di questo fornitore: <b>${d.articles||0}</b></div>
+        <button class="btn ghost sm" style="margin-top:10px" onclick="openSupplierForm('${esc(s.id)}')">Modifica anagrafica</button>
+      </div>
+      <h4 class="dsub">Documenti collegati <span class="mut">(${pur.length})</span></h4>
+      ${pur.length?pur.map(p=>`<div class="drow"><div class="drow-t">
+        <span><b class="mono">Fatt. ${esc(p.numero||'')}</b> <span class="mut">${p.data?new Date(p.data).toLocaleDateString('it-IT'):''}</span> · ${money(p.totale||0)} <span class="mut">(${p.righe||0} righe)</span></span>
+        <span>${p.file?`<button class="btn primary sm" onclick="openPurchaseFile('${esc(p.id)}')">⤓ Apri PDF</button>`:'<span class="mut" style="font-size:11.5px">PDF non allegato</span>'}</span>
+      </div></div>`).join(''):'<div class="mut" style="font-size:13px">Nessun documento importato per questo fornitore.</div>'}
+    </div>`);
+}
+function openSupplierForm(id){
+  const s=(state.suppliers||[]).find(x=>x.id===id)||{id};
+  openModal(`<div class="modal-hd"><h3>Modifica fornitore</h3></div>
+    <div class="modal-body">
+      <div class="field"><label>Ragione sociale</label><input id="sf_name" value="${esc(s.name||'')}"></div>
+      <div class="row2"><div class="field"><label>P.IVA</label><input id="sf_piva" value="${esc(s.piva||'')}"></div>
+        <div class="field"><label>Cod. Fiscale</label><input id="sf_cf" value="${esc(s.cf||'')}"></div></div>
+      <div class="row2"><div class="field"><label>PEC</label><input id="sf_pec" value="${esc(s.pec||'')}"></div>
+        <div class="field"><label>Email</label><input id="sf_email" value="${esc(s.email||'')}"></div></div>
+      <div class="field"><label>Telefono</label><input id="sf_phone" value="${esc(s.phone||'')}"></div>
+      <div class="field"><label>Indirizzo</label><input id="sf_address" value="${esc(s.address||'')}"></div>
+      <div class="row3"><div class="field"><label>CAP</label><input id="sf_cap" value="${esc(s.cap||'')}"></div>
+        <div class="field"><label>Città</label><input id="sf_city" value="${esc(s.city||'')}"></div>
+        <div class="field"><label>Prov.</label><input id="sf_prov" value="${esc(s.prov||'')}" maxlength="2"></div></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="saveSupplier('${esc(id)}')">Salva</button>
+    </div>`);
+}
+async function saveSupplier(id){
+  const g=x=>document.getElementById(x).value.trim();
+  const body={name:g('sf_name'),piva:g('sf_piva'),cf:g('sf_cf'),pec:g('sf_pec'),email:g('sf_email'),phone:g('sf_phone'),address:g('sf_address'),cap:g('sf_cap'),city:g('sf_city'),prov:g('sf_prov')};
+  try{ await api('/api/admin/suppliers/'+encodeURIComponent(id),{method:'PUT',body}); state.suppliers=await api('/api/admin/suppliers'); closeModal(); render(); toast('Fornitore aggiornato ✓'); }catch(e){ toast(e.message); }
+}
+async function deleteSupplier(id){
+  if(!confirm('Eliminare questo fornitore? (possibile solo se non ha documenti collegati)')) return;
+  try{ await api('/api/admin/suppliers/'+encodeURIComponent(id),{method:'DELETE'}); state.suppliers=await api('/api/admin/suppliers'); render(); toast('Fornitore eliminato'); }catch(e){ toast(e.message); }
+}
+async function openPurchaseFile(id){
+  try{ const b=await apiBlob('/api/admin/purchases/'+encodeURIComponent(id)+'/file'); window.open(URL.createObjectURL(b),'_blank'); }catch(e){ toast('Documento non disponibile'); }
+}
+async function openWarehouseDetail(id){
+  openModal('<div class="modal-body"><div class="empty">Caricamento…</div></div>');
+  let d; try{ d=await api('/api/admin/warehouse/'+encodeURIComponent(id)+'/detail'); }catch(e){ toast(e.message||'Errore'); closeModal(); return; }
+  if(!d||!d.article){ toast('Scheda non disponibile: verifica che il server aggiornato sia caricato.'); closeModal(); return; }
+  const a=d.article, sup=d.supplier||{}, pur=d.purchases||[];
+  openModal(`<div class="modal-hd"><h3>${esc(a.descr||'Articolo')}</h3><p>Cod. interno <span class="mono">${esc(a.code||'—')}</span> · Cod. fornitore <span class="mono">${esc(a.supplier_code||'—')}</span></p></div>
+    <div class="modal-body">
+      <div class="dcard">
+        <div><b>Giacenza:</b> ${a.qty_stock||0} ${esc(a.um||'')} &nbsp;·&nbsp; <b>Ultimo prezzo:</b> ${money(a.last_price||0)}${a.vat!=null?' · <b>IVA:</b> '+a.vat+'%':''}</div>
+        <div><b>Fornitore:</b> ${sup.name?`<button class="linkx" onclick="closeModal();openSupplierDetail('${esc(sup.id)}')">${esc(sup.name)}</button>`:'—'}</div>
+      </div>
+      <h4 class="dsub">Documenti di provenienza <span class="mut">(${pur.length})</span></h4>
+      ${pur.length?pur.map(p=>`<div class="drow"><div class="drow-t">
+        <span><b class="mono">Fatt. ${esc(p.numero||'')}</b> <span class="mut">${p.data?new Date(p.data).toLocaleDateString('it-IT'):''}</span> · ${money(p.totale||0)}</span>
+        <span>${p.file?`<button class="btn primary sm" onclick="openPurchaseFile('${esc(p.id)}')">⤓ Apri PDF</button>`:'<span class="mut" style="font-size:11.5px">PDF non allegato</span>'}</span>
+      </div></div>`).join(''):'<div class="mut" style="font-size:13px">Nessun documento di provenienza trovato.</div>'}
+    </div>`);
+}
+
+/* --- Aggancio manuale al listino durante l'import --- */
+async function openImportLookup(i){
+  syncParseEdits();
+  const pv=state.parsePreview; if(!pv) return; const sup=pv.supplier||{};
+  try{
+    const r=await api('/api/admin/import/lookup?'+new URLSearchParams({piva:sup.piva||'',name:sup.name||''}).toString());
+    state.importLookup={i, data:r, q:''};
+    const row=pv.items[i]||{};
+    openModal(`<div class="modal-hd"><h3>Collega al listino</h3><p>Riga: <b>${esc((row.descr||'').slice(0,60))}</b> — fornitore <b>${esc(sup.name||'')}</b>. Cerca e seleziona l'articolo corrispondente.</p></div>
+      <div class="modal-body">
+        <input class="tin" style="width:100%;padding:9px;font-size:13px" placeholder="Cerca per descrizione, codice o codice fornitore…" oninput="state.importLookup.q=this.value;document.getElementById('implist').innerHTML=importLookupListHtml()">
+        <div id="implist" style="max-height:52vh;overflow:auto;margin-top:10px">${importLookupListHtml()}</div>
+      </div>`);
+  }catch(e){ toast(e.message); }
+}
+function importLookupListHtml(){
+  const st=state.importLookup; if(!st) return ''; const q=(st.q||'').toLowerCase();
+  const mt=x=>!q||((x.code||'').toLowerCase().includes(q)||(x.descr||'').toLowerCase().includes(q)||(x.supcode||'').toLowerCase().includes(q));
+  const rowH=(kind,a)=>{
+    const key=kind==='wh'?a.id:a.code;
+    const codeShown=kind==='wh'?(a.supplier_code||a.code||''):(a.code||'');
+    const extra=kind==='wh'
+      ? `${a.code?` <span class="mut" style="font-size:11px">int: ${esc(a.code)}</span>`:''} <span class="mut" style="font-size:11px">· giac ${a.qty_stock||0}${a.um?' '+esc(a.um):''}</span>`
+      : (a.supcode?` <span class="mut" style="font-size:11px">forn: ${esc(a.supcode)}</span>`:'');
+    return `<div class="itemline"><span style="min-width:0"><b>${esc(a.descr||'')}</b> <span class="mut mono">${esc(codeShown)}</span>${extra}</span><button class="btn primary sm" onclick="pickImportMatch('${kind}','${esc(String(key||'').replace(/'/g,''))}')">Seleziona</button></div>`;
+  };
+  const sa=(st.data.supplierArticles||[]).filter(mt);
+  const li=(st.data.listino||[]).filter(mt).slice(0,200);
+  let h='';
+  if(st.data.supplierFound){
+    h+=`<div style="font-size:12.5px;font-weight:700;margin:4px 0 6px">Articoli di questo fornitore (in magazzino)</div>`;
+    h+= sa.length? sa.map(a=>rowH('wh',a)).join('') : '<div class="mut" style="font-size:12px;padding:4px 0">Nessuno corrispondente alla ricerca.</div>';
+  } else {
+    h+=`<div class="note" style="margin:4px 0 8px">Nessun articolo di <b>${esc(st.data.supplierName||'questo fornitore')}</b> in magazzino: seleziona dal listino completo l'articolo che ritieni corrispondente.</div>`;
+  }
+  h+=`<div style="font-size:12.5px;font-weight:700;margin:12px 0 6px">Listino completo${q?'':' (primi 200 — usa la ricerca)'}</div>`;
+  h+= li.length? li.map(a=>rowH('listino',a)).join('') : '<div class="mut" style="font-size:12px;padding:4px 0">Nessun articolo corrispondente.</div>';
+  return h;
+}
+function pickImportMatch(kind,key){
+  const st=state.importLookup; if(!st) return; const pv=state.parsePreview; const it=pv.items[st.i]; if(!it) return;
+  let a;
+  if(kind==='wh') a=(st.data.supplierArticles||[]).find(x=>String(x.id)===String(key));
+  else a=(st.data.listino||[]).find(x=>String(x.code||'')===String(key));
+  if(!a) return;
+  it.descr_listino=a.descr||it.descr_listino;
+  if(kind==='wh'){ it.wh_id=a.id; if(a.um) it.um_wh=a.um; if(a.code) it.intcode=a.code; it.listino={found:true,code:a.code||a.supplier_code,descr:a.descr}; }
+  else { it.wh_id=null; it.intcode=a.code; it.listino={found:true,code:a.code,descr:a.descr,price:a.price}; }
+  closeModal(); render();
+  toast('Riga collegata a: '+(a.descr||a.code));
+}
+
+/* --- Crea l'articolo a listino da una riga d'import --- */
+function openCreateListino(i){
+  syncParseEdits();
+  const pv=state.parsePreview; if(!pv) return; const it=pv.items[i]; if(!it) return; const sup=pv.supplier||{};
+  const cats=(state.meta&&state.meta.categories&&state.meta.categories.length)?state.meta.categories:['Monouso in carta','Monouso in plastica','Altro','Imballaggi in plastica','Imballaggi in carta','Pulizia e igiene','Imballaggi bio','arredo tavola','Monouso in alluminio','Monouso Bio','Monouso in legno','Cancelleria','Estetica e linee cortesia'];
+  const descr=(it.descr_listino&&it.descr_listino.trim())||it.descr||'';
+  const um=it.um_wh||it.um||'pz';
+  const cost=(it.unit!=null?it.unit:(it.qty?Math.round((it.total/it.qty)*10000)/10000:it.price))||0;
+  const codeSuggest=it.intcode||it.code||('ART'+String(Date.now()).slice(-5));
+  openModal(`<div class="modal-hd"><h3>Crea articolo a listino</h3><p>Crea il prodotto nel catalogo con i dati dell'import. Il <b>costo</b> è il prezzo d'acquisto (€/pz); imposta tu il <b>prezzo di vendita</b>.</p></div>
+    <div class="modal-body">
+      <div class="row2"><div class="field"><label>Codice listino *</label><input id="nl_code" value="${esc(codeSuggest)}"></div>
+        <div class="field"><label>Codice fornitore</label><input id="nl_supcode" value="${esc(it.code||'')}"></div></div>
+      <div class="field"><label>Descrizione *</label><input id="nl_descr" value="${esc(descr)}"></div>
+      <div class="row3"><div class="field"><label>Categoria</label><select id="nl_cat">${cats.map(c=>`<option>${esc(c)}</option>`).join('')}</select></div>
+        <div class="field"><label>U.M.</label><input id="nl_um" value="${esc(um)}"></div>
+        <div class="field"><label>Costo €/pz</label><input id="nl_cost" value="${cost}"></div></div>
+      <div class="row2"><div class="field"><label>Prezzo di vendita *</label><input id="nl_price" value="${cost}"></div>
+        <div class="field" style="display:flex;align-items:flex-end;padding-bottom:8px"><label style="display:flex;gap:8px;align-items:center;font-size:13px"><input type="checkbox" id="nl_pub"> Pubblica subito nel catalogo</label></div></div>
+      <input type="hidden" id="nl_supplier" value="${esc(sup.name||'')}">
+      <div id="nlerr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="saveCreateListino(${i})">Crea nel listino</button>
+    </div>`);
+}
+async function saveCreateListino(i){
+  const g=id=>document.getElementById(id).value.trim();
+  const price=parseFloat(g('nl_price').replace(',','.'));
+  const body={code:g('nl_code'),descr:g('nl_descr'),category:document.getElementById('nl_cat').value,um:g('nl_um')||'pz',cost:g('nl_cost')===''?null:parseFloat(g('nl_cost').replace(',','.')),price:price,supplier:g('nl_supplier'),supcode:g('nl_supcode'),published:document.getElementById('nl_pub').checked?1:0};
+  if(!body.code||!body.descr||isNaN(price)){ document.getElementById('nlerr').textContent='Codice, descrizione e prezzo di vendita sono obbligatori'; return; }
+  try{
+    await api('/api/admin/products',{method:'POST',body});
+    const pv=state.parsePreview; const it=pv.items&&pv.items[i]; if(it){ it.listino={found:true,code:body.code,descr:body.descr,price:body.price,created:true}; it.descr_listino=body.descr; it.intcode=body.code; }
+    try{ state.adminProducts=await api('/api/admin/products'); }catch(e){}
+    closeModal(); render(); toast('Articolo creato a listino ✓');
+  }catch(e){ const el=document.getElementById('nlerr'); if(el) el.textContent=e.message; else toast(e.message); }
+}
+
+async function saveCompany(){
+  const g=id=>document.getElementById(id).value.trim();
+  const body={name:g('co_name'),piva:g('co_piva'),cf:g('co_cf'),regime:document.getElementById('co_regime').value,address:g('co_address'),cap:g('co_cap'),city:g('co_city'),prov:g('co_prov'),tel:g('co_tel'),email:g('co_email'),iban:g('co_iban')};
+  try{ const r=await api('/api/admin/company',{method:'PUT',body}); state.company=r.company; toast('Dati azienda salvati ✓'); }catch(e){ toast(e.message); }
+}
+async function createInvoice(orderId){
+  try{ const r=await api('/api/admin/invoices/from-order/'+encodeURIComponent(orderId),{method:'POST',body:{aliquota:22}});
+    state.invoices=await api('/api/admin/invoices');
+    toast('Fattura '+r.numero+' creata ✓ — vai in Fatturazione per scaricare l\'XML');
+  }catch(e){ toast(e.message); }
+}
+async function downloadInvoiceXML(id){
+  try{ const b=await apiBlob('/api/admin/invoices/'+encodeURIComponent(id)+'/xml');
+    const url=URL.createObjectURL(b); const a=document.createElement('a'); a.href=url; a.download=(id)+'.xml';
+    // nome file corretto dall'header, fallback su id
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500);
+    toast('XML scaricato ✓');
+  }catch(e){ toast(e.message); }
+}
+async function deleteInvoice(id){
+  if(!confirm('Eliminare questa fattura? L\'operazione non è reversibile.')) return;
+  try{ await api('/api/admin/invoices/'+encodeURIComponent(id),{method:'DELETE'}); state.invoices=await api('/api/admin/invoices'); render(); toast('Fattura eliminata'); }catch(e){ toast(e.message); }
+}
+function openOrderProgress(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  const btns=[...ORDER_STEPS,'Annullato'].map(s=>`<button class="btn ${o.status===s?'primary':'ghost'} sm" onclick="setOrderStatus2('${id}','${s}')">${s}</button>`).join(' ');
+  openModal(`<div class="modal-hd"><h3>Avanzamento ordine ${o.id}</h3><p>Cliente: ${esc(o.client_name)} · Totale ${money(o.total)}. Il cliente vede lo stato di avanzamento nella sua area.</p></div>
+    <div class="modal-body">
+      <div style="margin-bottom:12px">${progressStepper(o.status)}</div>
+      <label style="display:block;font-size:12px;font-weight:700;color:var(--mut);margin-bottom:6px">CAMBIA STATO</label>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${btns}</div>
+      <div class="mut" style="font-size:11.5px;margin:0 0 16px">Impostando <b>Spedito</b> o <b>Fatturato</b> il cliente riceve una <b>notifica email automatica</b> (con l'allegato, se già caricato).</div>
+      <div class="row2">
+        <div class="field"><label>Numero DDT (spedizione)</label><input id="od_ddt" value="${esc(o.ddt_num||'')}" placeholder="es. 245/2026"></div>
+        <div class="field"><label>Data DDT</label><input id="od_ddtd" type="date" value="${esc(o.ddt_date||'')}"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Numero fattura di riferimento</label><input id="od_inv" value="${esc(o.invoice_num||'')}" placeholder="es. 512/2026"></div>
+        <div class="field"><label>Data fattura</label><input id="od_invd" type="date" value="${esc(o.invoice_date||'')}"></div>
+      </div>
+      <div class="attsec">
+        <div class="attcol"><div class="attlab">📎 Allegato DDT</div>${o.ddt_file?`<div class="attrow"><span style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(o.ddt_fname||'file')}</span><div style="flex:1"></div><button class="btn ghost sm" onclick="downloadOrderFile('${o.id}','ddt','admin')">Scarica</button><button class="btn ghost sm" style="color:var(--danger)" onclick="removeOrderFile('${o.id}','ddt')">✕</button></div>`:`<button class="btn ghost sm" style="width:100%" onclick="pickOrderFile('${o.id}','ddt')">⤒ Carica file DDT</button>`}</div>
+        <div class="attcol"><div class="attlab">🧾 Allegato Fattura</div>${o.invoice_file?`<div class="attrow"><span style="font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(o.invoice_fname||'file')}</span><div style="flex:1"></div><button class="btn ghost sm" onclick="downloadOrderFile('${o.id}','invoice','admin')">Scarica</button><button class="btn ghost sm" style="color:var(--danger)" onclick="removeOrderFile('${o.id}','invoice')">✕</button></div>`:`<button class="btn ghost sm" style="width:100%" onclick="pickOrderFile('${o.id}','invoice')">⤒ Carica file Fattura</button>`}</div>
+      </div>
+      <div class="mut" style="font-size:11.5px;margin:2px 0 12px">Formati: PDF o immagine, max 12 MB. Il cliente potrà scaricare i file dalla sua area.</div>
+      <button class="btn ghost" style="width:100%;justify-content:center;padding:10px;margin-bottom:8px" onclick="openSendDocs('${id}')">✉ Invia DDT / Fattura al cliente via email</button>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="saveOrderDocs('${id}')">Salva avanzamento</button>
+    </div>`);
+}
+function openSendDocs(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  const c=state.adminClients.find(x=>x.id===o.client_id);
+  const email=(c&&c.email)||'';
+  const atts=[]; if(o.ddt_file)atts.push('DDT ('+esc(o.ddt_fname||'file')+')'); if(o.invoice_file)atts.push('Fattura ('+esc(o.invoice_fname||'file')+')');
+  const hello=o.client_name?('Spett.le '+o.client_name):'Buongiorno';
+  const body=hello+',\n\nin allegato trovate i documenti relativi all\'ordine '+o.id+'.'+(o.ddt_num?('\nDDT n. '+o.ddt_num+(o.ddt_date?' del '+o.ddt_date:'')+'.'):'')+(o.invoice_num?('\nFattura n. '+o.invoice_num+(o.invoice_date?' del '+o.invoice_date:'')+'.'):'')+'\n\nCordiali saluti,\nZETAPACK Srl';
+  openModal(`<div class="modal-hd"><h3>Invia documenti — ${o.id}</h3><p>Invio email con i file allegati.</p></div>
+    <div class="modal-body">
+      ${atts.length?`<div class="dcard" style="margin-bottom:12px"><b>Allegati:</b> ${atts.join(' · ')}</div>`:`<div style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:12px">Nessun file caricato. Torna indietro e carica il DDT o la fattura, poi invia.</div>`}
+      <div class="field"><label>A — email</label><input id="sd_to" value="${esc(email)}" placeholder="email cliente"></div>
+      <div class="field"><label>Oggetto</label><input id="sd_sub" value="${esc('Documenti ordine '+o.id+' — ZETAPACK Srl')}"></div>
+      <div class="field"><label>Testo</label><textarea id="sd_body" style="min-height:160px">${esc(body)}</textarea></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn ghost sm" style="border-color:#25D366;color:#128C42" ${atts.length?'':'disabled style="opacity:.5"'} onclick="sendDocsWA('${id}')">🟢 WhatsApp</button>
+        <div style="flex:1"></div>
+        <button class="btn primary" ${atts.length?'':'disabled style="opacity:.5"'} onclick="sendDocs('${id}')">✉ Invia email con allegati</button>
+      </div>
+    </div>`);
+}
+async function sendDocsWA(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  const phone=clientPhone(o.client_id);
+  if(!phone){ toast('Numero WhatsApp non disponibile in anagrafica cliente.'); return; }
+  let n=0;
+  if(o.ddt_file){ downloadOrderFile(id,'ddt','admin'); n++; }
+  if(o.invoice_file){ setTimeout(()=>downloadOrderFile(id,'invoice','admin'),700); n++; }
+  const parts=[]; if(o.ddt_num||o.ddt_file)parts.push('DDT'+(o.ddt_num?' n. '+o.ddt_num:'')); if(o.invoice_num||o.invoice_file)parts.push('Fattura'+(o.invoice_num?' n. '+o.invoice_num:''));
+  const msg='Spett.le '+(o.client_name||'')+",\nin allegato i documenti dell'ordine "+o.id+(parts.length?': '+parts.join(' e '):'')+'.\n\nZETAPACK Srl';
+  await api('/api/admin/orders/'+encodeURIComponent(id)+'/send-docs',{method:'POST',body:{to:phone,channel:'whatsapp'}}).catch(()=>{});
+  waOpen(phone,msg); closeModal(); toast(n?'File scaricati — allegali nel messaggio WhatsApp':'WhatsApp aperto');
+}
+async function sendDocs(id){
+  const to=(document.getElementById('sd_to').value||'').trim();
+  const subject=document.getElementById('sd_sub').value||'', body=document.getElementById('sd_body').value||'';
+  if(!to){ toast('Inserisci l\'email'); return; }
+  toast('Invio in corso…');
+  try{ const r=await api('/api/admin/orders/'+encodeURIComponent(id)+'/send-docs',{method:'POST',body:{to,subject,body}});
+    if(r&&r.demo){ toast('Nella demo l\'invio email non è attivo: usa il sito pubblicato con SMTP configurato.'); return; }
+    state.adminOrders=await api('/api/admin/orders'); closeModal();
+    if(r&&r.dev) toast('Documenti pronti e registrati (modalità test).'); else toast('Documenti inviati a '+to+' ✓');
+  }catch(e){ toast('Invio non riuscito: '+e.message); }
+}
+async function downloadBackup(){
+  toast('Preparazione backup…');
+  try{ const b=await apiBlob('/api/admin/backup'); const url=URL.createObjectURL(b); const a=document.createElement('a'); a.href=url; a.download='zetapack-backup-'+new Date().toISOString().slice(0,10)+'.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500); toast('Backup scaricato ✓'); }catch(e){ toast('Backup non riuscito: '+e.message); }
+}
+function pickRestore(){
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='.json,application/json';
+  inp.onchange=async()=>{ const f=inp.files&&inp.files[0]; if(!f) return;
+    if(!confirm('ATTENZIONE: il ripristino SOSTITUISCE tutti i dati attuali (clienti, prodotti, ordini, preventivi, comunicazioni e allegati) con quelli del backup. Operazione non annullabile. Continuare?')) return;
+    let data; try{ data=JSON.parse(await f.text()); }catch(e){ toast('File di backup non valido'); return; }
+    toast('Ripristino in corso…');
+    try{ await api('/api/admin/restore',{method:'POST',body:data}); await loadAdmin(); render(); toast('Ripristino completato ✓'); }
+    catch(e){ toast('Ripristino non riuscito: '+e.message); } };
+  inp.click();
+}
+function fileToB64(f){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(String(r.result).split(',')[1]||''); r.onerror=()=>rej(new Error('Lettura file non riuscita')); r.readAsDataURL(f); }); }
+function pickOrderFile(id,kind){
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='.pdf,.jpg,.jpeg,.png,.gif,.webp';
+  inp.onchange=async()=>{ const f=inp.files&&inp.files[0]; if(!f) return;
+    if(f.size>12*1024*1024){ toast('File troppo grande (max 12 MB)'); return; }
+    toast('Caricamento…');
+    try{ const data=await fileToB64(f);
+      const r=await api('/api/admin/orders/'+encodeURIComponent(id)+'/upload',{method:'POST',body:{kind,filename:f.name,data}});
+      if(r&&r.demoTooBig){ toast('Nella demo locale il file supera lo spazio disponibile: usa un file più piccolo (sul sito reale il limite è 12 MB).'); return; }
+      state.adminOrders=await api('/api/admin/orders'); openOrderProgress(id); toast('Allegato caricato ✓');
+    }catch(e){ toast('Caricamento non riuscito: '+e.message); } };
+  inp.click();
+}
+async function removeOrderFile(id,kind){ if(!confirm("Rimuovere l'allegato?")) return; try{ await api('/api/admin/orders/'+encodeURIComponent(id)+'/file/'+kind,{method:'DELETE'}); state.adminOrders=await api('/api/admin/orders'); openOrderProgress(id); toast('Allegato rimosso'); }catch(e){ toast(e.message); } }
+function downloadOrderFile(id,kind,side){
+  const lists=[state.adminOrders,state.myOrders]; let o=null;
+  for(const l of lists){ if(l){ const f=l.find(x=>x.id===id); if(f){o=f;break;} } }
+  const fname=o?(kind==='ddt'?(o.ddt_fname||'DDT'):(o.invoice_fname||'Fattura')):kind;
+  const base=side==='admin'?'/api/admin/orders/':'/api/orders/';
+  apiBlob(base+encodeURIComponent(id)+'/file/'+kind).then(b=>{ const url=URL.createObjectURL(b); const a=document.createElement('a'); a.href=url; a.download=fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500); }).catch(e=>toast(e.message));
+}
+async function setOrderStatus2(id,s){ try{ await api('/api/admin/orders/'+encodeURIComponent(id),{method:'PATCH',body:{status:s}}); const o=state.adminOrders.find(x=>x.id===id); if(o)o.status=s; openOrderProgress(id); }catch(e){ toast(e.message); } }
+async function saveOrderDocs(id){
+  const g=x=>document.getElementById(x).value.trim();
+  try{ await api('/api/admin/orders/'+encodeURIComponent(id),{method:'PATCH',body:{ddt_num:g('od_ddt'),ddt_date:g('od_ddtd'),invoice_num:g('od_inv'),invoice_date:g('od_invd')}});
+    state.adminOrders=await api('/api/admin/orders'); closeModal(); render(); toast('Avanzamento salvato ✓');
+  }catch(e){ toast(e.message); }
+}
+function toggleOrder(id){ state.openOrder=state.openOrder===id?null:id; render(); }
+
+/* ---- Modifica righe ordine ricevuto (quantità e prezzi) ---- */
+let OD=null;
+function openOrderEditor(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  OD={id:o.id, client_name:o.client_name, note:o.note||'', search:'',
+    items:o.items.map(it=>{ const list=(it.list!=null?it.list:it.price)||0; const disc=Number(it.disc)||0; const price=(it.price!=null?it.price:Math.round(list*(1-disc/100)*100)/100); return {code:it.code,descr:it.descr,qty:it.qty,list,disc,price}; })};
+  openModal('', true); renderOrderEditor();
+}
+function orderResults(){
+  const s=OD.search.trim().toLowerCase(); if(!s) return '';
+  const res=state.adminProducts.filter(p=>p.code.toLowerCase().includes(s)||p.descr.toLowerCase().includes(s)).slice(0,7);
+  if(!res.length) return '<div class="mut" style="font-size:12.5px;margin-bottom:10px">Nessun prodotto trovato.</div>';
+  return '<div class="qresults">'+res.map(p=>`<div class="qres" onclick="orderAdd('${esc(p.code)}')"><span style="display:flex;align-items:center;gap:8px">${prodImgTag(p,"lthumb")}<span><b>${esc(p.descr)}</b> <span class="mut mono">${esc(p.code)}</span></span></span><span>${money(p.price)}</span></div>`).join('')+'</div>';
+}
+function orderAdd(code){ const p=state.adminProducts.find(x=>x.code===code); if(!p) return; const ex=OD.items.find(it=>it.code===code); if(ex) ex.qty+=1; else { const lp=p.price!=null?p.price:0; OD.items.push({code:p.code,descr:p.descr,qty:p.minq||1,list:lp,disc:0,price:lp}); } renderOrderEditor(); }
+function odSetQty(i,v){ OD.items[i].qty=Math.max(1,Math.round(Number(v)||1)); renderOrderEditor(); }
+function odSetList(i,v){ const L=Math.max(0,Number(v)||0); OD.items[i].list=L; OD.items[i].price=Math.round(L*(1-OD.items[i].disc/100)*100)/100; renderOrderEditor(); }
+function odSetDisc(i,v){ let d=Number(v)||0; if(d<0)d=0; if(d>100)d=100; OD.items[i].disc=d; OD.items[i].price=Math.round(OD.items[i].list*(1-d/100)*100)/100; renderOrderEditor(); }
+function odSetNet(i,v){ let net=Math.max(0,Number(v)||0); OD.items[i].price=net; const L=OD.items[i].list||0; OD.items[i].disc=L>0?Math.max(0,Math.round((1-net/L)*1000)/10):0; renderOrderEditor(); }
+function odApplyAll(){ let d=Number(document.getElementById('od_all').value)||0; if(d<0)d=0; if(d>100)d=100; OD.items.forEach(it=>{ it.disc=d; it.price=Math.round(it.list*(1-d/100)*100)/100; }); renderOrderEditor(); }
+function renderOrderEditor(){
+  const total=OD.items.reduce((s,it)=>s+it.price*it.qty,0);
+  const lordo=OD.items.reduce((s,it)=>s+it.list*it.qty,0);
+  const risparmio=lordo-total;
+  document.getElementById('modalcontent').innerHTML=`<div class="modal-hd"><h3>Modifica ordine ${OD.id}</h3><p>Adegua <b>quantità</b> e applica uno <b>sconto %</b> per ogni prodotto (o su tutte le righe). Cliente: ${esc(OD.client_name)}.</p></div>
+    <div class="modal-body">
+      <div class="field"><label>Aggiungi prodotti</label><input id="osearch" placeholder="Cerca codice o descrizione…" value="${esc(OD.search)}" oninput="OD.search=this.value;document.getElementById('oresults').innerHTML=orderResults()"></div>
+      <div id="oresults">${orderResults()}</div>
+      ${OD.items.length?`<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 0 8px"><span class="mut" style="font-size:12.5px">Sconto su tutte le righe:</span><input id="od_all" class="priceedit" style="width:70px" type="number" step="0.5" min="0" max="100" placeholder="%"><button class="btn ghost sm" onclick="odApplyAll()">Applica</button></div>
+      <div class="tbl-scroll"><table class="tbl"><thead><tr><th>Prodotto</th><th class="right">Q.tà</th><th class="right">Listino €</th><th class="right">Sconto %</th><th class="right">Netto €</th><th class="right">Subtot.</th><th></th></tr></thead><tbody>
+        ${OD.items.map((it,i)=>`<tr>
+          <td><div class="celldesc">${thumbImg(it.code)}<div>${esc(it.descr)}<div class="mut mono" style="font-size:11px">${esc(it.code)}</div></div></div></td>
+          <td class="right"><input class="priceedit" style="width:52px" type="number" min="1" value="${it.qty}" onchange="odSetQty(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:72px" type="number" step="0.01" min="0" value="${it.list}" onchange="odSetList(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:62px;${it.disc>0?'border-color:var(--green);font-weight:700':''}" type="number" step="0.5" min="0" max="100" value="${it.disc||0}" onchange="odSetDisc(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:72px" type="number" step="0.01" min="0" value="${it.price}" onchange="odSetNet(${i},this.value)"></td>
+          <td class="right"><b>${money(it.qty*it.price)}</b></td>
+          <td class="right"><button class="linkx" onclick="OD.items.splice(${i},1);renderOrderEditor()">Rimuovi</button></td>
+        </tr>`).join('')}</tbody></table></div>`:'<div class="mut" style="font-size:12.5px;margin:6px 0">Nessun articolo: aggiungine almeno uno.</div>'}
+      <div class="field" style="margin-top:12px"><label>Nota</label><textarea style="min-height:56px" oninput="OD.note=this.value">${esc(OD.note)}</textarea></div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 14px">
+        <span class="mut">Nuovo totale</span><b style="font-family:var(--disp);font-size:20px">${money(total)}</b>
+        ${risparmio>0.005?`<span class="mut" style="font-size:12.5px">(sconto totale ${money(risparmio)} su ${money(lordo)})</span>`:''}
+      </div>
+      <div id="oberr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="saveOrderItems()">Salva modifiche</button>
+    </div>`;
+}
+async function saveOrderItems(){
+  if(!OD.items.length){ document.getElementById('oberr').textContent="L'ordine deve avere almeno un articolo."; return; }
+  const body={items:OD.items.map(it=>({code:it.code,descr:it.descr,qty:it.qty,price:it.price,disc:it.disc,list:it.list})), note:OD.note};
+  try{ await api('/api/admin/orders/'+encodeURIComponent(OD.id)+'/items',{method:'PUT',body});
+    state.adminOrders=await api('/api/admin/orders'); closeModal(); render(); toast('Ordine aggiornato ✓');
+  }catch(e){ document.getElementById('oberr').textContent=e.message; }
+}
+async function exportOrdersCSV(){ try{ const b=await apiBlob('/api/admin/orders.csv'); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='ordini_zetapack.csv'; a.click(); toast('Ordini esportati in CSV'); }catch(e){ toast(e.message); } }
+
+/* ---- Preventivo: PDF + email precompilata (mailto) ---- */
+function quoteDefaults(o){
+  const cli=state.adminClients.find(x=>x.id===o.client_id)||{};
+  const hello=cli.contact?('Gentile '+cli.contact):('Spett.le '+(o.client_name||'Cliente'));
+  const subject='Preventivo '+o.id+' — ZETAPACK Srl';
+  const lines=o.items.map(it=>'- '+it.qty+' x '+it.descr+' ('+it.code+'): '+money(it.qty*it.price));
+  const listBlock=o.items.length<=15?('\n'+lines.join('\n')+'\n'):'\n(Dettaglio completo nel PDF allegato)\n';
+  const body=hello+',\n\n'+
+    'in allegato trovate il preventivo '+o.id+' relativo alla vostra richiesta.\n'+listBlock+
+    '\nTotale indicativo: '+money(o.total)+' (IVA esclusa).\n'+
+    "Preventivo valido 30 giorni, salvo conferma disponibilita'.\n\n"+
+    'Per accettare o per qualsiasi chiarimento restiamo a disposizione.\n\n'+
+    'Cordiali saluti,\nZETAPACK Srl';
+  return {to:cli.email||'', subject, body};
+}
+function openQuote(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  const d=quoteDefaults(o);
+  openModal(`<div class="modal-hd"><h3>Invia preventivo ${o.id}</h3><p>Genera il PDF e apre la tua email già precompilata. Puoi modificare testo e destinatario.</p></div>
+    <div class="modal-body">
+      <div class="field"><label>A — email cliente</label><input id="q_to" value="${esc(d.to)}" placeholder="email@cliente.it"></div>
+      <div class="field"><label>Oggetto</label><input id="q_sub" value="${esc(d.subject)}"></div>
+      <div class="field"><label>Testo email</label><textarea id="q_body" style="min-height:190px">${esc(d.body)}</textarea></div>
+      <div class="hint" style="margin-bottom:14px"><b>Invio diretto:</b> il preventivo parte dal gestionale con il PDF già allegato e una copia arriva all'azienda. In alternativa puoi aprire il tuo programma di posta (in quel caso allega tu il PDF scaricato).</div>
+      ${d.to?'':`<div style="color:var(--danger);font-size:12.5px;font-weight:600;margin:-6px 0 12px">Questo cliente non ha un'email in anagrafica: scrivila qui sopra oppure aggiungila nella scheda cliente.</div>`}
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn ghost sm" onclick="downloadQuotePdf('${o.id}')">⤓ Scarica PDF</button>
+        <button class="btn ghost sm" onclick="sendQuote('${o.id}')">✉ Programma di posta</button>
+        <button class="btn ghost sm" style="border-color:#25D366;color:#128C42" onclick="sendQuoteWA('${o.id}')">🟢 WhatsApp</button>
+        <div style="flex:1"></div>
+        <button class="btn primary" onclick="sendQuoteDirect('${o.id}')">Invia email al cliente</button>
+      </div>
+    </div>`);
+}
+function clientPhone(clientId){ const c=(state.adminClients||[]).find(x=>x.id===clientId); return (c&&c.phone)||''; }
+function waOpen(phoneRaw, message){ let ph=(phoneRaw||'').replace(/[^0-9]/g,'').replace(/^00/,''); if(ph.length<=10) ph='39'+ph; window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(message),'_blank'); }
+async function sendQuoteWA(id){
+  const o=state.adminOrders.find(x=>x.id===id); if(!o) return;
+  const phone=clientPhone(o.client_id);
+  if(!phone){ toast('Numero WhatsApp non disponibile: aggiungi il telefono nella scheda cliente.'); return; }
+  await downloadQuotePdf(id);
+  const msg='Spett.le '+(o.client_name||'')+',\nin allegato il preventivo '+o.id+'.\nTotale indicativo: '+money(o.total)+' (IVA esclusa).\n\nZETAPACK Srl';
+  await api('/api/admin/orders/'+encodeURIComponent(id)+'/send-quote',{method:'POST',body:{to:phone,channel:'whatsapp'}}).catch(()=>{});
+  waOpen(phone,msg); closeModal(); toast('PDF scaricato — allegalo nel messaggio WhatsApp');
+}
+async function downloadQuotePdf(id){
+  try{ const b=await apiBlob('/api/admin/orders/'+id+'/quote.pdf');
+    const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='Preventivo-'+id+'.pdf'; a.click();
+    toast('PDF preventivo scaricato');
+  }catch(e){ toast(e.message); }
+}
+async function sendQuote(id){
+  await downloadQuotePdf(id);
+  const to=(document.getElementById('q_to').value||'').trim();
+  const sub=document.getElementById('q_sub').value||'';
+  const body=document.getElementById('q_body').value||'';
+  const link='mailto:'+to+'?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);
+  setTimeout(()=>{ window.location.href=link; }, 700);
+  toast('Email aperta: allega il PDF scaricato e premi invio');
+}
+async function sendQuoteDirect(id){
+  const to=(document.getElementById('q_to').value||'').trim();
+  const subject=document.getElementById('q_sub').value||'';
+  const body=document.getElementById('q_body').value||'';
+  if(!to){ toast('Inserisci l\'email del cliente'); return; }
+  toast('Invio in corso…');
+  try{
+    const r=await api('/api/admin/orders/'+encodeURIComponent(id)+'/send-quote',{method:'POST',body:{to,subject,body}});
+    if(r&&r.demo){ toast('Nella demo l\'invio diretto non è attivo: usa "Apri nel programma di posta" o "Scarica PDF".'); return; }
+    closeModal();
+    if(r&&r.dev) toast('Preventivo pronto e registrato (modalità test): configura l\'email per l\'invio reale.');
+    else toast('Preventivo inviato a '+to+' ✓');
+  }catch(e){ toast('Invio non riuscito: '+e.message); }
+}
+
+function adminReqs(){
+  const list=state.adminRequests;
+  return `<div class="sect-title"><div><h2>Richieste di accesso e listino</h2><div class="sub">Contatti dal sito pubblico. Le notifiche email arrivano in automatico.</div></div></div>
+  <div class="panel">${list.length?`<div class="tbl-scroll"><table class="tbl">
+    <thead><tr><th>Data</th><th>Tipo</th><th>Azienda</th><th>Contatti</th><th>Messaggio</th><th>Stato</th><th></th></tr></thead><tbody>
+    ${list.map(r=>`<tr>
+      <td>${new Date(r.created_at).toLocaleDateString('it-IT')}</td><td><span class="tag">${esc(r.type)}</span></td>
+      <td>${esc(r.company)}<div class="mut" style="font-size:11.5px">${esc(r.vat||'')}</div></td>
+      <td>${esc(r.name)}<div class="mut" style="font-size:11.5px">${esc(r.email)} · ${esc(r.phone||'')}</div></td>
+      <td style="max-width:240px">${esc(r.msg||'—')}</td>
+      <td><span class="st ${r.status==='Gestita'?'gestita':'aperta'}">${r.status}</span></td>
+      <td class="right" style="white-space:nowrap"><button class="btn primary sm" onclick="openClientFromReq('${r.id}')">Crea accesso</button> <button class="btn ghost sm" onclick="toggleReq('${r.id}','${r.status==='Gestita'?'Aperta':'Gestita'}')">${r.status==='Gestita'?'Riapri':'Segna gestita'}</button></td>
+    </tr>`).join('')}</tbody></table></div>`:`<div class="empty">Nessuna richiesta ricevuta.</div>`}</div>`;
+}
+async function toggleReq(id,ns){ try{ await api('/api/admin/requests/'+id,{method:'PATCH',body:{status:ns}}); const r=state.adminRequests.find(x=>x.id===id); if(r)r.status=ns; render(); }catch(e){ toast(e.message); } }
+
+/* ----- Clienti ----- */
+function adminClients(){
+  const list=state.adminClients;
+  return `<div class="sect-title"><div><h2>Clienti</h2><div class="sub">Crea e gestisci gli account. Le credenziali funzionano subito per l'accesso.</div></div>
+    <button class="btn primary sm" onclick="openClientForm()">+ Nuovo cliente</button></div>
+  <div class="panel">${list.length?`<div class="tbl-scroll"><table class="tbl">
+    <thead><tr><th>Codice</th><th>Ragione sociale</th><th>Referente</th><th>Città</th><th>Email</th><th>Telefono</th><th>Utente</th><th class="right">Ordini</th><th></th></tr></thead><tbody>
+    ${list.map(c=>`<tr>
+      <td class="mono">${esc(c.id)}</td><td>${esc(c.name)}<div class="mut" style="font-size:11.5px">${esc(c.vat||'')}</div></td><td>${esc(c.contact||'—')}</td><td>${esc(c.city||'—')}</td>
+      <td class="mut">${esc(c.email||'—')}</td><td class="mut">${esc(c.phone||'—')}</td><td class="mono">${esc(c.username)}</td><td class="right">${c.orders}</td>
+      <td class="right" style="white-space:nowrap"><button class="btn primary sm" onclick='openClientDetail(${JSON.stringify(c.id)})'>Scheda</button> <button class="btn ghost sm" onclick='openClientForm(${JSON.stringify(c.id)})'>Modifica</button> <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteClient('${esc(c.id)}')">Elimina</button></td>
+    </tr>`).join('')}</tbody></table></div>`:`<div class="empty">Nessun cliente.<br><button class="btn primary sm" style="margin-top:14px" onclick="openClientForm()">Crea il primo cliente</button></div>`}</div>`;
+}
+function openClientForm(id, prefill){
+  const editing=!!id; const c=editing?(state.adminClients.find(x=>x.id===id)||{}):Object.assign({id:'',name:'',city:'',vat:'',email:'',phone:'',address:'',contact:'',username:''}, prefill||{});
+  openModal(`<div class="modal-hd"><h3>${editing?'Modifica cliente':'Nuovo cliente'}</h3><p>Anagrafica completa. Le credenziali permettono l'accesso all'area clienti con i prezzi.</p></div>
+    <div class="modal-body">
+      <div class="row2"><div class="field"><label>Codice cliente *</label><input id="cf_id" value="${esc(c.id)}" ${editing?'readonly style="background:var(--line-2)"':''} placeholder="es. C-003"></div>
+        <div class="field"><label>P.IVA</label><input id="cf_vat" value="${esc(c.vat||'')}"></div></div>
+      <div class="field"><label>Ragione sociale *</label><input id="cf_name" value="${esc(c.name)}"></div>
+      <div class="field"><label>Indirizzo</label><input id="cf_address" value="${esc(c.address||'')}" placeholder="Via, numero"></div>
+      <div class="row2"><div class="field"><label>Città</label><input id="cf_city" value="${esc(c.city||'')}"></div>
+        <div class="field"><label>Referente</label><input id="cf_contact" value="${esc(c.contact||'')}" placeholder="Nome e cognome"></div></div>
+      <div style="border-top:1px solid var(--line-2);margin:6px 0 12px;padding-top:10px"><b style="font-size:13px">Dati per la fattura elettronica</b> <span class="mut" style="font-size:11.5px">— servono per generare l'XML da inviare allo SdI</span></div>
+      <div class="row2"><div class="field"><label>Codice Fiscale</label><input id="cf_cf" value="${esc(c.cf||'')}" placeholder="se diverso dalla P.IVA"></div>
+        <div class="field"><label>Codice destinatario SdI (7)</label><input id="cf_sdi" value="${esc(c.sdi||'')}" maxlength="7" placeholder="es. ABC1234 · 0000000 se PEC"></div></div>
+      <div class="field"><label>PEC destinatario</label><input id="cf_pec" value="${esc(c.pec||'')}" placeholder="usata se il codice SdI è 0000000"></div>
+      <div class="row3"><div class="field"><label>CAP</label><input id="cf_cap" value="${esc(c.cap||'')}" maxlength="5"></div>
+        <div class="field"><label>Prov.</label><input id="cf_prov" value="${esc(c.prov||'')}" maxlength="2" placeholder="VR"></div>
+        <div class="field"><label>Nazione</label><input id="cf_naz" value="${esc(c.nazione||'IT')}" maxlength="2"></div></div>
+      <label style="display:flex;align-items:center;gap:8px;font-size:12.5px;margin:-2px 0 8px"><input type="checkbox" id="cf_pa" ${c.pa?'checked':''}> È una Pubblica Amministrazione (formato FPA12)</label>
+      <div class="row2"><div class="field"><label>Email (preventivi e notifiche)</label><input id="cf_email" value="${esc(c.email||'')}"></div>
+        <div class="field"><label>Telefono</label><input id="cf_phone" value="${esc(c.phone||'')}"></div></div>
+      <div class="row2"><div class="field"><label>Utente (login) *</label><input id="cf_user" value="${esc(c.username||'')}" autocomplete="off"></div>
+        <div class="field"><label>Password ${editing?'(vuota = invariata)':'*'}</label><input id="cf_pass" placeholder="${editing?'genera per (ri)inviare':''}"></div></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-2px 0 12px">
+        <button type="button" class="btn ghost sm" onclick="generateCreds()">🎲 Genera utente e password</button>
+        <div style="flex:1"></div>
+        <span class="mut" style="font-size:11.5px;width:100%;margin-bottom:2px">Invia le credenziali al cliente (salva in automatico):</span>
+        <button type="button" class="btn ghost sm" onclick='sendCredsEmail(${editing?JSON.stringify(id):'null'})'>✉ Invia via email</button>
+        <button type="button" class="btn ghost sm" style="border-color:#25D366;color:#128C42" onclick='sendCredsWhatsApp(${editing?JSON.stringify(id):'null'})'>🟢 Invia via WhatsApp</button>
+      </div>
+      <div id="cferr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick='saveClient(${editing?JSON.stringify(id):'null'})'>${editing?'Salva':'Crea cliente'}</button>
+    </div>`);
+}
+function genUsername(){
+  let base=(document.getElementById('cf_name').value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'').slice(0,12);
+  if(!base) base='cliente';
+  return base+Math.floor(100+Math.random()*900);
+}
+function genPassword(){
+  const cons='bcdfghjkmnpqrstvwxz', vow='aeiou', dig='23456789', pick=s=>s[Math.floor(Math.random()*s.length)];
+  let w=''; for(let i=0;i<2;i++) w+=pick(cons)+pick(vow)+pick(cons)+pick(vow);
+  return w.charAt(0).toUpperCase()+w.slice(1)+'-'+pick(dig)+pick(dig)+pick(dig);
+}
+function generateCreds(){
+  document.getElementById('cf_user').value=genUsername();
+  document.getElementById('cf_pass').value=genPassword();
+  const e=document.getElementById('cferr'); if(e)e.textContent='';
+  toast('Credenziali generate — salva o invia al cliente');
+}
+async function persistClient(origId){
+  const g=id=>document.getElementById(id).value.trim();
+  const body={id:g('cf_id'),name:g('cf_name'),city:g('cf_city'),vat:g('cf_vat'),email:g('cf_email'),phone:g('cf_phone'),address:g('cf_address'),contact:g('cf_contact'),cf:g('cf_cf'),sdi:g('cf_sdi'),pec:g('cf_pec'),cap:g('cf_cap'),prov:g('cf_prov'),nazione:g('cf_naz')||'IT',pa:document.getElementById('cf_pa')?.checked?1:0,username:g('cf_user'),password:g('cf_pass')};
+  if(origId) await api('/api/admin/clients/'+encodeURIComponent(origId),{method:'PUT',body});
+  else await api('/api/admin/clients',{method:'POST',body});
+  state.adminClients=await api('/api/admin/clients');
+  return body;
+}
+async function saveClient(origId){
+  try{ await persistClient(origId); closeModal(); render(); toast('Cliente salvato ✓'); }
+  catch(e){ document.getElementById('cferr').textContent=e.message; }
+}
+function ensureCreds(){
+  const uEl=document.getElementById('cf_user'), pEl=document.getElementById('cf_pass');
+  let regen=false;
+  if(!uEl.value.trim()){ uEl.value=genUsername(); regen=true; }
+  if(!pEl.value.trim()){ pEl.value=genPassword(); regen=true; }
+  const e=document.getElementById('cferr'); if(e)e.textContent='';
+  return {user:uEl.value.trim(), pass:pEl.value.trim(), regen};
+}
+async function sendCredsEmail(origId){
+  const err=document.getElementById('cferr');
+  const {user,pass,regen}=ensureCreds();
+  const email=document.getElementById('cf_email').value.trim(), name=document.getElementById('cf_name').value.trim();
+  if(!email){ err.textContent="Inserisci l'email del cliente per l'invio via email."; return; }
+  toast('Salvataggio e invio…');
+  try{ await persistClient(origId);
+    const r=await api('/api/admin/send-credentials',{method:'POST',body:{to:email,name,username:user,password:pass,channel:'email'}});
+    render();
+    if(r&&r.demo){ toast('Nella demo l\'email non parte: usa il sito con SMTP, oppure WhatsApp.'); return; }
+    closeModal();
+    toast(((r&&r.dev)?'Credenziali pronte e registrate (modalità test)':'Credenziali inviate a '+email+' ✓')+(regen?' — password impostata: '+pass:''));
+  }catch(e){ err.textContent=e.message; }
+}
+async function sendCredsWhatsApp(origId){
+  const err=document.getElementById('cferr');
+  const {user,pass,regen}=ensureCreds();
+  const phoneRaw=document.getElementById('cf_phone').value.trim(), name=document.getElementById('cf_name').value.trim();
+  if(!phoneRaw){ err.textContent='Inserisci il telefono del cliente per inviare via WhatsApp.'; return; }
+  let ph=phoneRaw.replace(/[^0-9]/g,'').replace(/^00/,''); if(ph.length<=10) ph='39'+ph;
+  const msg='Spett.le '+name+',\necco i vostri accessi al portale ZETAPACK:\nUtente: '+user+'\nPassword: '+pass+"\n\nAccedete dall'area riservata del nostro sito. Custodite queste credenziali.";
+  try{ await persistClient(origId);
+    await api('/api/admin/send-credentials',{method:'POST',body:{to:phoneRaw,name,username:user,password:pass,channel:'whatsapp'}}).catch(()=>{});
+    render(); closeModal();
+    window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(msg),'_blank');
+    toast('WhatsApp aperto: premi invio per inviare'+(regen?' — password impostata: '+pass:''));
+  }catch(e){ err.textContent=e.message; }
+}
+function openClientFromReq(rid){
+  const r=state.adminRequests.find(x=>x.id===rid); if(!r) return;
+  openClientForm(null, {name:r.company||r.name||'', vat:r.vat||'', email:r.email||'', phone:r.phone||'', contact:r.name||''});
+}
+async function deleteClient(id){ if(!confirm('Eliminare questo cliente?')) return; try{ await api('/api/admin/clients/'+encodeURIComponent(id),{method:'DELETE'}); state.adminClients=await api('/api/admin/clients'); render(); toast('Cliente eliminato'); }catch(e){ toast(e.message); } }
+async function openClientDetail(id){
+  openModal('<div class="modal-body"><div class="empty">Caricamento…</div></div>');
+  let d;
+  try{ d=await api('/api/admin/clients/'+encodeURIComponent(id)+'/detail'); }
+  catch(e){ toast(e.message||'Errore di rete'); closeModal(); return; }
+  if(!d || !d.client){ toast('Scheda non disponibile: verifica che il programma aggiornato (server.js) sia caricato sul server.'); closeModal(); return; }
+  const c=d.client, orders=d.orders||[], quotes=d.quotes||[], comms=d.communications||[];
+  try{
+  openModal(`<div class="modal-hd"><h3>${esc(c.name)}</h3><p>${esc(c.id)}${c.city?' · '+esc(c.city):''}${c.vat?' · '+esc(c.vat):''}</p></div>
+    <div class="modal-body">
+      <div class="dcard">
+        <div><b>Referente:</b> ${esc(c.contact||'—')} &nbsp;·&nbsp; <b>Utente:</b> <span class="mono">${esc(c.username)}</span></div>
+        <div><b>Email:</b> ${esc(c.email||'—')} &nbsp;·&nbsp; <b>Tel:</b> ${esc(c.phone||'—')}</div>
+        <div><b>Indirizzo:</b> ${esc(c.address||'—')}</div>
+        <button class="btn ghost sm" style="margin-top:10px" onclick='openClientForm(${JSON.stringify(c.id)})'>Modifica anagrafica</button>
+      </div>
+      <h4 class="dsub">Ordini <span class="mut">(${orders.length})</span></h4>
+      ${orders.length?orders.map(o=>`<div class="drow"><div class="drow-t"><span><b class="mono">${o.id}</b> <span class="mut">${new Date(o.created_at).toLocaleDateString('it-IT')}</span> · ${money(o.total)} <button class="linkx" onclick="downloadPdf('${o.id}')">⤓ PDF</button></span><span class="st ${stClass(o.status)}">${o.status}</span></div>${docsLine(o,'admin')}</div>`).join(''):'<div class="mut" style="font-size:13px;margin-bottom:6px">Nessun ordine.</div>'}
+      <h4 class="dsub">Preventivi <span class="mut">(${quotes.length})</span></h4>
+      ${quotes.length?quotes.map(q=>`<div class="drow"><div class="drow-t"><span><b class="mono">${q.id}</b> <span class="mut">${new Date(q.created_at).toLocaleDateString('it-IT')}</span> · ${money(q.total)}</span><span class="st ${quoteCls(q.status)}">${q.status}</span></div></div>`).join(''):'<div class="mut" style="font-size:13px;margin-bottom:6px">Nessun preventivo.</div>'}
+      <h4 class="dsub">Comunicazioni <span class="mut">(${comms.length})</span></h4>
+      ${comms.length?comms.map(m=>`<div class="drow"><div class="drow-t"><span><b>${esc(m.type)}</b> <span class="mut">${new Date(m.created_at).toLocaleDateString('it-IT')}</span></span><span class="mut" style="font-size:11.5px">${esc(m.to_email||'')}</span></div>${m.subject?`<div class="mut" style="font-size:12px">${esc(m.subject)}</div>`:''}</div>`).join(''):'<div class="mut" style="font-size:13px">Nessuna comunicazione registrata (ordini confermati e preventivi inviati compaiono qui).</div>'}
+    </div>`);
+  }catch(err){ toast('Errore nella scheda: '+err.message); closeModal(); }
+}
+
+/* ----- Listino ----- */
+let admT; function debouncedAdmin(){ clearTimeout(admT); admT=setTimeout(render,220); }
+function adminListino(){
+  const q=state.adminListinoQ.toLowerCase();
+  const cats=CATS();
+  const suppliers=[...new Set(state.adminProducts.map(p=>p.supplier).filter(Boolean))].sort();
+  let list=state.adminProducts;
+  if(state.listinoView==='cat' && state.listinoCat) list=list.filter(p=>p.category===state.listinoCat);
+  if(state.listinoView==='sup' && state.listinoSup) list=list.filter(p=>(p.supplier||'')===state.listinoSup);
+  if(state.listinoView==='sec' && state.listinoSec) list=list.filter(p=>(p.tags||[]).includes(state.listinoSec));
+  if(q) list=list.filter(p=>p.code.toLowerCase().includes(q)||p.descr.toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q)||(p.supplier||'').toLowerCase().includes(q)||(p.supcode||'').toLowerCase().includes(q));
+  const shown=list.slice(0,300);
+  const secondary = state.listinoView==='cat'
+    ? `<select class="fsel" onchange="state.listinoCat=this.value;render()"><option value="">Tutte le categorie</option>${cats.map(c=>`<option ${state.listinoCat===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`
+    : state.listinoView==='sup'
+    ? `<select class="fsel" onchange="state.listinoSup=this.value;render()"><option value="">Tutti i fornitori</option>${suppliers.map(s=>`<option ${state.listinoSup===s?'selected':''}>${esc(s)}</option>`).join('')}</select>`
+    : state.listinoView==='sec'
+    ? `<select class="fsel" onchange="state.listinoSec=this.value;render()"><option value="">Tutti i settori</option>${SECTORS().map(s=>`<option ${state.listinoSec===s?'selected':''}>${esc(s)}</option>`).join('')}</select>` : '';
+  return `<div class="sect-title"><div><h2>Gestione listino</h2><div class="sub">Modifica rapida in tabella di <b>tutti i campi</b>, oppure <b>scheda singola</b>. Puoi vedere il listino intero, <b>per categoria</b> o <b>per fornitore</b>. Costi e fornitori sono visibili solo all'azienda.</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost sm" onclick="openImport()">⇪ Importa da file</button><button class="btn primary sm" onclick="openProductForm()">+ Nuovo prodotto</button></div></div>
+  <div class="panel"><div class="panel-hd" style="flex-wrap:wrap">
+    <select class="fsel" onchange="state.listinoView=this.value;state.listinoCat='';state.listinoSup='';state.listinoSec='';render()">
+      <option value="all" ${state.listinoView==='all'?'selected':''}>Tutto il listino</option>
+      <option value="cat" ${state.listinoView==='cat'?'selected':''}>Per categoria</option>
+      <option value="sup" ${state.listinoView==='sup'?'selected':''}>Per fornitore</option>
+      <option value="sec" ${state.listinoView==='sec'?'selected':''}>Per settore</option>
+    </select>${secondary}
+    <div class="search" style="max-width:300px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input placeholder="Cerca…" value="${esc(state.adminListinoQ)}" oninput="state.adminListinoQ=this.value;debouncedAdmin()"></div>
+    <span class="count">${list.length} prodotti${list.length>300?' (primi 300)':''}</span></div>
+    <div class="tbl-scroll"><table class="tbl tbl-edit">
+      <thead><tr><th style="text-align:center">Visibile</th><th style="text-align:center">Promo</th><th>Codice</th><th>Descrizione</th><th>Categoria</th><th>Fornitore</th><th>Cod.forn.</th><th>u.m.</th><th class="right">Costo €</th><th class="right">Vendita €</th><th class="right">Min</th><th class="right">Margine</th><th></th></tr></thead><tbody>
+      ${shown.map(p=>{ const mgn=(p.price&&p.cost)?Math.round((p.price-p.cost)/p.price*100):null;
+        return `<tr>
+          <td style="text-align:center"><div class="pubtog ${p.published?'on':''}" title="${p.published?'Visibile ai clienti':'Nascosto: solo azienda'}" onclick="togglePub('${esc(p.code)}',${p.published?0:1})"></div><div class="mut" style="font-size:10.5px;margin-top:3px">${p.published?'Sì':'No'}</div></td>
+          <td style="text-align:center"><div class="pubtog promo ${p.promo?'on':''}" title="${p.promo?'In promozione: prezzo pubblico':'Non in promozione'}" onclick="togglePromo('${esc(p.code)}',${p.promo?0:1})"></div><div class="mut" style="font-size:10.5px;margin-top:3px">${p.promo?'Sì':'No'}</div></td>
+          <td class="mono" style="font-size:12px">${esc(p.code)}</td>
+          <td><div class="celldesc">${prodImgTag(p,"lthumb")}<input class="cellinput" value="${esc(p.descr)}" onchange="setDescr('${esc(p.code)}',this.value)"></div></td>
+          <td><select class="cellsel" onchange="setCategory('${esc(p.code)}',this.value)">${cats.map(c=>`<option ${p.category===c?'selected':''}>${esc(c)}</option>`).join('')}${cats.includes(p.category)?'':`<option selected>${esc(p.category)}</option>`}</select></td>
+          <td><input class="cellinput" style="min-width:120px" value="${esc(p.supplier||'')}" onchange="setField('${esc(p.code)}','supplier',this.value)"></td>
+          <td><input class="cellinput" style="min-width:80px" value="${esc(p.supcode||'')}" onchange="setField('${esc(p.code)}','supcode',this.value)"></td>
+          <td><input class="cellinput" style="min-width:48px;width:56px" value="${esc(p.um||'')}" onchange="setField('${esc(p.code)}','um',this.value)"></td>
+          <td class="right"><input class="priceedit" type="number" step="0.01" min="0" value="${p.cost!=null?p.cost:''}" onchange="setCost('${esc(p.code)}',this.value)"></td>
+          <td class="right"><input class="priceedit" type="number" step="0.01" min="0" value="${p.price!=null?p.price:''}" onchange="setPrice('${esc(p.code)}',this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:56px" type="number" step="1" min="1" value="${p.minq!=null?p.minq:1}" onchange="setField('${esc(p.code)}','minq',this.value,true)"></td>
+          <td class="right"><span class="mgn ${mgn!=null&&mgn<20?'lo':''}" data-mgn="${esc(p.code)}">${mgn!=null?mgn+'%':'—'}</span></td>
+          <td class="right" style="white-space:nowrap"><button class="btn ghost sm" onclick='openProductForm(${JSON.stringify(p.code)})'>Scheda</button> <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteProduct('${esc(p.code)}')">Elimina</button></td>
+        </tr>`;}).join('')}</tbody></table></div></div>`;
+}
+async function setField(code,field,value,numeric){ const v=numeric?(value===''?null:Number(value)):value; try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{[field]:v}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p[field]=v; toast('Salvato ✓'); }catch(e){ toast(e.message); } }
+async function togglePub(code,val){ try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{published:val}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.published=val; refreshCatalogSilently(); render(); }catch(e){ toast(e.message); } }
+async function togglePromo(code,val){ try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{promo:val}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.promo=val; refreshPromoSilently(); render(); toast(val?'Aggiunto alle promozioni ✓':'Rimosso dalle promozioni'); }catch(e){ toast(e.message); } }
+async function refreshPromoSilently(){ try{ state.promo=await api('/api/promo'); }catch(e){} }
+async function setPrice(code,val){ const price=val===''?null:Number(val); try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{price}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.price=price; updateMargin(code); refreshCatalogSilently(); toast('Salvato ✓'); }catch(e){ toast(e.message); } }
+async function setCost(code,val){ const cost=val===''?null:Number(val); try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{cost}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.cost=cost; updateMargin(code); toast('Salvato ✓'); }catch(e){ toast(e.message); } }
+async function setDescr(code,val){ try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{descr:val}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.descr=val; refreshCatalogSilently(); toast('Descrizione aggiornata ✓'); }catch(e){ toast(e.message); } }
+async function setCategory(code,val){ try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'PATCH',body:{category:val}}); const p=state.adminProducts.find(x=>x.code===code); if(p)p.category=val; refreshCatalogSilently(); toast('Categoria aggiornata ✓'); }catch(e){ toast(e.message); } }
+function updateMargin(code){
+  const p=state.adminProducts.find(x=>x.code===code); if(!p) return;
+  const sel='[data-mgn="'+((window.CSS&&CSS.escape)?CSS.escape(code):code)+'"]';
+  const el=document.querySelector(sel); if(!el) return;
+  const mgn=(p.price&&p.cost)?Math.round((p.price-p.cost)/p.price*100):null;
+  el.textContent=mgn!=null?mgn+'%':'—';
+  el.classList.toggle('lo', mgn!=null&&mgn<20);
+}
+function openProductForm(code){
+  const editing=!!code; const p=editing?state.adminProducts.find(x=>x.code===code):{code:'',descr:'',um:'pz',category:CATS()[0]||'Altro',tags:[],cost:null,price:null,supplier:'',published:1,minq:1};
+  openModal(`<div class="modal-hd"><h3>${editing?'Modifica prodotto':'Nuovo prodotto'}</h3><p>${editing?'Aggiorna i dati e salva.':'Il prodotto viene salvato nel database.'}</p></div>
+    <div class="modal-body">
+      <div class="row2"><div class="field"><label>Codice *</label><input id="pf_c" value="${esc(p.code)}" ${editing?'readonly style="background:var(--line-2)"':''}></div>
+        <div class="field"><label>u.m.</label><input id="pf_u" value="${esc(p.um)}"></div></div>
+      <div class="field"><label>Descrizione *</label><input id="pf_d" value="${esc(p.descr)}"></div>
+      <div class="field"><label>Categoria</label><select id="pf_g" class="fsel" style="width:100%">${CATS().map(c=>`<option ${p.category===c?'selected':''}>${esc(c)}</option>`).join('')}${CATS().includes(p.category)?'':`<option selected>${esc(p.category)}</option>`}</select></div>
+      <div class="field"><label>Settori (separati da virgola)</label><input id="pf_t" value="${esc((p.tags||[]).join(', '))}"></div>
+      <div class="row2"><div class="field"><label>Prezzo acquisto €</label><input id="pf_k" type="number" step="0.01" value="${p.cost!=null?p.cost:''}"></div>
+        <div class="field"><label>Prezzo vendita € *</label><input id="pf_p" type="number" step="0.01" value="${p.price!=null?p.price:''}"></div></div>
+      <div class="row2"><div class="field"><label>Fornitore</label><input id="pf_s" value="${esc(p.supplier||'')}"></div>
+        <div class="field"><label>Codice fornitore</label><input id="pf_sc" value="${esc(p.supcode||'')}"></div></div>
+      <div class="field"><label>Ordine minimo</label><input id="pf_m" type="number" step="1" min="1" value="${p.minq!=null?p.minq:1}" style="max-width:160px"></div>
+      <div class="field"><label>Immagine prodotto</label>
+        <input type="hidden" id="pf_img" value="${esc(p.image||'')}">
+        <div id="pf_imgwrap">${prodImgUI(p.image||'')}</div>
+        <div class="mut" style="font-size:11.5px;margin-top:6px">Se non carichi una foto, il portale usa automaticamente <code>/assets/products/${esc(p.code)}.png</code>${(p.supcode||'').trim()?` (o <code>${esc(p.supcode)}.png</code>)`:''} e, in mancanza, l'immagine della categoria <b>${esc(p.category||'Altro')}</b>. La foto caricata qui ha comunque la priorità.</div>
+      </div>
+      <div class="promo-edit"><label style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:700;cursor:pointer"><input type="checkbox" id="pf_promo" ${p.promo?'checked':''} style="width:18px;height:18px"> ★ In promozione <span class="mut" style="font-weight:500">(prezzo visibile a tutti, anche senza accesso)</span></label>
+        <div class="field" style="margin:10px 0 0"><label>Prezzo promo € (facoltativo)</label><input id="pf_pp" type="number" step="0.01" min="0" value="${p.promo_price!=null?p.promo_price:''}" placeholder="lascia vuoto = usa il prezzo di vendita" style="max-width:220px"></div>
+      </div>
+      <label style="display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;margin-bottom:14px;cursor:pointer"><input type="checkbox" id="pf_pub" ${p.published?'checked':''} style="width:18px;height:18px"> Pubblicato (visibile ai clienti)</label>
+      <div id="pferr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick='saveProduct(${editing?JSON.stringify(code):'null'})'>${editing?'Salva modifiche':'Salva e pubblica'}</button>
+    </div>`);
+}
+async function saveProduct(origCode){
+  const g=id=>document.getElementById(id).value.trim();
+  const body={code:g('pf_c'),descr:g('pf_d'),um:g('pf_u')||'pz',category:document.getElementById('pf_g').value,
+    tags:g('pf_t')?g('pf_t').split(',').map(s=>s.trim()).filter(Boolean):[],
+    cost:g('pf_k')?Number(g('pf_k')):null,price:g('pf_p')?Number(g('pf_p')):null,supplier:g('pf_s'),supcode:g('pf_sc'),
+    minq:g('pf_m')?Number(g('pf_m')):1,
+    image:(document.getElementById('pf_img').value||'').trim()||null,
+    promo:document.getElementById('pf_promo').checked?1:0,
+    promo_price:(document.getElementById('pf_pp').value||'').trim()===''?null:Number(document.getElementById('pf_pp').value),
+    published:document.getElementById('pf_pub').checked?1:0};
+  if(!body.code||!body.descr||body.price==null){ document.getElementById('pferr').textContent='Codice, descrizione e prezzo di vendita sono obbligatori.'; return; }
+  try{
+    if(origCode) await api('/api/admin/products/'+encodeURIComponent(origCode),{method:'PATCH',body});
+    else await api('/api/admin/products',{method:'POST',body});
+    state.adminProducts=await api('/api/admin/products'); refreshCatalogSilently(); refreshPromoSilently(); closeModal(); render(); toast('Prodotto '+body.code+' salvato ✓');
+  }catch(e){ document.getElementById('pferr').textContent=e.message; }
+}
+async function deleteProduct(code){ if(!confirm('Eliminare il prodotto '+code+'?')) return; try{ await api('/api/admin/products/'+encodeURIComponent(code),{method:'DELETE'}); state.adminProducts=await api('/api/admin/products'); refreshCatalogSilently(); render(); toast('Prodotto eliminato'); }catch(e){ toast(e.message); } }
+async function refreshCatalogSilently(){ try{ state.meta=await api('/api/meta'); }catch(e){} }
+function prodImgUI(url){
+  if(url) return `<div class="imgrow"><img src="${esc(url)}" class="imgthumb" alt=""><div style="flex:1"></div><button type="button" class="btn ghost sm" onclick="pickProductImage()">Sostituisci</button><button type="button" class="btn ghost sm" style="color:var(--danger)" onclick="removeProductImage()">Rimuovi</button></div>`;
+  return `<button type="button" class="btn ghost sm" onclick="pickProductImage()">⤒ Carica immagine</button>`;
+}
+/* ---- Immagini prodotto automatiche: codice → codice fornitore → categoria ---- */
+function slugCat(c){ return (c||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')||'altro'; }
+function autoImgChain(p){
+  if(!p) return [];
+  const enc=s=>encodeURIComponent(String(s).trim());
+  const safe=s=>String(s||'').trim().replace(/[\/\\\s]+/g,'_');   // nome file sicuro per codici con "/"
+  const steps=[];
+  const push=v=>{ if(v && steps.indexOf(v)<0) steps.push(v); };
+  if(p.image) push(p.image);                                                // 1) foto caricata a mano (priorità)
+  if(p.code){ push('/assets/products/'+enc(p.code)+'.png');                  // 2) foto per codice prodotto
+              push('/assets/products/'+enc(safe(p.code))+'.png'); }
+  if((p.supcode||'').trim()){ push('/assets/products/'+enc(p.supcode)+'.png'); // 3) per codice fornitore
+              push('/assets/products/'+enc(safe(p.supcode))+'.png'); }
+  const catSrc=(typeof window!=='undefined'&&window.__CATIMG&&window.__CATIMG[slugCat(p.category)])||('/assets/categories/'+slugCat(p.category)+'.png');
+  steps.push(catSrc);                                                       // 4) fallback: immagine categoria
+  return steps;
+}
+function imgFallback(el){
+  let fb=el.getAttribute('data-fb')||'';
+  if(fb){ const parts=fb.split('|'); const next=parts.shift(); el.setAttribute('data-fb',parts.join('|')); el.src=next; return; }
+  el.onerror=null; const box=el.closest('.cardimg,.promo-img'); if(box){ box.style.display='none'; } else { el.style.visibility='hidden'; }
+}
+function prodImgTag(p, cls, alt){
+  const chain=autoImgChain(p); if(!chain.length) return '';
+  return `<img class="${cls||''}" src="${esc(chain[0])}" data-fb="${esc(chain.slice(1).join('|'))}" onerror="imgFallback(this)" loading="lazy" alt="${esc(alt||(p&&p.descr)||'')}">`;
+}
+function prodObj(code){ return (state.adminProducts||[]).find(x=>x.code===code) || (state.catalog||[]).find(x=>x.code===code) || {code}; }
+function prodImage(code){ let p=(state.adminProducts||[]).find(x=>x.code===code); if(p&&p.image) return p.image; p=(state.catalog||[]).find(x=>x.code===code); return (p&&p.image)||''; }
+function thumbImg(code){ return prodImgTag(prodObj(code),'lthumb'); }
+function discBadge(it){ return (it&&it.disc>0)?` <span class="dscb">−${Math.round(it.disc*10)/10}%</span>`:''; }
+function resizeImage(file, maxDim, quality){
+  return new Promise((resolve,reject)=>{
+    const img=new Image(), url=URL.createObjectURL(file);
+    img.onload=()=>{ URL.revokeObjectURL(url);
+      let w=img.width, h=img.height;
+      if(w>maxDim||h>maxDim){ if(w>=h){ h=Math.round(h*maxDim/w); w=maxDim; } else { w=Math.round(w*maxDim/h); h=maxDim; } }
+      const cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+      const ctx=cv.getContext('2d'); ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,w,h); ctx.drawImage(img,0,0,w,h);
+      const mime='image/jpeg', durl=cv.toDataURL(mime,quality);
+      resolve({ data:durl.split(',')[1], filename:'img.jpg', mime });
+    };
+    img.onerror=()=>{ URL.revokeObjectURL(url); reject(new Error('File immagine non valido')); };
+    img.src=url;
+  });
+}
+function pickProductImage(){
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='image/*';
+  inp.onchange=async()=>{ const f=inp.files&&inp.files[0]; if(!f) return;
+    toast('Elaborazione immagine…');
+    try{ const r0=await resizeImage(f,1000,0.82);
+      const r=await api('/api/admin/upload-image',{method:'POST',body:{filename:r0.filename,data:r0.data}});
+      if(!r||!r.url) throw new Error('Risposta non valida');
+      const el=document.getElementById('pf_img'); if(el) el.value=r.url;
+      const w=document.getElementById('pf_imgwrap'); if(w) w.innerHTML=prodImgUI(r.url);
+      toast('Immagine caricata ✓');
+    }catch(e){ toast('Immagine: '+e.message); } };
+  inp.click();
+}
+function removeProductImage(){
+  const el=document.getElementById('pf_img'); const url=el?el.value:'';
+  if(url) api('/api/admin/delete-image',{method:'DELETE',body:{url}}).catch(()=>{});
+  if(el) el.value='';
+  const w=document.getElementById('pf_imgwrap'); if(w) w.innerHTML=prodImgUI('');
+}
+
+/* ----- Import ----- */
+function openImport(){
+  openModal(`<div class="modal-hd"><h3>Importa listino</h3><p>Carica un file Excel/CSV o incolla i dati. Puoi ricaricare anche il file gestionale originale.</p></div>
+    <div class="modal-body">
+      <div style="display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap">
+        <label style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;cursor:pointer"><input type="radio" name="impmode" value="upsert" checked> Aggiungi e aggiorna</label>
+        <label style="display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;cursor:pointer"><input type="radio" name="impmode" value="add"> Solo nuovi</label></div>
+      <div class="field"><label>File (.xlsx / .xls / .csv)</label><input type="file" accept=".xlsx,.xls,.csv" onchange="handleImportFile(this)"></div>
+      <div style="text-align:center;color:var(--mut);font-size:12px;margin:6px 0">— oppure incolla i dati (CSV) —</div>
+      <div class="field"><textarea id="imptext" style="min-height:110px;font-family:ui-monospace,monospace;font-size:12px" placeholder="codice;descrizione;um;acquisto;vendita;categoria;settori;fornitore;minimo;pubblicato"></textarea></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><button class="btn ghost sm" onclick="downloadCsvTemplate()">Scarica modello CSV</button><div style="flex:1"></div><button class="btn primary" onclick="importFromText()">Importa dati</button></div>
+      <div class="hint" style="margin-top:12px"><b>Suggerimento:</b> il file gestionale originale (Codice, Descrizione, u.m., Codice Fornitore, forn, ACQUISTO, VENDITA, caricare, minimo, categoria, tags) viene riconosciuto in automatico.</div>
+      <div id="imperr" style="color:var(--danger);font-size:13px;font-weight:600;margin-top:8px"></div>
+    </div>`);
+}
+function handleImportFile(input){
+  const file=input.files[0]; if(!file) return; const name=file.name.toLowerCase();
+  if(name.endsWith('.csv')){ const r=new FileReader(); r.onload=()=>{ document.getElementById('imptext').value=r.result; toast('CSV caricato: premi Importa dati'); }; r.readAsText(file,'utf-8'); return; }
+  if(typeof XLSX==='undefined'){ document.getElementById('imperr').textContent='Lettura Excel non disponibile: usa un file CSV.'; return; }
+  const r=new FileReader(); r.onload=e=>{ try{ const wb=XLSX.read(new Uint8Array(e.target.result),{type:'array'}); const ws=wb.Sheets[wb.SheetNames[0]]; importRows(XLSX.utils.sheet_to_json(ws,{header:1,defval:''})); }catch(err){ document.getElementById('imperr').textContent='Errore nella lettura del file.'; } }; r.readAsArrayBuffer(file);
+}
+function importFromText(){ const t=document.getElementById('imptext').value; if(!t.trim()){ document.getElementById('imperr').textContent='Incolla dei dati o carica un file.'; return; } importRows(parseCSV(t)); }
+function parseCSV(text){
+  text=text.replace(/\r/g,'').trim(); if(!text) return [];
+  const lines=text.split('\n').filter(l=>l.length);
+  const delim=(lines[0].split(';').length>=lines[0].split(',').length)?';':',';
+  return lines.map(line=>{ const out=[]; let cur='',q=false; for(let i=0;i<line.length;i++){ const ch=line[i]; if(ch==='"'){ if(q&&line[i+1]==='"'){cur+='"';i++;} else q=!q; } else if(ch===delim&&!q){ out.push(cur); cur=''; } else cur+=ch; } out.push(cur); return out.map(s=>s.trim()); });
+}
+async function importRows(rows){
+  if(!rows||!rows.length){ document.getElementById('imperr').textContent='Nessun dato valido.'; return; }
+  const mode=(document.querySelector('input[name=impmode]:checked')||{}).value||'upsert';
+  const header=rows[0].map(x=>String(x).toLowerCase());
+  const looksHeader=header.some(h=>h.includes('codice')||h.includes('descriz'));
+  let idx,data;
+  if(looksHeader){ const find=(...ks)=>header.findIndex(h=>ks.some(k=>h.includes(k)));
+    idx={c:find('codice'),d:find('descriz'),u:find('u.m','um','unit'),k:find('acquist'),p:find('vendit','prezzo'),g:find('categor'),t:find('settor','tag'),s:find('forn'),m:find('minim'),pub:find('pubblic','caricare')}; data=rows.slice(1);
+  } else { idx={c:0,d:1,u:2,s:4,k:5,p:6,pub:7,m:8,g:9,t:10}; data=rows; }
+  const num=v=>{ v=String(v||'').replace(',','.').trim(); const n=parseFloat(v); return isNaN(n)?null:n; };
+  const out=[];
+  for(const r of data){ const get=i=>(i!=null&&i>=0&&i<r.length)?String(r[i]).trim():''; const c=get(idx.c); if(!c) continue;
+    const pubRaw=get(idx.pub).toLowerCase();
+    out.push({code:c,descr:get(idx.d)||c,um:get(idx.u)||'pz',category:get(idx.g)||'Altro',
+      tags:get(idx.t)?get(idx.t).split(/[|,]/).map(s=>s.trim()).filter(Boolean):[],
+      cost:num(get(idx.k)),price:num(get(idx.p)),supplier:get(idx.s),minq:num(get(idx.m))||1,
+      published:(pubRaw==='si'||pubRaw==='sì'||pubRaw==='1'||pubRaw==='true'||pubRaw==='x')?1:0});
+  }
+  try{ const res=await api('/api/admin/products/import',{method:'POST',body:{rows:out,mode}});
+    state.adminProducts=await api('/api/admin/products'); refreshCatalogSilently(); closeModal(); render();
+    toast('Import completato: '+res.added+' nuovi, '+res.updated+' aggiornati'+(res.skipped?', '+res.skipped+' saltati':''));
+  }catch(e){ document.getElementById('imperr').textContent=e.message; }
+}
+function downloadCsvTemplate(){ const csv='codice;descrizione;um;acquisto;vendita;categoria;settori;fornitore;minimo;pubblicato\nbic500new;Bicchiere carta 500cc;cf;1.20;1.80;Monouso in carta;Sagra e Feste|Ristorante e Bar;fornitore x;1;si\n'; const b=new Blob([csv],{type:'text/csv;charset=utf-8'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download='modello_listino_zetapack.csv'; a.click(); }
+
+/* ----- Avanzamento & Guida ----- */
+const ROADMAP=[
+  {area:"Sito pubblico",title:"Catalogo pubblico senza prezzi",desc:"Elenco prodotti visibile a tutti, prezzi nascosti.",status:"done",v:"1.0"},
+  {area:"Sito pubblico",title:"Banner aziendale in home",desc:"Grafica del banner (logo, prodotti e claim) nella sezione di apertura.",status:"done",v:"4.3"},
+  {area:"Sito pubblico",title:"Ricerca e filtri",desc:"Ricerca, filtro per categoria e per settore.",status:"done",v:"1.0"},
+  {area:"Sito pubblico",title:"Richiesta accesso / listino",desc:"Modulo di contatto inviato al lato azienda.",status:"done",v:"1.0"},
+  {area:"Area clienti",title:"Accesso riservato",desc:"Login cliente per sbloccare i prezzi.",status:"done",v:"1.0"},
+  {area:"Area clienti",title:"Carrello e richiesta d'ordine",desc:"Invio richieste senza pagamenti.",status:"done",v:"1.0"},
+  {area:"Area clienti",title:"Storico ordini, replica e PDF",desc:"Elenco ordini con replica e download PDF.",status:"done",v:"4.0"},
+  {area:"Area clienti",title:"Stato avanzamento ordine",desc:"Il cliente segue l'ordine: lavorazione, spedizione (DDT) e fatturazione.",status:"done",v:"4.7"},
+  {area:"Area azienda",title:"Gestione ordini, richieste, clienti",desc:"Pannello completo di gestione.",status:"done",v:"2.0"},
+  {area:"Area azienda",title:"Gestione listino e import Excel/CSV",desc:"CRUD prodotti e import massivo.",status:"done",v:"2.0"},
+  {area:"Area azienda",title:"Modifica listino in tabella",desc:"Aggiornamento rapido di descrizione, categoria, costo, prezzo e visibilità al cliente direttamente in elenco.",status:"done",v:"4.2"},
+  {area:"Area azienda",title:"Export ordini CSV",desc:"Download di tutti gli ordini per Excel.",status:"done",v:"3.0"},
+  {area:"Area azienda",title:"Anagrafica clienti completa",desc:"Referente, telefono e indirizzo oltre a P.IVA ed email.",status:"done",v:"4.1"},
+  {area:"Area azienda",title:"Modifica ordine ricevuto con sconto per riga",desc:"Adegua quantità, prezzi e applica uno sconto % per ogni prodotto (o su tutte le righe); il netto e il totale si ricalcolano.",status:"done",v:"5.3"},
+  {area:"Area azienda",title:"Scheda cliente completa",desc:"Per ogni cliente: ordini, preventivi e comunicazioni inviate.",status:"done",v:"4.7"},
+  {area:"Area azienda",title:"Avanzamento ordine con DDT e fattura",desc:"Stati di lavorazione, spedizione (DDT) e fatturazione di riferimento.",status:"done",v:"4.7"},
+  {area:"Area azienda",title:"Allegati reali DDT e fattura",desc:"Carica il file (PDF o immagine) di DDT e fattura; il cliente lo scarica dalla sua area.",status:"done",v:"4.8"},
+  {area:"Area azienda",title:"Invio DDT/fattura via email al cliente",desc:"Email al cliente con i file di DDT e fattura allegati.",status:"done",v:"4.9"},
+  {area:"Area clienti",title:"Notifica automatica spedizione e fattura",desc:"Email automatica al cliente quando l'ordine passa a Spedito o Fatturato.",status:"done",v:"4.9"},
+  {area:"Sistema",title:"Backup e ripristino del portale",desc:"Scarica una copia completa (dati e allegati) e ricaricala in caso di problemi.",status:"done",v:"4.9"},
+  {area:"Area azienda",title:"Listino per categoria/fornitore/settore e tutti i campi",desc:"Viste filtrate (categoria, fornitore, settore) e modifica in tabella di tutti i campi dell'articolo.",status:"done",v:"5.0"},
+  {area:"Vetrina pubblica",title:"Prodotti in promozione (prezzo pubblico)",desc:"Segna i prodotti in promo dal listino: compaiono in una sezione sotto al banner con prezzo visibile a tutti, anche senza accesso.",status:"done",v:"5.4"},
+  {area:"Area azienda",title:"Immagini prodotto su Cloudflare R2",desc:"Carica le foto dei prodotti su storage esterno con CDN: compaiono nel catalogo senza appesantire Render.",status:"done",v:"5.1"},
+  {area:"Area azienda",title:"Credenziali automatiche + invio (email/WhatsApp)",desc:"Genera utente e password con un clic e li invii al cliente via email o WhatsApp, anche dalle richieste di accesso.",status:"done",v:"5.2"},
+  {area:"Area azienda",title:"Log accessi e attività nelle statistiche",desc:"Visite dei visitatori anonimi e azioni dei clienti che accedono (login, catalogo, ordini, PDF).",status:"done",v:"5.2"},
+  {area:"Area azienda",title:"Invio preventivo al cliente",desc:"Preventivo in PDF + email predefinita già precompilata (mailto).",status:"done",v:"4.1"},
+  {area:"Area azienda",title:"Invio preventivo via email dal gestionale",desc:"Il preventivo parte direttamente dal programma con il PDF allegato (SMTP), con copia all'azienda.",status:"done",v:"4.4"},
+  {area:"Sistema",title:"Backend con database condiviso",desc:"Server Node.js + SQLite: dati condivisi e multiutente.",status:"done",v:"4.0"},
+  {area:"Sistema",title:"Autenticazione sicura (password cifrate)",desc:"Login con hash bcrypt e token JWT.",status:"done",v:"4.0"},
+  {area:"Sistema",title:"Notifiche email",desc:"Email automatica per nuovi ordini e richieste.",status:"done",v:"4.0"},
+  {area:"Sistema",title:"Export PDF ordini/preventivi",desc:"PDF con logo, articoli e totale.",status:"done",v:"4.0"},
+  {area:"Sistema",title:"Pubblicazione online",desc:"Deploy su Render con dominio Aruba, HTTPS automatico e disco persistente.",status:"done",v:"4.0"},
+  {area:"Area azienda",title:"Area preventivi dedicata",desc:"Preventivi indipendenti dagli ordini: creazione, stato, PDF, invio e conversione in ordine.",status:"done",v:"4.5"},
+  {area:"Area azienda",title:"Statistiche e report vendite",desc:"Fatturato per mese, top prodotti e clienti, per categoria e per stato.",status:"done",v:"4.5"}
+];
+function adminRoadmap(){
+  const cls={done:"evaso",progress:"lav",planned:"nuovo"}, lab={done:"Completato",progress:"In corso",planned:"Pianificato"};
+  const done=ROADMAP.filter(r=>r.status==="done").length, tot=ROADMAP.length, pct=Math.round(done/tot*100);
+  const areas=[...new Set(ROADMAP.map(r=>r.area))];
+  return `<div class="sect-title"><div><h2>Stato avanzamento</h2><div class="sub">Versione ${APP_VERSION} · aggiornato il ${BUILD_DATE}. Si aggiorna a ogni nuova funzione richiesta.</div></div></div>
+  <div class="kpis"><div class="kpi hl"><b>${pct}%</b><span>Completamento (${done}/${tot})</span></div>
+    <div class="kpi"><b>${ROADMAP.filter(r=>r.status==="progress").length}</b><span>In corso</span></div>
+    <div class="kpi"><b>${ROADMAP.filter(r=>r.status==="planned").length}</b><span>Pianificate</span></div></div>
+  ${areas.map(a=>`<div class="panel" style="margin-bottom:14px"><div class="panel-hd"><h3>${esc(a)}</h3></div>
+    <div class="tbl-scroll"><table class="tbl"><thead><tr><th>Funzione</th><th>Descrizione</th><th class="center">Ver.</th><th>Stato</th></tr></thead><tbody>
+    ${ROADMAP.filter(r=>r.area===a).map(r=>`<tr><td><b>${esc(r.title)}</b></td><td class="mut" style="max-width:440px">${esc(r.desc)}</td><td class="center mono">${esc(r.v)}</td><td><span class="st ${cls[r.status]}">${lab[r.status]}</span></td></tr>`).join('')}
+    </tbody></table></div></div>`).join('')}`;
+}
+const GUIDE=[
+  {title:"Avvio del backend",funcs:["Server","Database"],steps:[`Installa Node.js (versione 18 o superiore).`,`Nella cartella del progetto esegui <b>npm install</b> e poi <b>npm start</b>.`,`Apri <b>http://localhost:3000</b> nel browser.`]},
+  {title:"Accesso al pannello azienda",funcs:["Login"],steps:[`Clicca <b>Accedi</b> e usa utente <b>admin</b> e password <b>admin123</b> (modificabili nel file .env).`]},
+  {title:"Ordini",funcs:["Stati","Modifica","Preventivo","PDF","CSV"],steps:[`In <b>Ordini</b> cambi lo stato dal menu della riga.`,`<b>✎ Modifica</b> apre l'ordine e permette di cambiare <b>quantità e prezzi</b> (utile per sconti o correzioni), aggiungere o togliere righe: il totale si aggiorna e resta salvato.`,`<b>✉ Preventivo</b> invia al cliente il preventivo (PDF) con i valori aggiornati; <b>PDF</b> scarica il documento; <b>Esporta CSV</b> scarica tutto per Excel.`,`<b>Righe</b> mostra il dettaglio e la nota del cliente.`]},
+  {title:"Prodotti in promozione",funcs:["Promo","Prezzo pubblico","Vetrina"],steps:[`Nel <b>Listino</b> ogni prodotto ha l'interruttore <b>Promo</b>: attivalo per metterlo in promozione.`,`Nella <b>Scheda</b> del prodotto puoi impostare un <b>Prezzo promo</b> facoltativo (se lasciato vuoto usa il prezzo di vendita).`,`I prodotti in promo compaiono nella sezione <b>Prodotti in promozione</b> sotto al banner in home, con il <b>prezzo visibile a tutti</b> — anche a chi non ha l'accesso.`,`Per rimuoverlo dalle promozioni disattiva l'interruttore Promo.`]},
+  {title:"Anagrafica e scheda cliente",funcs:["Scheda","Credenziali","Invio"],steps:[`In <b>Clienti → + Nuovo cliente</b> (o da una richiesta con <b>Crea accesso</b>) compili l'anagrafica.`,`Con <b>🎲 Genera utente e password</b> crei le credenziali in automatico; puoi comunque modificarle a mano.`,`Con <b>✉ Invia via email</b> o <b>🟢 Invia via WhatsApp</b> mandi le credenziali al cliente (il cliente viene salvato in automatico). Per WhatsApp serve il numero di telefono, per l'email l'indirizzo.`,`<b>Scheda</b> mostra lo storico del cliente: ordini, preventivi e comunicazioni inviate.`]},
+  {title:"Avanzamento ordine (DDT e fattura)",funcs:["Stato","DDT","Fattura","Allegati","Email"],steps:[`In <b>Ordini</b> clicca <b>📄 Avanzamento</b> su una riga.`,`Fai avanzare lo stato: Nuovo → In lavorazione → <b>Spedito</b> → <b>Fatturato</b> → Evaso. Impostando <b>Spedito</b> o <b>Fatturato</b> il cliente riceve una <b>notifica email automatica</b> (con l'allegato, se caricato).`,`Inserisci numero e data di DDT e fattura e, se vuoi, <b>carica il file reale</b> (PDF o immagine, max 12 MB).`,`Con <b>✉ Invia DDT/Fattura al cliente</b> mandi un'email con i file allegati; con <b>🟢 WhatsApp</b> scarichi i file e apri la chat col cliente (poi li alleghi). Il cliente può anche <b>scaricare</b> i documenti dalla sua area.`]},
+  {title:"Backup e ripristino",funcs:["Scarica","Ripristina"],steps:[`In <b>Dashboard</b>, riquadro <b>Backup e ripristino</b>, usa <b>⤓ Scarica backup</b> per salvare un file con tutti i dati e gli allegati.`,`Conserva il file in un luogo sicuro (contiene tutte le informazioni del portale).`,`In caso di problemi, <b>⤒ Ripristina da backup</b> ricarica quel file e riporta il portale allo stato salvato.`,`Consiglio: scarica un backup periodicamente (es. una volta a settimana) e dopo modifiche importanti.`]},
+  {title:"Immagini prodotto",funcs:["Carica","Catalogo"],steps:[`Le foto si caricano su <b>Cloudflare R2</b> (storage esterno gratuito), così non appesantiscono il server.`,`In <b>Listino → Scheda</b> di un prodotto (o <b>+ Nuovo prodotto</b>) usa <b>Carica immagine</b>: la foto viene ridotta e compressa nel browser, poi caricata; il catalogo la mostra ai clienti.`,`La configurazione una-tantum di R2 (bucket e chiavi) è spiegata nel file <b>GUIDA-IMMAGINI.md</b> incluso nel progetto.`]},
+  {title:"Inviare un preventivo al cliente",funcs:["Preventivo","Email","WhatsApp","PDF"],steps:[`In <b>Ordini</b>, sulla riga dell'ordine, clicca <b>✉ Preventivo</b> (oppure usa l'area <b>Preventivi</b>).`,`Si apre una finestra con destinatario, oggetto e testo <b>già precompilati</b> (puoi modificarli).`,`<b>Invia email al cliente:</b> il preventivo parte con il <b>PDF allegato</b> e una copia all'azienda.`,`<b>🟢 WhatsApp:</b> scarica il PDF e apre WhatsApp col messaggio pronto verso il numero del cliente (dall'anagrafica) — ti basta <b>allegare il PDF</b> scaricato e inviare.`,`In alternativa <b>Programma di posta</b> apre la tua email; l'invio email diretto richiede l'SMTP configurato sul sito.`]},
+  {title:"Listino, viste e import",funcs:["Viste","Tutti i campi","Import"],steps:[`In alto scegli la vista: <b>Tutto il listino</b>, <b>Per categoria</b>, <b>Per fornitore</b> o <b>Per settore</b> (con il secondo menu selezioni quale).`,`<b>Modifica in tabella</b> tutti i campi: descrizione, categoria, fornitore, codice fornitore, u.m., costo, prezzo, ordine minimo e visibilità — ogni modifica si salva da sola.`,`<b>Scheda</b> apre l'articolo con tutti i campi (inclusi settori/tag); <b>+ Nuovo prodotto</b> ne crea uno.`,`<b>⇪ Importa da file</b> carica Excel o CSV, anche il file gestionale originale.`]},
+  {title:"Email e notifiche",funcs:["SMTP"],steps:[`Configura i parametri SMTP nel file <b>.env</b> per inviare le email reali.`,`Senza SMTP, le email vengono registrate nella console del server (utile in prova).`]},
+  {title:"Area Preventivi",funcs:["Nuovo preventivo","Invio","→ Ordine"],steps:[`Apri <b>Preventivi</b> e clicca <b>+ Nuovo preventivo</b>.`,`Scegli un cliente registrato (email e nome si compilano da soli) oppure lascia "Destinatario libero" e scrivi nome ed email.`,`Cerca i prodotti e aggiungili: puoi modificare <b>quantità e prezzo</b> di ogni riga (utile per sconti), imposta la validità e una nota, poi salva.`,`Sulla riga del preventivo: <b>✉ Invia</b> (email diretta con PDF), <b>PDF</b>, <b>Modifica</b>, e il menu <b>Stato</b> (Bozza → Inviato → Accettato/Rifiutato/Scaduto).`,`Se il preventivo è di un cliente registrato, <b>→ Ordine</b> lo trasforma in un ordine con un clic.`]},
+  {title:"Statistiche e report",funcs:["Fatturato","Top prodotti","Log accessi","Stampa"],steps:[`Apri <b>Statistiche</b> per vedere fatturato, numero e valore medio degli ordini e clienti attivi.`,`Usa il menu in alto per il periodo (Sempre / Anno corrente / Ultimi 30 giorni).`,`Trovi il fatturato per mese, i prodotti più venduti, i migliori clienti, il fatturato per categoria e gli ordini per stato.`,`In fondo, <b>Log accessi e attività</b>: visite dei visitatori anonimi e azioni dei clienti che accedono (login, catalogo, ordini, PDF). <b>Stampa report</b> genera una stampa pulita.`]},
+  {title:"Pubblicazione online (dominio Aruba)",funcs:["Deploy","Dominio","HTTPS"],steps:[`Il portale si pubblica su <b>Render</b> mantenendo il dominio su <b>Aruba</b>.`,`Il database resta salvato su un <b>disco persistente</b>; HTTPS è automatico.`,`Le istruzioni passo-passo sono nel file <b>GUIDA-PUBBLICAZIONE.md</b> incluso nel progetto.`]}
+];
+function adminGuide(){
+  return `<div class="sect-title"><div><h2>Guida operativa</h2><div class="sub">Come usare il portale. Aggiornata alla versione ${APP_VERSION}.</div></div>
+    <button class="btn ghost sm" onclick="window.print()">Stampa guida</button></div>
+  ${GUIDE.map((g,i)=>`<div class="panel" style="margin-bottom:14px"><div class="panel-hd"><h3><span class="mono" style="color:var(--green-d)">${String(i+1).padStart(2,'0')}</span> &nbsp; ${esc(g.title)}</h3></div>
+    <div style="padding:14px 20px"><ol style="margin:0;padding-left:22px;line-height:1.75">${g.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
+    ${g.funcs?`<div style="margin-top:14px;display:flex;gap:6px;flex-wrap:wrap">${g.funcs.map(f=>`<span class="tag">${esc(f)}</span>`).join('')}</div>`:''}</div></div>`).join('')}`;
+}
+
+/* ================= AREA PREVENTIVI ================= */
+function adminQuotes(){
+  const f=state.quoteFilter;
+  let list=state.adminQuotes.slice();
+  if(f) list=list.filter(q=>q.status===f);
+  return `<div class="sect-title"><div><h2>Preventivi</h2><div class="sub">Crea preventivi anche senza un ordine, inviali al cliente con PDF allegato e tienine traccia. Alla conferma li trasformi in ordine.</div></div>
+    <button class="btn primary sm" onclick="openQuoteBuilder()">+ Nuovo preventivo</button></div>
+  <div class="panel"><div class="panel-hd">
+    <select class="fsel" onchange="state.quoteFilter=this.value;render()"><option value="">Tutti gli stati</option>${['Bozza','Inviato','Accettato','Rifiutato','Scaduto'].map(s=>`<option ${f===s?'selected':''}>${s}</option>`).join('')}</select>
+    <span class="count">${list.length} preventivi</span></div>
+    ${list.length?`<div class="tbl-scroll"><table class="tbl">
+      <thead><tr><th>N.</th><th>Data</th><th>Cliente / destinatario</th><th class="right">Righe</th><th class="right">Totale</th><th>Stato</th><th></th></tr></thead><tbody>
+      ${list.map(q=>`<tr>
+        <td class="mono">${q.id}</td><td>${new Date(q.created_at).toLocaleDateString('it-IT')}</td>
+        <td>${esc(q.client_name)}<div class="mut" style="font-size:11.5px">${esc(q.to_email||'—')}</div></td>
+        <td class="right">${q.items.length}</td><td class="right"><b>${money(q.total)}</b></td>
+        <td><select class="fsel" style="padding:6px 8px;font-size:12.5px" onchange="setQuoteStatus('${q.id}',this.value)">${['Bozza','Inviato','Accettato','Rifiutato','Scaduto'].map(s=>`<option ${q.status===s?'selected':''}>${s}</option>`).join('')}</select></td>
+        <td class="right" style="white-space:nowrap">
+          <button class="btn primary sm" onclick="openQuoteSend('${q.id}')">✉ Invia</button>
+          <button class="btn ghost sm" onclick="downloadQuoteAreaPdf('${q.id}')">PDF</button>
+          <button class="btn ghost sm" onclick="openQuoteBuilder('${q.id}')">Modifica</button>
+          ${q.client_id?`<button class="btn ghost sm" onclick="quoteToOrder('${q.id}')">→ Ordine</button>`:''}
+          <button class="btn ghost sm" style="color:var(--danger)" onclick="deleteQuote('${q.id}')">Elimina</button>
+        </td></tr>`).join('')}
+      </tbody></table></div>`:`<div class="empty">Nessun preventivo.<br><button class="btn primary sm" style="margin-top:14px" onclick="openQuoteBuilder()">Crea il primo preventivo</button></div>`}</div>`;
+}
+
+let QD=null;
+function openQuoteBuilder(id){
+  const mapItems=arr=>arr.map(it=>{ const list=(it.list!=null?it.list:it.price)||0; const disc=Number(it.disc)||0; const price=(it.price!=null?it.price:Math.round(list*(1-disc/100)*100)/100); return {code:it.code,descr:it.descr,qty:it.qty,list,disc,price}; });
+  if(id){ const q=state.adminQuotes.find(x=>x.id===id); QD={id:q.id,client_id:q.client_id||'',client_name:q.client_name,to_email:q.to_email||'',note:q.note||'',validity:q.validity||30,items:mapItems(q.items),search:''}; }
+  else QD={id:null,client_id:'',client_name:'',to_email:'',note:'',validity:30,items:[],search:''};
+  openModal('', true); renderQuoteBuilder();
+}
+function buildQResults(){
+  const s=QD.search.trim().toLowerCase(); if(!s) return '';
+  const res=state.adminProducts.filter(p=>p.code.toLowerCase().includes(s)||p.descr.toLowerCase().includes(s)).slice(0,7);
+  if(!res.length) return '<div class="mut" style="font-size:12.5px;margin-bottom:10px">Nessun prodotto trovato.</div>';
+  return '<div class="qresults">'+res.map(p=>`<div class="qres" onclick="quoteAdd('${esc(p.code)}')"><span style="display:flex;align-items:center;gap:8px">${prodImgTag(p,"lthumb")}<span><b>${esc(p.descr)}</b> <span class="mut mono">${esc(p.code)}</span></span></span><span>${money(p.price)}</span></div>`).join('')+'</div>';
+}
+function qdSetQty(i,v){ QD.items[i].qty=Math.max(1,Math.round(Number(v)||1)); renderQuoteBuilder(); }
+function qdSetList(i,v){ const L=Math.max(0,Number(v)||0); QD.items[i].list=L; QD.items[i].price=Math.round(L*(1-QD.items[i].disc/100)*100)/100; renderQuoteBuilder(); }
+function qdSetDisc(i,v){ let d=Number(v)||0; if(d<0)d=0; if(d>100)d=100; QD.items[i].disc=d; QD.items[i].price=Math.round(QD.items[i].list*(1-d/100)*100)/100; renderQuoteBuilder(); }
+function qdSetNet(i,v){ let net=Math.max(0,Number(v)||0); QD.items[i].price=net; const L=QD.items[i].list||0; QD.items[i].disc=L>0?Math.max(0,Math.round((1-net/L)*1000)/10):0; renderQuoteBuilder(); }
+function qdApplyAll(){ let d=Number(document.getElementById('qd_all').value)||0; if(d<0)d=0; if(d>100)d=100; QD.items.forEach(it=>{ it.disc=d; it.price=Math.round(it.list*(1-d/100)*100)/100; }); renderQuoteBuilder(); }
+function renderQuoteBuilder(){
+  const cli=state.adminClients, total=QD.items.reduce((s,it)=>s+it.price*it.qty,0);
+  const lordo=QD.items.reduce((s,it)=>s+it.list*it.qty,0), risparmio=lordo-total;
+  document.getElementById('modalcontent').innerHTML=`<div class="modal-hd"><h3>${QD.id?'Modifica preventivo '+QD.id:'Nuovo preventivo'}</h3><p>Scegli il destinatario, aggiungi i prodotti e applica gli sconti; il netto e il totale si ricalcolano.</p></div>
+    <div class="modal-body">
+      <div class="row2">
+        <div class="field"><label>Cliente registrato</label>
+          <select class="fsel" style="width:100%" onchange="quotePickClient(this.value)">
+            <option value="">— Destinatario libero —</option>
+            ${cli.map(c=>`<option value="${esc(c.id)}" ${QD.client_id===c.id?'selected':''}>${esc(c.name)} (${esc(c.id)})</option>`).join('')}
+          </select></div>
+        <div class="field"><label>Validità (giorni)</label><input type="number" min="1" value="${QD.validity}" onchange="QD.validity=Number(this.value)||30"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Nome destinatario</label><input value="${esc(QD.client_name)}" ${QD.client_id?'readonly style="background:var(--line-2)"':''} oninput="QD.client_name=this.value"></div>
+        <div class="field"><label>Email destinatario</label><input value="${esc(QD.to_email)}" oninput="QD.to_email=this.value"></div>
+      </div>
+      <div class="field"><label>Aggiungi prodotti</label><input id="qsearch" placeholder="Cerca codice o descrizione…" value="${esc(QD.search)}" oninput="QD.search=this.value;document.getElementById('qresults').innerHTML=buildQResults()"></div>
+      <div id="qresults">${buildQResults()}</div>
+      ${QD.items.length?`<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:2px 0 8px"><span class="mut" style="font-size:12.5px">Sconto su tutte le righe:</span><input id="qd_all" class="priceedit" style="width:70px" type="number" step="0.5" min="0" max="100" placeholder="%"><button class="btn ghost sm" onclick="qdApplyAll()">Applica</button></div>
+      <div class="tbl-scroll"><table class="tbl"><thead><tr><th>Prodotto</th><th class="right">Q.tà</th><th class="right">Listino €</th><th class="right">Sconto %</th><th class="right">Netto €</th><th class="right">Subtot.</th><th></th></tr></thead><tbody>
+        ${QD.items.map((it,i)=>`<tr>
+          <td><div class="celldesc">${thumbImg(it.code)}<div>${esc(it.descr)}<div class="mut mono" style="font-size:11px">${esc(it.code)}</div></div></div></td>
+          <td class="right"><input class="priceedit" style="width:52px" type="number" min="1" value="${it.qty}" onchange="qdSetQty(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:72px" type="number" step="0.01" min="0" value="${it.list}" onchange="qdSetList(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:62px;${it.disc>0?'border-color:var(--green);font-weight:700':''}" type="number" step="0.5" min="0" max="100" value="${it.disc||0}" onchange="qdSetDisc(${i},this.value)"></td>
+          <td class="right"><input class="priceedit" style="width:72px" type="number" step="0.01" min="0" value="${it.price}" onchange="qdSetNet(${i},this.value)"></td>
+          <td class="right"><b>${money(it.qty*it.price)}</b></td>
+          <td class="right"><button class="linkx" onclick="QD.items.splice(${i},1);renderQuoteBuilder()">Rimuovi</button></td>
+        </tr>`).join('')}</tbody></table></div>`:'<div class="mut" style="font-size:12.5px;margin:6px 0 4px">Nessun articolo aggiunto.</div>'}
+      <div class="field" style="margin-top:12px"><label>Nota (facoltativa)</label><textarea style="min-height:56px" oninput="QD.note=this.value">${esc(QD.note)}</textarea></div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 14px"><span class="mut">Totale preventivo</span><b style="font-family:var(--disp);font-size:20px">${money(total)}</b>${risparmio>0.005?`<span class="mut" style="font-size:12.5px">(sconto totale ${money(risparmio)} su ${money(lordo)})</span>`:''}</div>
+      <div id="qberr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="saveQuote()">${QD.id?'Salva preventivo':'Crea preventivo'}</button>
+    </div>`;
+}
+function quoteAdd(code){ const p=state.adminProducts.find(x=>x.code===code); if(!p) return; const ex=QD.items.find(it=>it.code===code); if(ex) ex.qty+=1; else { const lp=p.price!=null?p.price:0; QD.items.push({code:p.code,descr:p.descr,qty:p.minq||1,list:lp,disc:0,price:lp}); } renderQuoteBuilder(); }
+function quotePickClient(id){ QD.client_id=id; if(id){ const c=state.adminClients.find(x=>x.id===id); if(c){ QD.client_name=c.name; QD.to_email=c.email||QD.to_email; } } renderQuoteBuilder(); }
+async function saveQuote(){
+  if(!QD.items.length){ document.getElementById('qberr').textContent='Aggiungi almeno un articolo.'; return; }
+  if(!QD.client_id && !QD.client_name.trim()){ document.getElementById('qberr').textContent='Indica il cliente o il nome del destinatario.'; return; }
+  const body={client_id:QD.client_id||null,client_name:QD.client_name,to_email:QD.to_email,note:QD.note,validity:QD.validity,items:QD.items.map(it=>({code:it.code,qty:it.qty,price:it.price,disc:it.disc,list:it.list,descr:it.descr}))};
+  try{ if(QD.id) await api('/api/admin/quotes/'+encodeURIComponent(QD.id),{method:'PUT',body}); else await api('/api/admin/quotes',{method:'POST',body});
+    state.adminQuotes=await api('/api/admin/quotes'); closeModal(); render(); toast('Preventivo salvato ✓');
+  }catch(e){ document.getElementById('qberr').textContent=e.message; }
+}
+async function setQuoteStatus(id,s){ try{ await api('/api/admin/quotes/'+encodeURIComponent(id),{method:'PATCH',body:{status:s}}); const q=state.adminQuotes.find(x=>x.id===id); if(q)q.status=s; render(); }catch(e){ toast(e.message); } }
+async function deleteQuote(id){ if(!confirm('Eliminare il preventivo '+id+'?')) return; try{ await api('/api/admin/quotes/'+encodeURIComponent(id),{method:'DELETE'}); state.adminQuotes=await api('/api/admin/quotes'); render(); toast('Preventivo eliminato'); }catch(e){ toast(e.message); } }
+async function downloadQuoteAreaPdf(id){ try{ const b=await apiBlob('/api/admin/quotes/'+encodeURIComponent(id)+'/pdf'); window.open(URL.createObjectURL(b),'_blank'); }catch(e){ toast(e.message); } }
+async function quoteToOrder(id){ if(!confirm('Trasformare il preventivo '+id+' in ordine?')) return; try{ const r=await api('/api/admin/quotes/'+encodeURIComponent(id)+'/to-order',{method:'POST',body:{}}); state.adminQuotes=await api('/api/admin/quotes'); state.adminOrders=await api('/api/admin/orders'); render(); toast('Creato ordine '+r.orderId+' ✓'); }catch(e){ toast(e.message); } }
+function openQuoteSend(id){
+  const q=state.adminQuotes.find(x=>x.id===id); if(!q) return;
+  const hello=q.client_name?('Spett.le '+q.client_name):'Buongiorno';
+  const subject='Preventivo '+q.id+' — ZETAPACK Srl';
+  const body=hello+',\n\nin allegato trovate il preventivo '+q.id+'.\nTotale: '+money(q.total)+" (IVA esclusa).\nValidita' "+q.validity+' giorni.\n\nRestiamo a disposizione per qualsiasi chiarimento.\n\nCordiali saluti,\nZETAPACK Srl';
+  openModal(`<div class="modal-hd"><h3>Invia preventivo ${q.id}</h3><p>Invio diretto con PDF allegato, oppure apertura nel programma di posta.</p></div>
+    <div class="modal-body">
+      <div class="field"><label>A — email</label><input id="qs_to" value="${esc(q.to_email||'')}"></div>
+      <div class="field"><label>Oggetto</label><input id="qs_sub" value="${esc(subject)}"></div>
+      <div class="field"><label>Testo</label><textarea id="qs_body" style="min-height:180px">${esc(body)}</textarea></div>
+      ${q.to_email?'':`<div style="color:var(--danger);font-size:12.5px;font-weight:600;margin:-6px 0 12px">Nessuna email indicata: scrivila qui sopra.</div>`}
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn ghost sm" onclick="downloadQuoteAreaPdf('${q.id}')">⤓ Scarica PDF</button>
+        <button class="btn ghost sm" onclick="quoteAreaMailto('${q.id}')">✉ Programma di posta</button>
+        <button class="btn ghost sm" style="border-color:#25D366;color:#128C42" onclick="sendQuoteAreaWA('${q.id}')">🟢 WhatsApp</button>
+        <div style="flex:1"></div>
+        <button class="btn primary" onclick="sendQuoteArea('${q.id}')">Invia email</button>
+      </div>
+    </div>`);
+}
+async function sendQuoteAreaWA(id){
+  const q=state.adminQuotes.find(x=>x.id===id); if(!q) return;
+  const phone=clientPhone(q.client_id);
+  if(!phone){ toast('Numero WhatsApp non disponibile: è un destinatario libero o manca il telefono in anagrafica.'); return; }
+  await downloadQuoteAreaPdf(id);
+  const msg='Spett.le '+(q.client_name||'')+',\nin allegato il preventivo '+q.id+'.\nTotale: '+money(q.total)+" (IVA esclusa). Validita' "+q.validity+' giorni.\n\nZETAPACK Srl';
+  await api('/api/admin/quotes/'+encodeURIComponent(id)+'/send',{method:'POST',body:{to:phone,channel:'whatsapp'}}).catch(()=>{});
+  state.adminQuotes=await api('/api/admin/quotes'); waOpen(phone,msg); closeModal(); render(); toast('PDF scaricato — allegalo nel messaggio WhatsApp');
+}
+async function sendQuoteArea(id){
+  const to=(document.getElementById('qs_to').value||'').trim();
+  const subject=document.getElementById('qs_sub').value||'', body=document.getElementById('qs_body').value||'';
+  if(!to){ toast('Inserisci l\'email'); return; }
+  toast('Invio in corso…');
+  try{ const r=await api('/api/admin/quotes/'+encodeURIComponent(id)+'/send',{method:'POST',body:{to,subject,body}});
+    if(r&&r.demo){ toast('Nella demo l\'invio diretto non è attivo: usa "Apri nel programma di posta" o "Scarica PDF".'); return; }
+    state.adminQuotes=await api('/api/admin/quotes'); closeModal(); render();
+    if(r&&r.dev) toast('Preventivo pronto e registrato (modalità test).'); else toast('Preventivo inviato a '+to+' ✓');
+  }catch(e){ toast('Invio non riuscito: '+e.message); }
+}
+async function quoteAreaMailto(id){
+  await downloadQuoteAreaPdf(id);
+  const to=(document.getElementById('qs_to').value||'').trim(), sub=document.getElementById('qs_sub').value||'', body=document.getElementById('qs_body').value||'';
+  setTimeout(()=>{ window.location.href='mailto:'+to+'?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body); },700);
+  toast('Email aperta: allega il PDF scaricato');
+}
+
+/* ================= AREA STATISTICHE ================= */
+function statsData(){
+  const now=Date.now(), y0=new Date(new Date().getFullYear(),0,1).getTime(), m30=now-30*864e5;
+  const from=state.statsPeriod==='m'?m30:state.statsPeriod==='y'?y0:0;
+  const orders=state.adminOrders.filter(o=>o.created_at>=from);
+  const valid=orders.filter(o=>o.status!=='Annullato');
+  const revenue=valid.reduce((s,o)=>s+o.total,0);
+  const catOf={}; state.adminProducts.forEach(p=>catOf[p.code]=p.category);
+  const byProd={},byClient={},byCat={},byStatus={};
+  valid.forEach(o=>{ byClient[o.client_name]=(byClient[o.client_name]||0)+o.total; (o.items||[]).forEach(it=>{ byProd[it.descr]=(byProd[it.descr]||0)+it.qty*it.price; const c=catOf[it.code]||'Altro'; byCat[c]=(byCat[c]||0)+it.qty*it.price; }); });
+  orders.forEach(o=>{ byStatus[o.status]=(byStatus[o.status]||0)+1; });
+  const months=[]; const d=new Date();
+  for(let i=11;i>=0;i--){ const dd=new Date(d.getFullYear(),d.getMonth()-i,1); months.push({key:dd.getFullYear()+'-'+dd.getMonth(),label:dd.toLocaleDateString('it-IT',{month:'short'}),val:0}); }
+  valid.forEach(o=>{ const dd=new Date(o.created_at),k=dd.getFullYear()+'-'+dd.getMonth(),m=months.find(x=>x.key===k); if(m)m.val+=o.total; });
+  return {orders,valid,revenue,byProd,byClient,byCat,byStatus,months,clients:new Set(valid.map(o=>o.client_id)).size};
+}
+function topN(obj,n){ return Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,n); }
+function barList(entries,fmt){ const max=Math.max(1,...entries.map(e=>e[1])); return entries.length?entries.map(([k,v])=>`<div class="barrow"><div class="barlab" title="${esc(k)}">${esc(k)}</div><div class="bartrack"><div class="barfill" style="width:${Math.round(v/max*100)}%"></div></div><div class="barval">${fmt(v)}</div></div>`).join(''):'<div class="empty">Nessun dato.</div>'; }
+function adminStats(){
+  const d=statsData(), avg=d.valid.length?d.revenue/d.valid.length:0, mmax=Math.max(1,...d.months.map(m=>m.val)), per=state.statsPeriod;
+  return `<div class="sect-title"><div><h2>Statistiche e report vendite</h2><div class="sub">Dati calcolati dagli ordini ricevuti. Gli ordini annullati sono esclusi dal fatturato.</div></div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <select class="fsel" onchange="state.statsPeriod=this.value;render()"><option value="all" ${per==='all'?'selected':''}>Sempre</option><option value="y" ${per==='y'?'selected':''}>Anno corrente</option><option value="m" ${per==='m'?'selected':''}>Ultimi 30 giorni</option></select>
+      <button class="btn ghost sm" onclick="window.print()">Stampa report</button></div></div>
+  <div class="kpis">
+    <div class="kpi hl"><b>${money(d.revenue)}</b><span>Fatturato ordini</span></div>
+    <div class="kpi"><b>${d.valid.length}</b><span>Ordini validi</span></div>
+    <div class="kpi"><b>${money(avg)}</b><span>Valore medio ordine</span></div>
+    <div class="kpi"><b>${d.clients}</b><span>Clienti attivi</span></div>
+  </div>
+  <div class="panel" style="margin-bottom:14px"><div class="panel-hd"><h3>Fatturato per mese (ultimi 12)</h3></div>
+    <div class="chartbars">${d.months.map(m=>`<div class="cb"><div class="cb-bar" style="height:${Math.round(m.val/mmax*130)+2}px" title="${money(m.val)}"></div><div class="cb-lab">${esc(m.label)}</div></div>`).join('')}</div></div>
+  <div class="statgrid">
+    <div class="panel"><div class="panel-hd"><h3>Prodotti più venduti</h3></div><div class="barwrap">${barList(topN(d.byProd,6),money)}</div></div>
+    <div class="panel"><div class="panel-hd"><h3>Migliori clienti</h3></div><div class="barwrap">${barList(topN(d.byClient,6),money)}</div></div>
+    <div class="panel"><div class="panel-hd"><h3>Fatturato per categoria</h3></div><div class="barwrap">${barList(topN(d.byCat,6),money)}</div></div>
+    <div class="panel"><div class="panel-hd"><h3>Ordini per stato</h3></div><div class="barwrap">${barList(Object.entries(d.byStatus),v=>v)}</div></div>
+  </div>
+  ${adminLogsPanel()}`;
+}
+/* ---- Parser user-agent e provenienza (solo lato visualizzazione) ---- */
+function parseUA(ua){
+  ua=(ua||'').toLowerCase();
+  if(!ua) return {browser:'—',os:'—',device:'—'};
+  let device='PC';
+  if(/ipad|tablet|(android(?!.*mobile))/.test(ua)) device='Tablet';
+  else if(/mobile|iphone|ipod|android|windows phone/.test(ua)) device='Smartphone';
+  let os='—';
+  if(/windows/.test(ua)) os='Windows';
+  else if(/iphone|ipad|ios/.test(ua)) os='iOS';
+  else if(/mac os x|macintosh/.test(ua)) os='macOS';
+  else if(/android/.test(ua)) os='Android';
+  else if(/linux/.test(ua)) os='Linux';
+  let browser='Altro';
+  if(/edg\//.test(ua)) browser='Edge';
+  else if(/opr\/|opera/.test(ua)) browser='Opera';
+  else if(/samsungbrowser/.test(ua)) browser='Samsung';
+  else if(/firefox|fxios/.test(ua)) browser='Firefox';
+  else if(/chrome|crios/.test(ua)) browser='Chrome';
+  else if(/safari/.test(ua)) browser='Safari';
+  return {browser,os,device};
+}
+function refHost(ref){
+  if(!ref) return 'Diretto';
+  try{
+    const h=new URL(ref).hostname.replace(/^www\./,'');
+    if(h===location.hostname||/zetapacksrl/.test(h)) return 'Navigazione interna';
+    const map=[['google','Google'],['bing','Bing'],['facebook','Facebook'],['instagram','Instagram'],['l.instagram','Instagram'],['t.co','Twitter/X'],['linkedin','LinkedIn'],['youtube','YouTube'],['whatsapp','WhatsApp'],['duckduckgo','DuckDuckGo'],['yahoo','Yahoo']];
+    for(const [k,v] of map) if(h.includes(k)) return v;
+    return h;
+  }catch(e){ return 'Diretto'; }
+}
+function devIcon(d){ return d==='Smartphone'?'📱':d==='Tablet'?'▭':d==='PC'?'🖥️':'—'; }
+
+function adminLogsPanel(){
+  const now=Date.now(); const from=state.statsPeriod==='m'?now-30*864e5:state.statsPeriod==='y'?new Date(new Date().getFullYear(),0,1).getTime():0;
+  let logs=(state.adminLogs||[]).filter(l=>l.ts>=from);
+  const f=state.logFilter||'';
+  if(f) logs=logs.filter(l=>l.kind===f);
+  const anon=logs.filter(l=>l.kind==='anon').length;
+  const logins=logs.filter(l=>l.kind==='client'&&l.action==='Login').length;
+  // statistiche dispositivi/browser/provenienza sui visitatori (con user-agent)
+  const withUA=logs.filter(l=>l.ua);
+  const dev={PC:0,Smartphone:0,Tablet:0}; const brow={}; const prov={};
+  withUA.forEach(l=>{ const p=parseUA(l.ua); if(dev[p.device]!=null)dev[p.device]++; brow[p.browser]=(brow[p.browser]||0)+1; });
+  logs.forEach(l=>{ if(l.kind==='anon'){ const s=refHost(l.ref); prov[s]=(prov[s]||0)+1; } });
+  const topBrowser=Object.entries(brow).sort((a,b)=>b[1]-a[1])[0];
+  const topProv=Object.entries(prov).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  const uniqueIP=new Set(logs.filter(l=>l.kind==='anon'&&l.ip).map(l=>l.ip)).size;
+  const shown=logs.slice(0,150);
+  const kindPill=k=>k==='anon'?'<span class="st nuovo">Anonimo</span>':k==='admin'?'<span class="st inv">Azienda</span>':'<span class="st evaso">Cliente</span>';
+  return `<div class="panel" style="margin-top:16px"><div class="panel-hd"><h3>Visitatori, accessi e attività</h3><div style="flex:1"></div>
+      <select class="fsel" onchange="state.logFilter=this.value;render()"><option value="">Tutti</option><option value="anon" ${f==='anon'?'selected':''}>Visitatori anonimi</option><option value="client" ${f==='client'?'selected':''}>Clienti</option><option value="admin" ${f==='admin'?'selected':''}>Azienda</option></select>
+      <button class="btn ghost sm" onclick="reloadLogs()">↻ Aggiorna</button></div>
+    <div class="kpis" style="margin:14px 18px 0">
+      <div class="kpi"><b>${anon}</b><span>Visite anonime</span></div>
+      <div class="kpi"><b>${uniqueIP}</b><span>Visitatori unici (IP)</span></div>
+      <div class="kpi"><b>${dev.PC}</b><span>Da PC</span></div>
+      <div class="kpi"><b>${dev.Smartphone}</b><span>Da smartphone</span></div>
+      <div class="kpi"><b>${dev.Tablet}</b><span>Da tablet</span></div>
+      <div class="kpi"><b>${logins}</b><span>Accessi clienti</span></div>
+    </div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;margin:12px 20px 0;font-size:13px;color:var(--ink-2)">
+      <div><b>Browser più usato:</b> ${topBrowser?esc(topBrowser[0])+' ('+topBrowser[1]+')':'—'}</div>
+      <div><b>Provenienza visite:</b> ${topProv.length?topProv.map(p=>esc(p[0])+' '+p[1]).join(' · '):'—'}</div>
+    </div>
+    ${shown.length?`<div class="tbl-scroll" style="max-height:420px;margin-top:12px;overflow:auto"><table class="tbl"><thead><tr><th>Data e ora</th><th>Tipo</th><th>Chi</th><th>Dispositivo</th><th>Browser</th><th>Sistema</th><th>Provenienza</th><th>IP</th><th>Attività</th></tr></thead><tbody>
+      ${shown.map(l=>{const p=parseUA(l.ua);return `<tr><td class="mut" style="white-space:nowrap;font-size:12px">${new Date(l.ts).toLocaleString('it-IT')}</td><td>${kindPill(l.kind)}</td><td>${esc(l.who||'—')}</td><td style="white-space:nowrap">${p.device}</td><td>${esc(p.browser)}</td><td class="mut">${esc(p.os)}</td><td class="mut">${esc(refHost(l.ref))}</td><td class="mut" style="font-size:12px;white-space:nowrap">${esc(l.ip||'—')}</td><td>${esc(l.action||'')}${l.detail?' <span class="mut">· '+esc(l.detail)+'</span>':''}</td></tr>`;}).join('')}
+    </tbody></table></div>`:'<div class="empty">Nessun accesso registrato nel periodo selezionato.</div>'}
+    <div class="mut" style="font-size:11.5px;margin:10px 18px 2px">Gli indirizzi IP sono dati personali: usali solo per statistiche e sicurezza, nel rispetto del GDPR e della tua privacy policy.</div>
+  </div>`;
+}
+
+/* ---------------- Login / Request modals ---------------- */
+function openModal(html, wide){ document.getElementById('modalcontent').innerHTML=html; const bg=document.getElementById('modalbg'); const m=bg.querySelector('.modal'); if(m) m.classList.toggle('wide', !!wide); bg.classList.add('open'); }
+function closeModal(){ const bg=document.getElementById('modalbg'); bg.classList.remove('open'); const m=bg.querySelector('.modal'); if(m) m.classList.remove('wide'); }
+function openLogin(){
+  openModal(`<div class="modal-hd"><h3>Accedi al tuo account</h3><p>Area clienti e area azienda.</p></div>
+    <div class="modal-body">
+      <div class="field"><label>Utente</label><input id="lu" placeholder="es. cliente" autocomplete="off"></div>
+      <div class="field"><label>Password</label><input id="lp" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"></div>
+      <div id="lerr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="doLogin()">Accedi</button>
+      <div style="text-align:center;margin-top:14px;font-size:13px" class="mut">Non hai un account? <button style="color:var(--green-d);font-weight:700" onclick="openRequest()">Richiedi accesso</button></div>
+    </div>`);
+  setTimeout(()=>document.getElementById('lu')?.focus(),60);
+}
+async function doLogin(){
+  const u=document.getElementById('lu').value.trim(), p=document.getElementById('lp').value;
+  try{
+    const {token,user}=await api('/api/login',{method:'POST',body:{username:u,password:p}});
+    sessionSave(token,user); state.user=user;
+    if(user.role==='admin'){ state.view='admin'; state.tab='dash'; await loadAdmin(); }
+    else { state.view='client'; state.tab='cat'; state.cart={}; await loadClient(); }
+    closeModal(); render(); toast('Accesso effettuato — '+user.name);
+  }catch(e){ document.getElementById('lerr').textContent=e.message; }
+}
+let reqType='Accesso';
+function openRequest(){
+  reqType='Accesso';
+  openModal(`<div class="modal-hd"><h3>Richiedi accesso o listino</h3><p>Lascia i tuoi dati: ti ricontattiamo per attivare l'account cliente o inviarti il listino completo di imballaggi e monouso. È gratuito e senza impegno.</p></div>
+    <div class="modal-body">
+      <div class="seg" id="seg"><button class="on" onclick="setReqType('Accesso',this)">Voglio accedere</button><button onclick="setReqType('Listino',this)">Ricevere il listino</button><button onclick="setReqType('Nuovo cliente',this)">Diventare cliente</button></div>
+      <div class="field"><label>Ragione sociale / attività *</label><input id="rc"></div>
+      <div class="row2"><div class="field"><label>Referente *</label><input id="rn"></div><div class="field"><label>P.IVA</label><input id="rv"></div></div>
+      <div class="row2"><div class="field"><label>Email *</label><input id="re" type="email"></div><div class="field"><label>Telefono</label><input id="rp"></div></div>
+      <div class="field"><label>Messaggio</label><textarea id="rm"></textarea></div>
+      <div id="rerr" style="color:var(--danger);font-size:13px;font-weight:600;margin-bottom:8px"></div>
+      <button class="btn primary" style="width:100%;justify-content:center;padding:12px" onclick="submitRequest()">Invia richiesta</button>
+    </div>`);
+}
+function setReqType(t,btn){ reqType=t; [...document.getElementById('seg').children].forEach(b=>b.classList.remove('on')); btn.classList.add('on'); }
+async function submitRequest(){
+  const g=id=>document.getElementById(id).value.trim();
+  if(!g('rc')||!g('rn')||!g('re')){ document.getElementById('rerr').textContent='Compila attività, referente ed email.'; return; }
+  try{ await api('/api/requests',{method:'POST',body:{type:reqType,company:g('rc'),name:g('rn'),vat:g('rv'),email:g('re'),phone:g('rp'),msg:g('rm')}});
+    closeModal(); toast('Richiesta inviata ✓ Ti ricontattiamo a breve');
+  }catch(e){ document.getElementById('rerr').textContent=e.message; }
+}
+
+/* ---------------- misc ---------------- */
+const ORDER_STEPS=['Nuovo','In lavorazione','Spedito','Fatturato','Evaso'];
+function stClass(s){ return {'Nuovo':'nuovo','In lavorazione':'lav','Spedito':'spd','Fatturato':'inv','Evaso':'evaso','Annullato':'ann'}[s]||'nuovo'; }
+function quoteCls(s){ return {'Bozza':'nuovo','Inviato':'lav','Accettato':'evaso','Rifiutato':'ann','Scaduto':'ann'}[s]||'nuovo'; }
+function progressStepper(status){
+  if(status==='Annullato') return `<div class="progcanc">✕ Ordine annullato</div>`;
+  const idx=ORDER_STEPS.indexOf(status), cur=idx<0?0:idx;
+  return `<div class="prog">${ORDER_STEPS.map((s,i)=>`<div class="pstep ${i<cur?'done':''} ${i===cur?'now':''}"><span class="pdot">${i<cur?'✓':i+1}</span><span class="plab">${s}</span></div>`).join('')}</div>`;
+}
+function docsLine(o, side){
+  const s=side||'client'; const parts=[];
+  if(o.ddt_num||o.ddt_file){ let t='📄 DDT'; if(o.ddt_num)t+=' '+esc(o.ddt_num); if(o.ddt_date)t+=' del '+esc(o.ddt_date); if(o.ddt_file)t+=` <button class="linkx" onclick="downloadOrderFile('${o.id}','ddt','${s}')">⤓ scarica</button>`; parts.push(t); }
+  if(o.invoice_num||o.invoice_file){ let t='🧾 Fattura'; if(o.invoice_num)t+=' '+esc(o.invoice_num); if(o.invoice_date)t+=' del '+esc(o.invoice_date); if(o.invoice_file)t+=` <button class="linkx" onclick="downloadOrderFile('${o.id}','invoice','${s}')">⤓ scarica</button>`; parts.push(t); }
+  if(!parts.length) return '';
+  return `<div class="mut" style="font-size:12px;margin:2px 0 8px">${parts.join(' · ')}</div>`;
+}
+function logout(){ sessionClear(); state.user=null; state.view='public'; state.tab=''; state.cart={}; state.filter={q:'',cat:'',sector:''};
+  api('/api/catalog').then(c=>{ state.catalog=c; render(); }).catch(()=>render()); }
+// Anteprima: l'amministratore vede il sito come un visitatore ('public') o un cliente registrato ('client'), senza uscire.
+async function previewAs(mode){
+  try{
+    state._bak={ tab:state.tab, catalog:state.catalog, promo:state.promo, filter:state.filter, cart:state.cart };
+    state.filter={q:'',cat:'',sector:''}; state.page=1;
+    if(mode==='client'){
+      const cat=await api('/api/catalog/prices');
+      state.catalog=cat; state.cart={}; state.preview='client'; state.view='client'; state.tab='cat';
+    } else {
+      const [cat,promo]=await Promise.all([api('/api/catalog'), api('/api/promo').catch(()=>[])]);
+      state.catalog=cat; state.promo=promo||[]; state.preview='public'; state.view='public'; state.tab='';
+    }
+    render(); try{window.scrollTo(0,0);}catch(e){}
+  }catch(e){ toast(e.message||'Anteprima non disponibile'); }
+}
+function exitPreview(){
+  const b=state._bak;
+  if(b){ state.catalog=b.catalog; state.promo=b.promo; state.tab=b.tab||'dash'; state.filter=b.filter||{q:'',cat:'',sector:''}; state.cart=b.cart||{}; state._bak=null; }
+  state.preview=null; state.view='admin'; if(!state.tab) state.tab='dash';
+  render(); try{window.scrollTo(0,0);}catch(e){}
+}
+let toastT; function toast(m){ document.getElementById('toastmsg').textContent=m; const t=document.getElementById('toast'); t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),3200); }
+function footer(){ return `<footer class="ftr"><div class="wrap"><div><b style="font-family:var(--disp);color:var(--ink)">ZETAPACK Srl</b> · Imballaggi, monouso, packaging alimentare e igiene professionale per bar, ristoranti, negozi e attività a Verona e Rovereto</div><div>Portale ordini & preventivi · v${APP_VERSION} · ${BUILD_DATE}</div></div></footer>`; }
+
+init();
+</script>
+</body>
+</html>
