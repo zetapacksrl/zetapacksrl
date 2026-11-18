@@ -337,18 +337,23 @@ a{color:inherit}
 html,body{max-width:100%;overflow-x:hidden}
 
 /* ===== Area amministrazione: menu laterale a sinistra ===== */
-body.adminui .hd-nav{position:fixed;top:0;left:0;bottom:0;width:210px;margin:0;
-  flex-direction:column;align-items:stretch;gap:3px;padding:70px 12px 20px;
-  background:#fff;border-right:1px solid var(--line);overflow-y:auto;z-index:35}
+/* niente backdrop-filter in admin: altrimenti l'header diventa il contenitore del menu fisso e lo schiaccia */
+body.adminui .hd{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+body.adminui .hd-in{max-width:none}                       /* intestazione a tutta larghezza: il logo resta a sinistra */
+body.adminui .hd-nav{position:fixed;top:63px;left:0;bottom:0;width:212px;margin:0;
+  flex-direction:column;align-items:stretch;gap:3px;padding:16px 12px 20px;
+  background:#fff;border-right:1px solid var(--line);overflow-y:auto;z-index:30}
 body.adminui .hd-nav button{text-align:left;width:100%;padding:10px 12px;font-size:13.5px;border-radius:9px}
 body.adminui .hd-nav button.on{background:var(--green);color:#fff}
-body.adminui #app .wrap{margin-left:210px;max-width:none}
-body.adminui .ftr{margin-left:210px}
+body.adminui #app .wrap{margin-left:212px;max-width:none;padding-left:24px;padding-right:24px}
+body.adminui .ftr{margin-left:212px}
 @media(max-width:900px){
+  body.adminui .hd-in{max-width:1240px}
   body.adminui .hd-nav{position:static;width:auto;flex-direction:row;padding:0;gap:6px;
-    border-right:none;overflow-x:auto;overflow-y:hidden;display:flex!important;flex-wrap:nowrap}
+    border-right:none;overflow-x:auto;overflow-y:hidden;display:flex!important;flex-wrap:nowrap;top:auto}
   body.adminui .hd-nav button{width:auto;white-space:nowrap}
-  body.adminui #app .wrap,body.adminui .ftr{margin-left:0}
+  body.adminui #app .wrap{margin-left:0;padding-left:14px;padding-right:14px}
+  body.adminui .ftr{margin-left:0}
 }
 
 /* ===== Listino: scorre internamente e la colonna azioni resta sempre visibile ===== */
@@ -394,7 +399,7 @@ body.adminui .ftr{margin-left:210px}
 <div class="toast" id="toast"><span class="dot"></span><span id="toastmsg"></span></div>
 
 <script>
-const APP_VERSION = "6.3.6";
+const APP_VERSION = "6.3.7";
 const BUILD_DATE  = "18 novembre 2026";
 
 /* ---------------- API layer ---------------- */

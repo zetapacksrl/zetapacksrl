@@ -1,6 +1,6 @@
 {
   "name": "zetapack-portale",
-  "version": "6.3.6",
+  "version": "6.3.7",
   "description": "Portale ordini e preventivi ZETAPACK Srl - backend con email, PDF, allegati e immagini prodotto (R2)",
   "type": "commonjs",
   "main": "server.js",
