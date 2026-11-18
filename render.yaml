@@ -1,0 +1,49 @@
+# Configurazione automatica per la pubblicazione su Render.
+# Render legge questo file e crea il servizio con il disco persistente.
+services:
+  - type: web
+    name: zetapack-portale
+    runtime: node
+    plan: starter                # servizio sempre attivo (~7 $/mese)
+    region: frankfurt            # data center in Europa (vicino all'Italia)
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/meta
+    autoDeploy: true
+    disk:
+      name: dati                 # disco persistente: conserva il database
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DB_PATH             # database salvato sul disco persistente
+        value: /var/data/zetapack.db
+      - key: JWT_SECRET          # generato automaticamente da Render
+        generateValue: true
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASS          # da inserire nel pannello Render (non nel codice)
+        sync: false
+      - key: SMTP_HOST
+        value: smtps.aruba.it
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_SECURE
+        value: "true"
+      - key: SMTP_USER           # es. ordini@tuodominio.it — da inserire in Render
+        sync: false
+      - key: SMTP_PASS           # password della casella email — da inserire in Render
+        sync: false
+      - key: MAIL_FROM           # es. ZETAPACK Srl <ordini@tuodominio.it>
+        sync: false
+      - key: MAIL_ADMIN          # dove ricevere le notifiche degli ordini
+        sync: false
+      - key: R2_ACCOUNT_ID       # ID account Cloudflare — per le immagini prodotto
+        sync: false
+      - key: R2_ACCESS_KEY_ID    # token R2 (Access Key ID)
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY  # token R2 (Secret Access Key)
+        sync: false
+      - key: R2_BUCKET           # nome del bucket R2 (es. zetapack-immagini)
+        sync: false
+      - key: R2_PUBLIC_URL       # URL pubblico del bucket (es. https://pub-xxxx.r2.dev)
+        sync: false
